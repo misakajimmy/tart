@@ -1,0 +1,36 @@
+{
+  "name": "@tart/core",
+  "version": "1.0.0",
+  "directories": {
+    "lib": "lib/"
+  },
+  "files": [
+    "lib/*.d.ts",
+    "lib/*.d.ts.map",
+    "lib/*.js",
+    "lib/*.css"
+  ],
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "prepare": "yarn build",
+    "build": "gulp",
+    "watch": "gulp && gulp watch",
+    "dev": "yarn build && yarn watch"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "inversify": "^6.0.1",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "typescript": "^4.7.4",
+    "gulp": "^4.0.2",
+    "gulp-less": "^5.0.0",
+    "gulp-typescript": "^5.0.1",
+    "gulp-sourcemaps": "^3.0.0"
+  }
+}

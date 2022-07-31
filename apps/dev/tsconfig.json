@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "allowJs": true,
+    "jsx": "react",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    //    "inlineSources": true,
+    //    "sourceMap": true,
+    "lib": [
+      "DOM",
+      "ES6",
+      "ESNext"
+    ],
+    "types": [
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src",
+    "vite.config.ts"
+  ]
+}
