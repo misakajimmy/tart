@@ -9,6 +9,7 @@
   },
   "packages": [
     "packages/*",
-    "apps/*"
+    "apps/*",
+    "plugins/*"
   ]
 }
