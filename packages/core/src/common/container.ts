@@ -7,6 +7,10 @@ export class ContainerLoader {
   constructor() {
   }
 
+  get container() {
+    return this._container;
+  }
+
   async importModules(modules: string[]) {
     await modules.map(async module => {
       await this.importModule(module);
@@ -14,12 +18,8 @@ export class ContainerLoader {
   }
 
   protected async importModule(module: string) {
-    console.log(module);
-    const m = await import(`@tart/core/${module}`);
-    console.log(m);
-    // const n = await import(module);
-    // console.log(n);
-    // await this.load(m);
+    const m = await import(`@tart_module/${module}`);
+    await this.load(m);
   }
 
   protected async load(jsModule: any) {
@@ -31,6 +31,7 @@ export class ContainerLoader {
   }
 
   getService<T>(service: interfaces.ServiceIdentifier<T>): T {
+    console.log(this._container);
     return this._container.get(service);
   }
 }
