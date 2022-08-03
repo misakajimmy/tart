@@ -90,7 +90,7 @@ export class Path {
   /**
    * vscode-uri always normalizes drive letters to lower case:
    * https://github.com/Microsoft/vscode-uri/blob/b1d3221579f97f28a839b6f996d76fc45e9964d8/src/index.ts#L1025
-   * wm path should be adjusted to this.
+   * tart path should be adjusted to this.
    */
   static normalizeDrive(path: string): string {
     // lower-case windows drive letters in /C:/fff or C:/fff

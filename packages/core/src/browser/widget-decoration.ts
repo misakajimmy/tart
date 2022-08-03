@@ -23,17 +23,17 @@ export namespace WidgetDecoration {
    * CSS styles for the decorators.
    */
   export namespace Styles {
-    export const CAPTION_HIGHLIGHT_CLASS = 'wm-caption-highlight';
-    export const CAPTION_PREFIX_CLASS = 'wm-caption-prefix';
-    export const CAPTION_SUFFIX_CLASS = 'wm-caption-suffix';
-    export const ICON_WRAPPER_CLASS = 'wm-icon-wrapper';
-    export const DECORATOR_SIZE_CLASS = 'wm-decorator-size';
-    export const DECORATOR_SIDEBAR_SIZE_CLASS = 'wm-decorator-sidebar-size';
-    export const TOP_RIGHT_CLASS = 'wm-top-right';
-    export const BOTTOM_RIGHT_CLASS = 'wm-bottom-right';
-    export const BOTTOM_RIGHT_SIDEBAR_CLASS = 'wm-bottom-right-sidebar';
-    export const BOTTOM_LEFT_CLASS = 'wm-bottom-left';
-    export const TOP_LEFT_CLASS = 'wm-top-left';
+    export const CAPTION_HIGHLIGHT_CLASS = 'tart-caption-highlight';
+    export const CAPTION_PREFIX_CLASS = 'tart-caption-prefix';
+    export const CAPTION_SUFFIX_CLASS = 'tart-caption-suffix';
+    export const ICON_WRAPPER_CLASS = 'tart-icon-wrapper';
+    export const DECORATOR_SIZE_CLASS = 'tart-decorator-size';
+    export const DECORATOR_SIDEBAR_SIZE_CLASS = 'tart-decorator-sidebar-size';
+    export const TOP_RIGHT_CLASS = 'tart-top-right';
+    export const BOTTOM_RIGHT_CLASS = 'tart-bottom-right';
+    export const BOTTOM_RIGHT_SIDEBAR_CLASS = 'tart-bottom-right-sidebar';
+    export const BOTTOM_LEFT_CLASS = 'tart-bottom-left';
+    export const TOP_LEFT_CLASS = 'tart-top-left';
   }
   /**
    * For the sake of simplicity, we have merged the `font-style`, `font-weight`, and the `text-decoration` together.
@@ -48,7 +48,7 @@ export namespace WidgetDecoration {
    *
    * For more details, see: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value.
    *
-   * Note, it is highly recommended to use one of the predefined colors of Wm, so the desired color will
+   * Note, it is highly recommended to use one of the predefined colors of Tart, so the desired color will
    * look nice with both the `light` and the `dark` theme too.
    */
   export type Color = string;

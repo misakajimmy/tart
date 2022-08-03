@@ -26,7 +26,7 @@
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.3);
-  font-size: var(--wm-ui-font-size1);
+  font-size: var(--tart-ui-font-size1);
   padding: 2px;
 }
 
@@ -35,10 +35,10 @@
   flex-direction: column;
   min-width: 400px;
   min-height: 150px;
-  color: var(--wm-editorWidget-foreground);
-  background-color: var(--wm-editorWidget-background);
-  border: 1px solid var(--wm-contrastBorder);
-  box-shadow: 0 0px 8px var(--wm-widget-shadow);
+  color: var(--tart-editorWidget-foreground);
+  background-color: var(--tart-editorWidget-background);
+  border: 1px solid var(--tart-contrastBorder);
+  box-shadow: 0 0px 8px var(--tart-widget-shadow);
 }
 
 .p-Widget.dialogOverlay .dialogTitle {
@@ -48,10 +48,10 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  font-size: var(--wm-ui-font-size1);
-  background-color: var(--wm-statusBar-background);
-  color: var(--wm-statusBar-foreground);
-  padding: 0 calc(var(--wm-ui-padding) * 2);
+  font-size: var(--tart-ui-font-size1);
+  background-color: var(--tart-statusBar-background);
+  color: var(--tart-statusBar-foreground);
+  padding: 0 calc(var(--tart-ui-padding) * 2);
   min-height: 24px;
 }
 
@@ -66,11 +66,11 @@
   justify-content: space-around;
   align-items: stretch;
   position: relative;
-  padding: calc(var(--wm-ui-padding) * 2);
+  padding: calc(var(--tart-ui-padding) * 2);
 }
 
 .p-Widget.dialogOverlay .dialogControl {
-  padding: calc(var(--wm-ui-padding) * 2);
+  padding: calc(var(--tart-ui-padding) * 2);
   padding-top: 0px;
   display: flex;
   flex-direction: row;
@@ -81,7 +81,7 @@
 }
 
 .dialogOverlay :focus {
-  box-shadow: 0px 0px 1px 1px var(--wm-focusBorder);
+  box-shadow: 0px 0px 1px 1px var(--tart-focusBorder);
   outline: none;
 }
 
@@ -94,49 +94,49 @@
 }
 
 .p-Widget.dialogOverlay .error {
-  color: var(--wm-inputValidation-errorForeground);
+  color: var(--tart-inputValidation-errorForeground);
 }
 
 .p-Widget.dialogOverlay .error.main {
-  color: var(--wm-inputValidation-errorForeground);
-  border-color: var(--wm-inputValidation-errorBorder);
+  color: var(--tart-inputValidation-errorForeground);
+  border-color: var(--tart-inputValidation-errorBorder);
 }
 
-.p-Widget.dialogOverlay .error > .wm-button.main {
-  background-color: var(--wm-inputValidation-errorBackground);
-  color: var(--wm-inputValidation-errorForeground);
+.p-Widget.dialogOverlay .error > .tart-button.main {
+  background-color: var(--tart-inputValidation-errorBackground);
+  color: var(--tart-inputValidation-errorForeground);
 }
 
 .p-Widget.dialogOverlay .error > .dialogErrorMessage {
-  margin-top: calc(var(--wm-ui-padding) * 3);
-  font-size: var(--wm-ui-font-size1);
+  margin-top: calc(var(--tart-ui-padding) * 3);
+  font-size: var(--tart-ui-font-size1);
   display: block;
 }
 
-.wm-dialog-node {
-  line-height: var(--wm-content-line-height);
-  margin-top: calc(var(--wm-ui-padding) * 1.5);
-  margin-left: calc(var(--wm-ui-padding) * 2.5);
+.tart-dialog-node {
+  line-height: var(--tart-content-line-height);
+  margin-top: calc(var(--tart-ui-padding) * 1.5);
+  margin-left: calc(var(--tart-ui-padding) * 2.5);
 }
 
-.wm-dialog-node-content {
+.tart-dialog-node-content {
   display: flex;
   align-items: center;
-  margin-right: calc(var(--wm-ui-padding) * 1.5);
+  margin-right: calc(var(--tart-ui-padding) * 1.5);
 }
 
-.wm-dialog-node-segment {
+.tart-dialog-node-segment {
   flex-grow: 0;
   user-select: none;
   white-space: nowrap;
 }
 
-.wm-dialog-icon {
+.tart-dialog-icon {
   align-content: center;
-  margin-right: calc(var(--wm-ui-padding) * 1.5);
+  margin-right: calc(var(--tart-ui-padding) * 1.5);
 }
 
-.wm-dialog-node-content-flex {
+.tart-dialog-node-content-flex {
   display: flex;
   flex-direction: column;
   justify-content: center;

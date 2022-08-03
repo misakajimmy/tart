@@ -15,93 +15,93 @@
  ********************************************************************************/
 
 :root {
-  --wm-statusBar-height: 22px;
+  --tart-statusBar-height: 22px;
 }
 
-#wm-statusBar {
-  background: var(--wm-statusBar-background);
+#tart-statusBar {
+  background: var(--tart-statusBar-background);
   display: flex;
-  min-height: var(--wm-statusBar-height);
+  min-height: var(--tart-statusBar-height);
   white-space: nowrap;
-  border-top: var(--wm-border-width) solid var(--wm-statusBar-border);
+  border-top: var(--tart-border-width) solid var(--tart-statusBar-border);
 }
 
-body.wm-no-open-workspace #wm-statusBar {
-  background: var(--wm-statusBar-noFolderBackground);
-  color: var(--wm-statusBar-noFolderForeground);
-  border-top: var(--wm-border-width) solid var(--wm-statusBar-noFolderBorder);
+body.tart-no-open-workspace #tart-statusBar {
+  background: var(--tart-statusBar-noFolderBackground);
+  color: var(--tart-statusBar-noFolderForeground);
+  border-top: var(--tart-border-width) solid var(--tart-statusBar-noFolderBorder);
 }
 
-#wm-statusBar .area {
+#tart-statusBar .area {
   flex: 1;
   display: flex;
   align-items: stretch;
 }
 
-#wm-statusBar .area.left {
+#tart-statusBar .area.left {
   justify-content: flex-start;
-  padding-left: calc(var(--wm-ui-padding) * 2);
+  padding-left: calc(var(--tart-ui-padding) * 2);
 }
 
-#wm-statusBar .area.right {
+#tart-statusBar .area.right {
   justify-content: flex-end;
-  padding-right: calc(var(--wm-ui-padding) * 2);
+  padding-right: calc(var(--tart-ui-padding) * 2);
 }
 
-#wm-statusBar .area .element {
-  color: var(--wm-statusBar-foreground);
+#tart-statusBar .area .element {
+  color: var(--tart-statusBar-foreground);
   display: flex;
   align-items: center;
-  font-size: var(--wm-statusBar-font-size);
+  font-size: var(--tart-statusBar-font-size);
 }
 
-#wm-statusBar .area .element > * {
-  margin-left: calc(var(--wm-ui-padding) / 2);
+#tart-statusBar .area .element > * {
+  margin-left: calc(var(--tart-ui-padding) / 2);
 }
 
-#wm-statusBar .area .element .codicon {
+#tart-statusBar .area .element .codicon {
   /* Scaling down codicons from 16 to 14 pixels */
   font-size: 14px;
 }
 
-#wm-statusBar .area .element > *:last-child {
-  margin-right: calc(var(--wm-ui-padding) / 2);
+#tart-statusBar .area .element > *:last-child {
+  margin-right: calc(var(--tart-ui-padding) / 2);
 }
 
-#wm-statusBar .area .element.hasCommand:hover {
-  background-color: var(--wm-statusBarItem-hoverBackground);
+#tart-statusBar .area .element.hasCommand:hover {
+  background-color: var(--tart-statusBarItem-hoverBackground);
   cursor: pointer;
 }
 
-#wm-statusBar .area .element.hasCommand:active {
-  background-color: var(--wm-statusBarItem-activeBackground);
+#tart-statusBar .area .element.hasCommand:active {
+  background-color: var(--tart-statusBarItem-activeBackground);
 }
 
-.wm-mod-offline #wm-statusBar {
-  background-color: var(--wm-statusBar-offlineBackground) !important;
+.tart-mod-offline #tart-statusBar {
+  background-color: var(--tart-statusBar-offlineBackground) !important;
 }
 
-.wm-mod-offline #wm-statusBar .area .element {
-  color: var(--wm-statusBar-offlineForeground) !important;
+.tart-mod-offline #tart-statusBar .area .element {
+  color: var(--tart-statusBar-offlineForeground) !important;
 }
 
-.wm-mod-offline #wm-statusBar .area .element.hasCommand:hover {
-  background-color: var(--wm-statusBarItem-offlineHoverBackground) !important;
+.tart-mod-offline #tart-statusBar .area .element.hasCommand:hover {
+  background-color: var(--tart-statusBarItem-offlineHoverBackground) !important;
 }
 
-.wm-mod-offline #wm-statusBar .area .element.hasCommand:active {
-  background-color: var(--wm-statusBarItem-offlineActiveBackground) !important;
+.tart-mod-offline #tart-statusBar .area .element.hasCommand:active {
+  background-color: var(--tart-statusBarItem-offlineActiveBackground) !important;
 }
 
-#wm-statusBar .area.left .element {
-  margin-right: var(--wm-ui-padding);
+#tart-statusBar .area.left .element {
+  margin-right: var(--tart-ui-padding);
 }
 
-#wm-statusBar .area.right .element {
-  margin-left: var(--wm-ui-padding);
+#tart-statusBar .area.right .element {
+  margin-left: var(--tart-ui-padding);
 }
 
-#wm-statusBar .element {
+#tart-statusBar .element {
   /* https://css-tricks.com/os-specific-fonts-css/#article-header-id-0 */
   /* https://github.com/Microsoft/vscode/blob/5dbdc8d19c8cf6dd10d558eabcc48bba962ea45f/src/vs/workbench/browser/media/style.css#L8-L24 */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif;

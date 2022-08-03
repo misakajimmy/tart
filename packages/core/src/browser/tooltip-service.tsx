@@ -78,6 +78,6 @@ export class TooltipServiceImpl extends ReactRenderer implements TooltipService 
 
   protected doRender(): React.ReactNode {
     const hoverDelay = this.corePreferences.get(DELAY_PREFERENCE);
-    return <ReactTooltip id={this.tooltipId} className='wm-tooltip' html={true} delayShow={hoverDelay}/>;
+    return <ReactTooltip id={this.tooltipId} className='tart-tooltip' html={true} delayShow={hoverDelay}/>;
   }
 }

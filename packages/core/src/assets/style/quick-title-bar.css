@@ -14,31 +14,31 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-.wm-quick-title-container {
+.tart-quick-title-container {
   display: flex;
-  padding: calc(var(--wm-ui-padding) / 2);
+  padding: calc(var(--tart-ui-padding) / 2);
   justify-content: space-between;
   align-items: center;
-  background: var(--wm-titleBar-activeBackground);
+  background: var(--tart-titleBar-activeBackground);
 }
 
-.wm-quick-title-left-bar {
+.tart-quick-title-left-bar {
   display: flex;
   text-align: left;
 }
 
-.wm-quick-title-right-bar {
+.tart-quick-title-right-bar {
   display: flex;
   text-align: right;
 }
 
-.wm-quick-title-header {
+.tart-quick-title-header {
   text-align: center;
 }
 
-.wm-quick-title-button {
-  width: var(--wm-icon-size);
-  height: var(--wm-icon-size);
+.tart-quick-title-button {
+  width: var(--tart-icon-size);
+  height: var(--tart-icon-size);
   display: flex;
   align-items: center;
   cursor: pointer;

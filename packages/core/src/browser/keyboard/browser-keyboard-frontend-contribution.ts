@@ -27,7 +27,7 @@ export namespace KeyboardCommands {
     id: 'core.keyboard.choose',
     category: KEYBOARD_CATEGORY,
     label: 'Choose Keyboard Layout',
-  }, 'wm/core/keyboard/choose', KEYBOARD_CATEGORY_KEY);
+  }, 'tart/core/keyboard/choose', KEYBOARD_CATEGORY_KEY);
 
 }
 

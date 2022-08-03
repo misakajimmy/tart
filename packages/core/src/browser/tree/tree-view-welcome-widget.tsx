@@ -101,7 +101,7 @@ export class TreeViewWelcomeWidget extends TreeWidget {
 
   protected renderViewWelcome(): React.ReactNode {
     return (
-        <div className='wm-WelcomeView'>
+        <div className='tart-WelcomeView'>
           {...this.viewWelcomeNodes}
         </div>
     );
@@ -157,9 +157,9 @@ export class TreeViewWelcomeWidget extends TreeWidget {
 
   protected renderButtonNode(node: ILink, lineKey: string): React.ReactNode {
     return (
-        <div key={`line-${lineKey}`} className='wm-WelcomeViewButtonWrapper'>
+        <div key={`line-${lineKey}`} className='tart-WelcomeViewButtonWrapper'>
           <button title={node.title}
-                  className='wm-button wm-WelcomeViewButton'
+                  className='tart-button tart-WelcomeViewButton'
                   disabled={!this.isEnabledClick(node.href)}
                   onClick={e => this.openLinkOrCommand(e, node.href)}>
             {node.label}
@@ -184,7 +184,7 @@ export class TreeViewWelcomeWidget extends TreeWidget {
   }
 
   protected getLinkClassName(href: string): string {
-    const classNames = ['wm-WelcomeViewCommandLink'];
+    const classNames = ['tart-WelcomeViewCommandLink'];
     if (!this.isEnabledClick(href)) {
       classNames.push('disabled');
     }

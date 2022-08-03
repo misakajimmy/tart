@@ -13,13 +13,13 @@ import {IconThemeService} from '../icon-theme-service';
 import {ElementInlineStyle, h, VirtualDOM, VirtualElement} from '@lumino/virtualdom';
 import {WidgetDecoration} from '../widget-decoration';
 import {notEmpty} from '../../common/objects';
-import {BOTTOM_AREA_ID, MAIN_AREA_ID, WmDockPanel} from './wm-dock-panel';
+import {BOTTOM_AREA_ID, MAIN_AREA_ID, TartDockPanel} from './tart-dock-panel';
 import {ArrayExt} from '@lumino/algorithm';
 import {IDragEvent} from '@lumino/dragdrop';
 import {ElementExt} from '@lumino/domutils';
 
 /** The class name added to hidden content nodes, which are required to render vertical side bars. */
-const HIDDEN_CONTENT_CLASS = 'wm-TabBar-hidden-content';
+const HIDDEN_CONTENT_CLASS = 'tart-TabBar-hidden-content';
 
 export const TabBarRendererFactory = Symbol('TabBarRendererFactory');
 
@@ -138,7 +138,7 @@ export class TabBarRenderer extends TabBar.Renderer {
           }
         },
         h.div(
-            {className: 'wm-tab-icon-label'},
+            {className: 'tart-tab-icon-label'},
             this.renderIcon(data, isInSidePanel),
             this.renderLabel(data, isInSidePanel),
             this.renderBadge(data, isInSidePanel)
@@ -223,8 +223,8 @@ export class TabBarRenderer extends TabBar.Renderer {
     }
     const limitedBadge = totalBadge >= 100 ? '99+' : totalBadge;
     return isInSidePanel
-        ? h.div({className: 'wm-badge-decorator-sidebar'}, `${limitedBadge}`)
-        : h.div({className: 'wm-badge-decorator-horizontal'}, `${limitedBadge}`);
+        ? h.div({className: 'tart-badge-decorator-sidebar'}, `${limitedBadge}`)
+        : h.div({className: 'tart-badge-decorator-horizontal'}, `${limitedBadge}`);
   }
 
   /**
@@ -430,7 +430,7 @@ export class TabBarRenderer extends TabBar.Renderer {
       // eslint-disable-next-line no-null/no-null
       const title = this.tabBar.titles.find(t => this.createTabId(t) === id) || null;
       const area = title && title.owner.parent;
-      if (area instanceof WmDockPanel && (area.id === BOTTOM_AREA_ID || area.id === MAIN_AREA_ID)) {
+      if (area instanceof TartDockPanel && (area.id === BOTTOM_AREA_ID || area.id === MAIN_AREA_ID)) {
         area.toggleMaximized();
       }
     }
@@ -770,9 +770,9 @@ export class SideTabBar extends ScrollableTabBar {
     if (target instanceof HTMLElement) {
       if (widget.options.disableDraggingToOtherContainers || widget.viewContainer.disableDNDBetweenContainers) {
         event.dropAction = 'none';
-        target.classList.add('wm-cursor-no-drop');
+        target.classList.add('tart-cursor-no-drop');
         this.toCancelViewContainerDND.push(Disposable.create(() => {
-          target.classList.remove('wm-cursor-no-drop');
+          target.classList.remove('tart-cursor-no-drop');
         }));
       } else {
         event.dropAction = event.proposedAction;
@@ -904,12 +904,12 @@ export class SideTabBar extends ScrollableTabBar {
 //         this.toDispose.push(this.tabBarToolbarRegistry.onDidChange(() => this.update()));
 //         this.toDispose.push(this.breadcrumbsRenderer);
 //         this.toDispose.push(this.breadcrumbsRenderer.onDidChangeActiveState(active => {
-//             this.node.classList.toggle('wm-tabBar-multirow', active);
+//             this.node.classList.toggle('tart-tabBar-multirow', active);
 //             if (this.parent) {
 //                 MessageLoop.sendMessage(this.parent, new Message('fit-request'));
 //             }
 //         }));
-//         this.node.classList.toggle('wm-tabBar-multirow', this.breadcrumbsRenderer.active);
+//         this.node.classList.toggle('tart-tabBar-multirow', this.breadcrumbsRenderer.active);
 //         const handler = () => this.updateBreadcrumbs();
 //         this.currentChanged.connect(handler);
 //         this.toDispose.push(Disposable.create(() => this.currentChanged.disconnect(handler)));
@@ -995,7 +995,7 @@ export class SideTabBar extends ScrollableTabBar {
 //         }
 //         this.node.removeChild(contentNode);
 //         this.topRow = document.createElement('div');
-//         this.topRow.classList.add('wm-tabBar-tab-row');
+//         this.topRow.classList.add('tart-tabBar-tab-row');
 //         this.contentContainer = document.createElement('div');
 //         this.contentContainer.classList.add(ToolbarAwareTabBar.Styles.TAB_BAR_CONTENT_CONTAINER);
 //         this.contentContainer.appendChild(contentNode);
@@ -1003,7 +1003,7 @@ export class SideTabBar extends ScrollableTabBar {
 //         this.node.appendChild(this.topRow);
 //         this.toolbar = this.tabBarToolbarFactory();
 //         this.breadcrumbsContainer = document.createElement('div');
-//         this.breadcrumbsContainer.classList.add('wm-tabBar-breadcrumb-row');
+//         this.breadcrumbsContainer.classList.add('tart-tabBar-breadcrumb-row');
 //         this.breadcrumbsContainer.appendChild(this.breadcrumbsRenderer.host);
 //         this.node.appendChild(this.breadcrumbsContainer);
 //     }

@@ -19,11 +19,11 @@ import {Disposable} from 'vscode-languageserver-protocol';
 import URI from '../../common/uri';
 
 export namespace Styles {
-  export const BREADCRUMBS = 'wm-breadcrumbs';
-  export const BREADCRUMB_ITEM = 'wm-breadcrumb-item';
-  export const BREADCRUMB_POPUP_OVERLAY_CONTAINER = 'wm-breadcrumbs-popups-overlay';
-  export const BREADCRUMB_POPUP = 'wm-breadcrumbs-popup';
-  export const BREADCRUMB_ITEM_HAS_POPUP = 'wm-breadcrumb-item-haspopup';
+  export const BREADCRUMBS = 'tart-breadcrumbs';
+  export const BREADCRUMB_ITEM = 'tart-breadcrumb-item';
+  export const BREADCRUMB_POPUP_OVERLAY_CONTAINER = 'tart-breadcrumbs-popups-overlay';
+  export const BREADCRUMB_POPUP = 'tart-breadcrumbs-popup';
+  export const BREADCRUMB_ITEM_HAS_POPUP = 'tart-breadcrumb-item-haspopup';
 }
 
 /** A single breadcrumb in the breadcrumbs bar. */

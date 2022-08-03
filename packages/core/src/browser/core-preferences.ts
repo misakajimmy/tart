@@ -124,7 +124,7 @@ export const corePreferenceSchema: PreferenceSchema = {
     'workbench.silentNotifications': {
       type: 'boolean',
       default: false,
-      description: nls.localize('wm/core/silentNotifications', 'Controls whether to suppress notification popups.')
+      description: nls.localize('tart/core/silentNotifications', 'Controls whether to suppress notification popups.')
     },
     'workbench.statusBar.visible': {
       type: 'boolean',

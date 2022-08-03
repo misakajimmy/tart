@@ -15,134 +15,134 @@
  ********************************************************************************/
 
 :root {
-  --wm-view-container-title-height: var(--wm-content-line-height);
-  --wm-view-container-content-height: calc(100% - var(--wm-view-container-title-height));
+  --tart-view-container-title-height: var(--tart-content-line-height);
+  --tart-view-container-content-height: calc(100% - var(--tart-view-container-title-height));
 }
 
 
-.wm-view-container {
+.tart-view-container {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.wm-view-container > .p-SplitPanel {
+.tart-view-container > .p-SplitPanel {
   height: 100%;
   width: 100%;
 }
 
-.wm-view-container > .p-SplitPanel > .p-SplitPanel-child {
+.tart-view-container > .p-SplitPanel > .p-SplitPanel-child {
   min-width: 50px;
-  min-height: var(--wm-content-line-height);
+  min-height: var(--tart-content-line-height);
 }
 
-.wm-view-container > .p-SplitPanel > .p-SplitPanel-handle:after {
-  background-color: var(--wm-sideBarSectionHeader-border);
+.tart-view-container > .p-SplitPanel > .p-SplitPanel-handle:after {
+  background-color: var(--tart-sideBarSectionHeader-border);
   min-height: 2px;
   min-width: 2px
 }
 
-.wm-view-container > .p-SplitPanel > .p-SplitPanel-handle {
-  background-color: var(--wm-sideBarSectionHeader-border);
+.tart-view-container > .p-SplitPanel > .p-SplitPanel-handle {
+  background-color: var(--tart-sideBarSectionHeader-border);
 }
 
-.wm-view-container .part {
+.tart-view-container .part {
   height: 100%;
 }
 
-.wm-view-container-part-header {
+.tart-view-container-part-header {
   cursor: pointer;
   display: flex;
   align-items: center;
-  background: var(--wm-sideBarSectionHeader-background);
-  line-height: var(--wm-view-container-title-height);
+  background: var(--tart-sideBarSectionHeader-background);
+  line-height: var(--tart-view-container-title-height);
   z-index: 10;
-  color: var(--wm-sideBarSectionHeader-foreground);
+  color: var(--tart-sideBarSectionHeader-foreground);
   font-weight: 700;
 }
 
-.wm-view-container-part-header .wm-ExpansionToggle {
+.tart-view-container-part-header .tart-ExpansionToggle {
   padding-left: 4px;
 }
 
-.wm-view-container > .p-SplitPanel[data-orientation='horizontal'] .part > .wm-header .wm-ExpansionToggle::before {
+.tart-view-container > .p-SplitPanel[data-orientation='horizontal'] .part > .tart-header .tart-ExpansionToggle::before {
   display: none;
   padding-left: 0px;
 }
 
-.wm-view-container > .p-SplitPanel[data-orientation='horizontal'] .part > .wm-header .wm-ExpansionToggle {
+.tart-view-container > .p-SplitPanel[data-orientation='horizontal'] .part > .tart-header .tart-ExpansionToggle {
   padding-left: 0px;
 }
 
-.wm-view-container-part-header .label {
+.tart-view-container-part-header .label {
   flex: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-.wm-view-container-part-header .description {
+.tart-view-container-part-header .description {
   flex: 1;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  padding-left: var(--wm-ui-padding);
+  padding-left: var(--tart-ui-padding);
   text-transform: none;
   opacity: 0.6;
 }
 
-.wm-view-container .part > .body {
-  height: var(--wm-view-container-content-height);
+.tart-view-container .part > .body {
+  height: var(--tart-view-container-content-height);
   min-width: 50px;
   min-height: 50px;
   position: relative;
 }
 
-.wm-view-container .part > .body .wm-tree-source-node-placeholder {
+.tart-view-container .part > .body .tart-tree-source-node-placeholder {
   padding-top: 4px;
   height: 100%;
 }
 
-.wm-view-container .part:hover > .body {
+.tart-view-container .part:hover > .body {
   display: block;
 }
 
-.wm-view-container .part.drop-target {
-  background: var(--wm-list-dropBackground);
-  border: var(--wm-border-width) dashed var(--wm-contrastActiveBorder);
+.tart-view-container .part.drop-target {
+  background: var(--tart-list-dropBackground);
+  border: var(--tart-border-width) dashed var(--tart-contrastActiveBorder);
   transition-property: top, left, right, bottom;
   transition-duration: 150ms;
   transition-timing-function: ease;
 }
 
-.wm-view-container-drag-image {
-  background: var(--wm-sideBarSectionHeader-background);
-  color: var(--wm-sideBarSectionHeader-foreground);
-  line-height: var(--wm-content-line-height);
+.tart-view-container-drag-image {
+  background: var(--tart-sideBarSectionHeader-background);
+  color: var(--tart-sideBarSectionHeader-foreground);
+  line-height: var(--tart-content-line-height);
   position: absolute;
   z-index: 999;
   text-transform: uppercase;
-  font-size: var(--wm-ui-font-size0);
+  font-size: var(--tart-ui-font-size0);
   font-weight: 500;
-  padding: 0 var(--wm-ui-padding) 0 var(--wm-ui-padding);
+  padding: 0 var(--tart-ui-padding) 0 var(--tart-ui-padding);
 }
 
-.p-TabBar-toolbar.wm-view-container-part-title {
+.p-TabBar-toolbar.tart-view-container-part-title {
   padding: 0px;
-  padding-right: calc(var(--wm-ui-padding) * 2 / 3);
+  padding-right: calc(var(--tart-ui-padding) * 2 / 3);
 }
 
-.wm-view-container-part-title .item > div {
-  width: var(--wm-icon-size);
-  background-size: var(--wm-icon-size);
-  line-height: var(--wm-icon-size);
+.tart-view-container-part-title .item > div {
+  width: var(--tart-icon-size);
+  background-size: var(--tart-icon-size);
+  line-height: var(--tart-icon-size);
 }
 
-.wm-view-container-part-title {
+.tart-view-container-part-title {
   display: none;
 }
 
-.wm-view-container-part-title.menu-open,
-.p-Widget.part:not(.collapsed):hover .wm-view-container-part-header .wm-view-container-part-title,
-.p-Widget.part:not(.collapsed):focus-within .wm-view-container-part-header .wm-view-container-part-title {
+.tart-view-container-part-title.menu-open,
+.p-Widget.part:not(.collapsed):hover .tart-view-container-part-header .tart-view-container-part-title,
+.p-Widget.part:not(.collapsed):focus-within .tart-view-container-part-header .tart-view-container-part-title {
   display: flex;
 }

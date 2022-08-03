@@ -75,7 +75,7 @@ export class BrowserMainMenuFactory implements MenuWidgetFactory {
 
   createMenuBar(): MenuBarWidget {
     const menuBar = new DynamicMenuBarWidget();
-    menuBar.id = 'wm:menubar';
+    menuBar.id = 'tart:menubar';
     this.showMenuBar(menuBar, 'visible');
 
     this.corePreferences.ready.then(() => {
@@ -405,14 +405,14 @@ export class BrowserMenuBarContribution implements FrontendApplicationContributi
 
   protected createLogo(): Widget {
     const logo = new Widget();
-    logo.id = 'wm:icon';
-    logo.addClass('wm-icon');
+    logo.id = 'tart:icon';
+    logo.addClass('tart-icon');
     return logo;
   }
 }
 
 /**
- * Stores Wm-specific action menu nodes instead of PhosphorJS commands with their handlers.
+ * Stores Tart-specific action menu nodes instead of PhosphorJS commands with their handlers.
  */
 export class MenuCommandRegistry extends PhosphorCommandRegistry {
 

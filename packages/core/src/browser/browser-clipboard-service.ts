@@ -52,7 +52,7 @@ export class BrowserClipboardService implements ClipboardService {
         console.error('Failed reading clipboard content.', e2);
         if (isFirefox) {
           this.messageService.warn(`Clipboard API is not available.
-                    It can be enabled by 'dom.events.testing.asyncClipboard' preference on 'about:config' page. Then reload wm.
+                    It can be enabled by 'dom.events.testing.asyncClipboard' preference on 'about:config' page. Then reload tart.
                     Note, it will allow FireFox getting full access to the system clipboard.`);
         }
         return '';
@@ -80,7 +80,7 @@ export class BrowserClipboardService implements ClipboardService {
         console.error('Failed writing to the clipboard.', e2);
         if (isFirefox) {
           this.messageService.warn(`Clipboard API is not available.
-                    It can be enabled by 'dom.events.testing.asyncClipboard' preference on 'about:config' page. Then reload wm.
+                    It can be enabled by 'dom.events.testing.asyncClipboard' preference on 'about:config' page. Then reload tart.
                     Note, it will allow FireFox getting full access to the system clipboard.`);
         }
         return;

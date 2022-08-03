@@ -44,7 +44,7 @@ import {
   SplitPositionOptions,
   StatefulWidget
 } from './shell';
-import {BOTTOM_AREA_ID, MAIN_AREA_ID} from './shell/wm-dock-panel';
+import {BOTTOM_AREA_ID, MAIN_AREA_ID} from './shell/tart-dock-panel';
 import {FrontendApplicationStateService} from './frontend-application-state';
 import {Anchor, ContextMenuRenderer} from './context-menu-renderer';
 import {parseCssMagnitude} from './browser';
@@ -293,9 +293,9 @@ export class ViewContainer extends BaseWidget implements StatefulWidget, Applica
     if (isDraggingOutsideDisabled && !sameContainers) {
       const {target} = event;
       if (target instanceof HTMLElement) {
-        target.classList.add('wm-cursor-no-drop');
+        target.classList.add('tart-cursor-no-drop');
         this.toDisposeOnDragEnd.push(Disposable.create(() => {
-          target.classList.remove('wm-cursor-no-drop');
+          target.classList.remove('tart-cursor-no-drop');
         }));
       }
       event.dropAction = 'none';
@@ -338,7 +338,7 @@ export class ViewContainer extends BaseWidget implements StatefulWidget, Applica
   @postConstruct()
   protected init(): void {
     this.id = this.options.id;
-    this.addClass('wm-view-container');
+    this.addClass('tart-view-container');
     const layout = new PanelLayout();
     this.layout = layout;
     this.panel = new SplitPanel({
@@ -957,7 +957,7 @@ export class ViewContainerPart extends BaseWidget {
 
     this.toNoDisposeWrapped = this.toDispose.push(wrapped);
     this.toolbar = this.toolbarFactory();
-    this.toolbar.addClass('wm-view-container-part-title');
+    this.toolbar.addClass('tart-view-container-part-title');
 
     this.toolbar.updateTarget(this.wrapped);
 
@@ -1114,7 +1114,7 @@ export class ViewContainerPart extends BaseWidget {
     const disposable = new DisposableCollection();
     const header = document.createElement('div');
     header.tabIndex = 0;
-    header.classList.add('wm-header', 'header', 'wm-view-container-part-header');
+    header.classList.add('tart-header', 'header', 'tart-view-container-part-header');
     disposable.push(addEventListener(header, 'click', event => {
       if (this.toolbar && this.toolbar.shouldHandleMouseEvent(event)) {
         return;
@@ -1252,7 +1252,7 @@ export class ViewContainerPart extends BaseWidget {
 export namespace ViewContainerPart {
 
   /**
-   * Make sure to adjust the `line-height` of the `.wm-view-container .part > .header` CSS class when modifying this, and vice versa.
+   * Make sure to adjust the `line-height` of the `.tart-view-container .part > .header` CSS class when modifying this, and vice versa.
    */
   export const HEADER_HEIGHT = 22;
 

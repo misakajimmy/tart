@@ -44,14 +44,14 @@ export function codicon(name: string, actionItem = false): string {
   return `codicon codicon-${name}${actionItem ? ` ${ACTION_ITEM}` : ''}`;
 }
 
-export const DISABLED_CLASS = 'wm-mod-disabled';
-export const EXPANSION_TOGGLE_CLASS = 'wm-ExpansionToggle';
+export const DISABLED_CLASS = 'tart-mod-disabled';
+export const EXPANSION_TOGGLE_CLASS = 'tart-ExpansionToggle';
 export const CODICON_TREE_ITEM_CLASSES = codiconArray('chevron-down');
-export const COLLAPSED_CLASS = 'wm-mod-collapsed';
-export const BUSY_CLASS = 'wm-mod-busy';
+export const COLLAPSED_CLASS = 'tart-mod-collapsed';
+export const BUSY_CLASS = 'tart-mod-busy';
 export const CODICON_LOADING_CLASSES = codiconArray('loading');
-export const SELECTED_CLASS = 'wm-mod-selected';
-export const FOCUS_CLASS = 'wm-mod-focus';
+export const SELECTED_CLASS = 'tart-mod-selected';
+export const FOCUS_CLASS = 'tart-mod-focus';
 export const DEFAULT_SCROLL_OPTIONS: PerfectScrollbar.Options = {
   suppressScrollX: true,
   minScrollbarLength: 35,

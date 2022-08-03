@@ -153,7 +153,7 @@ export abstract class AbstractDialog<T> extends BaseWidget {
       @inject(DialogProps) protected readonly props: DialogProps
   ) {
     super();
-    this.id = 'wm-dialog-shell';
+    this.id = 'tart-dialog-shell';
     this.addClass('dialogOverlay');
     this.toDispose.push(Disposable.create(() => {
       if (this.reject) {
@@ -248,7 +248,7 @@ export abstract class AbstractDialog<T> extends BaseWidget {
 
   protected createButton(text: string): HTMLButtonElement {
     const button = document.createElement('button');
-    button.classList.add('wm-button');
+    button.classList.add('tart-button');
     button.textContent = text;
     return button;
   }
@@ -413,7 +413,7 @@ export class SingleTextInputDialog extends AbstractDialog<string> {
 
     this.inputField = document.createElement('input');
     this.inputField.type = 'text';
-    this.inputField.className = 'wm-input';
+    this.inputField.className = 'tart-input';
     this.inputField.spellcheck = false;
     this.inputField.setAttribute('style', 'flex: 0;');
     this.inputField.value = props.initialValue || '';

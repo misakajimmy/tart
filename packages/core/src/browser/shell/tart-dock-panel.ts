@@ -8,12 +8,12 @@ import {UnsafeWidgetUtilities} from '../widgets';
 import {Signal} from '@lumino/signaling';
 import {ArrayExt, find, toArray} from '@lumino/algorithm';
 
-export const MAXIMIZED_CLASS = 'wm-maximized';
+export const MAXIMIZED_CLASS = 'tart-maximized';
 
-export const MAIN_AREA_ID = 'wm-main-content-panel';
-export const BOTTOM_AREA_ID = 'wm-bottom-content-panel';
+export const MAIN_AREA_ID = 'tart-main-content-panel';
+export const BOTTOM_AREA_ID = 'tart-bottom-content-panel';
 
-export class WmDockPanel extends DockPanel {
+export class TartDockPanel extends DockPanel {
   /**
    * Emitted when a widget is added to the panel.
    */

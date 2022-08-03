@@ -38,7 +38,7 @@ export namespace KeybindingScope {
 }
 
 /**
- * @deprecated import from `@wm/core/lib/common/keybinding` instead
+ * @deprecated import from `@tart/core/lib/common/keybinding` instead
  */
 export type Keybinding = common.Keybinding;
 export const Keybinding = common.Keybinding;

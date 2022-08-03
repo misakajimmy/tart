@@ -99,12 +99,12 @@ export class SidePanelToolbar extends BaseWidget {
 
   protected init(): void {
     this.titleContainer = document.createElement('div');
-    this.titleContainer.classList.add('wm-sidepanel-title');
+    this.titleContainer.classList.add('tart-sidepanel-title');
     this.titleContainer.classList.add('noWrapInfo');
     this.titleContainer.classList.add('noselect');
     this.node.appendChild(this.titleContainer);
-    this.node.classList.add('wm-sidepanel-toolbar');
-    this.node.classList.add(`wm-${this.side}-side-panel`);
+    this.node.classList.add('tart-sidepanel-toolbar');
+    this.node.classList.add(`tart-${this.side}-side-panel`);
     this.toolbar = this.tabBarToolbarFactory();
     this.update();
   }

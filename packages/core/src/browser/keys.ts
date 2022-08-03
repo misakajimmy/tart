@@ -15,7 +15,7 @@
  ********************************************************************************/
 
 // Reexporting here for backwards compatibility.
-// Please import from '@wm/core/lib/browser' or '@wm/core/lib/browser/keyboard' instead of this module.
+// Please import from '@tart/core/lib/browser' or '@tart/core/lib/browser/keyboard' instead of this module.
 // This module might be removed in future releases.
 import {Key, KeyCode, KeyModifier, KeySequence, KeysOrKeyCodes, Keystroke, SpecialCases} from './keyboard';
 

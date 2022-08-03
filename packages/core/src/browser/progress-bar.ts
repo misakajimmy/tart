@@ -29,10 +29,10 @@ export class ProgressBar implements Disposable {
 
   constructor() {
     this.progressBar = document.createElement('div');
-    this.progressBar.className = 'wm-progress-bar';
+    this.progressBar.className = 'tart-progress-bar';
     this.progressBar.style.display = 'none';
     this.progressBarContainer = document.createElement('div');
-    this.progressBarContainer.className = 'wm-progress-bar-container';
+    this.progressBarContainer.className = 'tart-progress-bar-container';
     this.progressBarContainer.append(this.progressBar);
   }
 

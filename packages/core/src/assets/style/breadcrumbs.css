@@ -15,11 +15,11 @@
  ********************************************************************************/
 
 :root {
-  --wm-breadcrumbs-height: 22px;
+  --tart-breadcrumbs-height: 22px;
 }
 
-.wm-breadcrumbs {
-  height: var(--wm-breadcrumbs-height);
+.tart-breadcrumbs {
+  height: var(--tart-breadcrumbs-height);
   position: relative;
   user-select: none;
   display: flex;
@@ -33,33 +33,33 @@
   overflow: hidden;
   padding: 0;
   margin: 0;
-  background-color: var(--wm-breadcrumb-background);
+  background-color: var(--tart-breadcrumb-background);
 }
 
-.wm-breadcrumbs .ps__thumb-x {
+.tart-breadcrumbs .ps__thumb-x {
   /* Same scrollbar height as in tab bar. */
-  height: var(--wm-private-horizontal-tab-scrollbar-height) !important;
+  height: var(--tart-private-horizontal-tab-scrollbar-height) !important;
 }
 
-.wm-breadcrumbs .wm-breadcrumb-item {
+.tart-breadcrumbs .tart-breadcrumb-item {
   display: flex;
   align-items: center;
   flex: 0 1 auto;
   white-space: nowrap;
   align-self: center;
   height: 100%;
-  color: var(--wm-breadcrumb-foreground);
+  color: var(--tart-breadcrumb-foreground);
   outline: none;
   padding: 0 .3rem 0 .25rem;
 }
 
-.wm-breadcrumbs .wm-breadcrumb-item:hover {
-  color: var(--wm-breadcrumb-focusForeground);
+.tart-breadcrumbs .tart-breadcrumb-item:hover {
+  color: var(--tart-breadcrumb-focusForeground);
 }
 
-.wm-breadcrumbs .wm-breadcrumb-item:not(:last-of-type)::after {
+.tart-breadcrumbs .tart-breadcrumb-item:not(:last-of-type)::after {
   font-family: codicon;
-  font-size: var(--wm-ui-font-size2);
+  font-size: var(--tart-ui-font-size2);
   content: "\eab6";
   display: flex;
   align-items: center;
@@ -68,7 +68,7 @@
   padding-left: 4px;
 }
 
-.wm-breadcrumbs .wm-breadcrumb-item::before {
+.tart-breadcrumbs .tart-breadcrumb-item::before {
   width: 16px;
   height: 100%;
   display: flex;
@@ -76,38 +76,38 @@
   justify-content: center;
 }
 
-.wm-breadcrumbs .wm-breadcrumb-item:first-of-type::before {
+.tart-breadcrumbs .tart-breadcrumb-item:first-of-type::before {
   content: " ";
 }
 
-.wm-breadcrumb-item-haspopup:hover {
-  background: var(--wm-accent-color3);
+.tart-breadcrumb-item-haspopup:hover {
+  background: var(--tart-accent-color3);
   cursor: pointer;
 }
 
-#wm-breadcrumbs-popups-overlay {
+#tart-breadcrumbs-popups-overlay {
   height: 0px;
 }
 
-.wm-breadcrumbs-popup {
+.tart-breadcrumbs-popup {
   position: fixed;
   width: 300px;
   max-height: 200px;
   z-index: 10000;
   padding: 0px;
-  background: var(--wm-breadcrumbPicker-background);
-  font-size: var(--wm-ui-font-size1);
-  color: var(--wm-ui-font-color1);
+  background: var(--tart-breadcrumbPicker-background);
+  font-size: var(--tart-ui-font-size1);
+  color: var(--tart-ui-font-color1);
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
-.wm-breadcrumbs-popup:focus {
+.tart-breadcrumbs-popup:focus {
   outline-width: 0;
   outline-style: none;
 }
 
-.wm-breadcrumbs-popup ul {
+.tart-breadcrumbs-popup ul {
   display: flex;
   flex-direction: column;
   outline-style: none;
@@ -116,7 +116,7 @@
   margin: 0 0 0 4px;
 }
 
-.wm-breadcrumbs-popup ul li {
+.tart-breadcrumbs-popup ul li {
   display: flex;
   align-items: center;
   flex: 0 1 auto;
@@ -126,6 +126,6 @@
   padding: .25rem .25rem .25rem .25rem;
 }
 
-.wm-breadcrumbs-popup ul li:hover {
-  background: var(--wm-accent-color3);
+.tart-breadcrumbs-popup ul li:hover {
+  background: var(--tart-accent-color3);
 }

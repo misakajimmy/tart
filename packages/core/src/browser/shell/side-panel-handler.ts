@@ -3,7 +3,7 @@ import {SideTabBar, TabBarRenderer, TabBarRendererFactory} from './tab-bars';
 import {AttachedProperty} from '@lumino/properties';
 import {SidebarBottomMenuWidgetFactory, SidebarMenuWidget, SidebarTopMenuWidgetFactory} from './sidebar-menu-widget';
 import {SidePanelToolbar} from './side-panel-toolbar';
-import {WmDockPanel} from './wm-dock-panel';
+import {TartDockPanel} from './tart-dock-panel';
 import {SidebarTopMenuWidget} from './sidebar-top-menu-widget';
 import {inject, injectable} from 'inversify';
 import {MenuPath} from '../../common/menu';
@@ -19,10 +19,10 @@ import {TabBarToolbar, TabBarToolbarFactory, TabBarToolbarRegistry} from './tab-
 import {ContextMenuRenderer} from '../context-menu-renderer';
 
 /** The class name added to the left and right area panels. */
-export const LEFT_RIGHT_AREA_CLASS = 'wm-app-sides';
+export const LEFT_RIGHT_AREA_CLASS = 'tart-app-sides';
 
 /** The class name added to collapsed side panels. */
-const COLLAPSED_CLASS = 'wm-mod-collapsed';
+const COLLAPSED_CLASS = 'tart-mod-collapsed';
 
 /** Menu path for tab bars used throughout the application shell. */
 export const SHELL_TABBAR_CONTEXT_MENU: MenuPath = ['shell-tabbar-context-menu'];
@@ -70,7 +70,7 @@ export class SidePanelHandler {
    * The widget container is a dock panel in `single-document` mode, which means that the panel
    * cannot be split.
    */
-  dockPanel: WmDockPanel;
+  dockPanel: TartDockPanel;
   /**
    * The panel that contains the tab bar and the dock panel. This one is hidden whenever the dock
    * panel is empty.
@@ -359,7 +359,7 @@ export class SidePanelHandler {
     tabBarRenderer.tabBar = sideBar;
     sideBar.disposed.connect(() => tabBarRenderer.dispose());
     tabBarRenderer.contextMenuPath = SHELL_TABBAR_CONTEXT_MENU;
-    sideBar.addClass('wm-app-' + side);
+    sideBar.addClass('tart-app-' + side);
     sideBar.addClass(LEFT_RIGHT_AREA_CLASS);
 
     sideBar.tabAdded.connect((sender, {title}) => {
@@ -382,7 +382,7 @@ export class SidePanelHandler {
 
   protected createSidebarMenu<T extends SidebarMenuWidget>(factory: () => T): T {
     const menu = factory();
-    menu.addClass('wm-sidebar-menu');
+    menu.addClass('tart-sidebar-menu');
     return menu;
   }
 
@@ -434,7 +434,7 @@ export class SidePanelHandler {
     const containerLayout = new BoxLayout({direction, spacing: 0});
     const sidebarContainerLayout = new PanelLayout();
     const sidebarContainer = new Panel({layout: sidebarContainerLayout});
-    sidebarContainer.addClass('wm-app-sidebar-container');
+    sidebarContainer.addClass('tart-app-sidebar-container');
     sidebarContainerLayout.addWidget(this.topMenu);
     sidebarContainerLayout.addWidget(this.tabBar);
     sidebarContainerLayout.addWidget(this.bottomMenu);
@@ -444,16 +444,16 @@ export class SidePanelHandler {
     containerLayout.addWidget(sidebarContainer);
     containerLayout.addWidget(contentPanel);
     const boxPanel = new BoxPanel({layout: containerLayout});
-    boxPanel.id = 'wm-' + side + '-content-panel';
+    boxPanel.id = 'tart-' + side + '-content-panel';
     return boxPanel;
   }
 
-  protected createSidePanel(): WmDockPanel {
-    const sidePanel = new WmDockPanel({
+  protected createSidePanel(): TartDockPanel {
+    const sidePanel = new TartDockPanel({
       mode: 'single-document'
     });
-    sidePanel.id = 'wm-' + this.side + '-side-panel';
-    sidePanel.addClass('wm-side-panel');
+    sidePanel.id = 'tart-' + this.side + '-side-panel';
+    sidePanel.addClass('tart-side-panel');
 
     sidePanel.widgetActivated.connect((sender, widget) => {
       this.tabBar.currentTitle = widget.title;

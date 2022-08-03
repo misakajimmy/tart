@@ -27,49 +27,49 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-family: var(--wm-ui-font-family);
-  background: var(--wm-editor-background);
-  color: var(--wm-foreground);
-  border: 1px solid var(--wm-window-activeBorder);
+  font-family: var(--tart-ui-font-family);
+  background: var(--tart-editor-background);
+  color: var(--tart-foreground);
+  border: 1px solid var(--tart-window-activeBorder);
 }
 
 body:window-inactive,
 body:-moz-window-inactive {
-  border-color: var(--wm-window-inactiveBorder);
+  border-color: var(--tart-window-inactiveBorder);
 }
 
 a {
-  color: var(--wm-textLink-foreground);
+  color: var(--tart-textLink-foreground);
 }
 
 a:active, a:hover {
-  color: var(--wm-textLink-activeForeground);
+  color: var(--tart-textLink-activeForeground);
 }
 
 code {
-  color: var(--wm-textPreformat-foreground);
+  color: var(--tart-textPreformat-foreground);
 }
 
 blockquote {
   background: var(--vscode-textBlockQuote-background);
-  border: var(--wm-border-width) solid var(--wm-textBlockQuote-border);
+  border: var(--tart-border-width) solid var(--tart-textBlockQuote-border);
 }
 
-.wm-input {
-  background: var(--wm-input-background);
-  color: var(--wm-input-foreground);
-  border: var(--wm-border-width) solid var(--wm-input-border);
-  font-family: var(--wm-ui-font-family);
-  font-size: var(--wm-ui-font-size1);
-  line-height: var(--wm-content-line-height);
+.tart-input {
+  background: var(--tart-input-background);
+  color: var(--tart-input-foreground);
+  border: var(--tart-border-width) solid var(--tart-input-border);
+  font-family: var(--tart-ui-font-family);
+  font-size: var(--tart-ui-font-size1);
+  line-height: var(--tart-content-line-height);
   padding-left: 5px;
 }
 
-.wm-input::placeholder {
-  color: var(--wm-input-placeholderForeground);
+.tart-input::placeholder {
+  color: var(--tart-input-placeholderForeground);
 }
 
-.wm-maximized {
+.tart-maximized {
   position: fixed !important;
   top: 0 !important;
   bottom: 0 !important;
@@ -78,31 +78,31 @@ blockquote {
   width: auto !important;
   height: auto !important;
   z-index: 255 !important;
-  background: var(--wm-editor-background);
+  background: var(--tart-editor-background);
 }
 
-.wm-visible-menu-maximized {
-  top: var(--wm-private-menubar-height) !important;
+.tart-visible-menu-maximized {
+  top: var(--tart-private-menubar-height) !important;
 }
 
-.wm-ApplicationShell {
+.tart-ApplicationShell {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--wm-editor-background);
+  background: var(--tart-editor-background);
 }
 
-.wm-preload {
+.tart-preload {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 50000;
-  background: var(--wm-editor-background);
-  background-image: var(--wm-preloader);
+  background: var(--tart-editor-background);
+  background-image: var(--tart-preloader);
   background-size: 60px 60px;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -110,29 +110,29 @@ blockquote {
   transition: opacity 0.8s;
 }
 
-.wm-preload.wm-hidden {
+.tart-preload.tart-hidden {
   opacity: 0;
 }
 
-.wm-icon {
+.tart-icon {
   width: 32px;
   height: 18px;
   margin: 5px;
   margin-left: 8px;
 }
 
-.wm-mod-disabled, .wm-mod-disabled:focus {
-  opacity: var(--wm-mod-disabled-opacity) !important;
+.tart-mod-disabled, .tart-mod-disabled:focus {
+  opacity: var(--tart-mod-disabled-opacity) !important;
 }
 
-.wm-header {
+.tart-header {
   text-transform: uppercase;
-  font-size: var(--wm-ui-font-size0);
+  font-size: var(--tart-ui-font-size0);
   font-weight: 450;
 }
 
 .p-Widget {
-  font-size: var(--wm-ui-font-size1);
+  font-size: var(--tart-ui-font-size1);
 }
 
 .p-Widget.p-mod-hidden {
@@ -155,11 +155,11 @@ blockquote {
   outline-style: solid;
   outline-offset: -1px;
   opacity: 1;
-  outline-color: var(--wm-focusBorder);
+  outline-color: var(--tart-focusBorder);
 }
 
 ::selection {
-  background: var(--wm-selection-background);
+  background: var(--tart-selection-background);
 }
 
 .p-Widget:focus {
@@ -177,59 +177,59 @@ blockquote {
   background-color: rgba(50%, 50%, 50%, 0.2);
 }
 
-button.wm-button, .wm-button {
+button.tart-button, .tart-button {
   border: none;
-  color: var(--wm-button-foreground);
-  background-color: var(--wm-button-background);
+  color: var(--tart-button-foreground);
+  background-color: var(--tart-button-background);
   min-width: 65px;
   outline: none;
   cursor: pointer;
   padding: 4px 9px;
-  margin-left: calc(var(--wm-ui-padding) * 2);
+  margin-left: calc(var(--tart-ui-padding) * 2);
   border-radius: 1px;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 1px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 1px -2px rgba(0, 0, 0, 0.12);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
-button.wm-button:hover, .wm-button:hover, .wm-button:focus {
-  background-color: var(--wm-button-hoverBackground);
+button.tart-button:hover, .tart-button:hover, .tart-button:focus {
+  background-color: var(--tart-button-hoverBackground);
 }
 
-button.secondary, .wm-button.secondary {
-  color: var(--wm-secondaryButton-foreground);
-  background-color: var(--wm-secondaryButton-background);
+button.secondary, .tart-button.secondary {
+  color: var(--tart-secondaryButton-foreground);
+  background-color: var(--tart-secondaryButton-background);
 }
 
-button.secondary:hover, .wm-button.secondary:hover {
-  background-color: var(--wm-secondaryButton-hoverBackground);
+button.secondary:hover, .tart-button.secondary:hover {
+  background-color: var(--tart-secondaryButton-hoverBackground);
 }
 
-button.wm-button[disabled], .wm-button[disabled] {
+button.tart-button[disabled], .tart-button[disabled] {
   opacity: 0.6;
-  color: var(--wm-button-disabledForeground);
-  background-color: var(--wm-button-disabledBackground);
+  color: var(--tart-button-disabledForeground);
+  background-color: var(--tart-button-disabledBackground);
   cursor: default;
 }
 
-button.secondary[disabled], .wm-button.secondary[disabled] {
-  color: var(--wm-secondaryButton-disabledForeground);
-  background-color: var(--wm-secondaryButton-disabledBackground);
+button.secondary[disabled], .tart-button.secondary[disabled] {
+  color: var(--tart-secondaryButton-disabledForeground);
+  background-color: var(--tart-secondaryButton-disabledBackground);
 }
 
-.wm-select {
+.tart-select {
   color: var(--dropdown-foreground);
-  font-size: var(--wm-ui-font-size1);
+  font-size: var(--tart-ui-font-size1);
   border-radius: 0;
-  border: 1px solid var(--wm-dropdown-border);
-  background: var(--wm-dropdown-background);
+  border: 1px solid var(--tart-dropdown-border);
+  background: var(--tart-dropdown-background);
   outline: none;
 }
 
-.wm-select option {
-  background: var(--wm-dropdown-listBackground);
+.tart-select option {
+  background: var(--tart-dropdown-listBackground);
 }
 
-.wm-transparent-overlay {
+.tart-transparent-overlay {
   background-color: transparent;
   position: absolute;
   top: 0;
@@ -239,7 +239,7 @@ button.secondary[disabled], .wm-button.secondary[disabled] {
   z-index: 999;
 }
 
-.wm-cursor-no-drop, .wm-cursor-no-drop:active {
+.tart-cursor-no-drop, .tart-cursor-no-drop:active {
   cursor: no-drop;
 }
 

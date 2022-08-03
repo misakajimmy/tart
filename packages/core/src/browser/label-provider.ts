@@ -48,7 +48,7 @@ export const LabelProviderContribution = Symbol('LabelProviderContribution');
 
 /**
  * A {@link LabelProviderContribution} determines how specific elements/nodes are displayed in the workbench.
- * Wm views use a common {@link LabelProvider} to determine the label and/or an icon for elements shown in the UI. This includes elements in lists
+ * Tart views use a common {@link LabelProvider} to determine the label and/or an icon for elements shown in the UI. This includes elements in lists
  * and trees, but also view specific locations like headers. The common {@link LabelProvider} collects all {@links LabelProviderContribution} and delegates
  * to the contribution with the highest priority. This is determined via calling the {@link LabelProviderContribution.canHandle} function, so contributions
  * define which elements they are responsible for.
@@ -196,7 +196,7 @@ export class DefaultUriLabelProviderContribution implements LabelProviderContrib
     if (!fileIcon) {
       return undefined;
     }
-    return fileIcon + ' wm-file-icons-js';
+    return fileIcon + ' tart-file-icons-js';
   }
 
   protected getUri(element: URI | URIIconReference): URI | undefined {
@@ -275,11 +275,11 @@ export class DefaultUriLabelProviderContribution implements LabelProviderContrib
  * The {@link LabelProvider} determines how elements/nodes are displayed in the workbench. For any element, it can determine a short label, a long label
  * and an icon. The {@link LabelProvider} is to be used in lists, trees and tables, but also view specific locations like headers.
  * The common {@link LabelProvider} can be extended/adapted via {@link LabelProviderContribution}s. For every element, the {@links LabelProvider} will determine the
- * {@link LabelProviderContribution} with the hightest priority and delegate to it. Wm registers default {@link LabelProviderContribution} for common types, e.g.
+ * {@link LabelProviderContribution} with the hightest priority and delegate to it. Tart registers default {@link LabelProviderContribution} for common types, e.g.
  * the {@link DefaultUriLabelProviderContribution} for elements that have a URI.
  * Using the {@link LabelProvider} across the workbench ensures a common look and feel for elements across multiple views. To adapt the way how specific
  * elements/nodes are rendered, use a {@link LabelProviderContribution} rather than adapting or sub classing the {@link LabelProvider}. This way, your adaptation
- * is applied to all views in Wm that use the {@link LabelProvider}
+ * is applied to all views in Tart that use the {@link LabelProvider}
  */
 @injectable()
 export class LabelProvider implements FrontendApplicationContribution {

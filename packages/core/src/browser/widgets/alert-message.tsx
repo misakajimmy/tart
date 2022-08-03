@@ -41,13 +41,13 @@ export interface AlertMessageProps {
 export class AlertMessage extends React.Component<AlertMessageProps> {
 
   render(): React.ReactNode {
-    return <div className='wm-alert-message-container'>
-      <div className={`wm-${this.props.type.toLowerCase()}-alert`}>
-        <div className='wm-message-header'>
+    return <div className='tart-alert-message-container'>
+      <div className={`tart-${this.props.type.toLowerCase()}-alert`}>
+        <div className='tart-message-header'>
           <i className={AlertMessageIcon[this.props.type]}></i>&nbsp;
           {this.props.header}
         </div>
-        <div className='wm-message-content'>{
+        <div className='tart-message-content'>{
           // @ts-ignore
           this.props.children
         }</div>

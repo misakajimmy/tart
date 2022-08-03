@@ -19,9 +19,9 @@ export class PreferenceConfigurations {
   protected readonly provider: ContributionProvider<PreferenceConfiguration>;
   protected sectionNames: string[] | undefined;
 
-  /* prefer Wm over VS Code by default */
+  /* prefer Tart over VS Code by default */
   getPaths(): string[] {
-    return ['.wm', '.vscode'];
+    return ['.tart', '.vscode'];
   }
 
   getConfigName(): string {

@@ -24,16 +24,16 @@
 }
 
 .p-DockPanel-handle[data-orientation='vertical'] {
-  min-height: var(--wm-border-width);
+  min-height: var(--tart-border-width);
 }
 
 .p-DockPanel-handle[data-orientation='horizontal'] {
-  min-width: var(--wm-border-width);
+  min-width: var(--tart-border-width);
 }
 
 .p-DockPanel-overlay {
-  background: var(--wm-editorGroup-dropBackground);
-  border: var(--wm-border-width) dashed var(--wm-contrastActiveBorder);
+  background: var(--tart-editorGroup-dropBackground);
+  border: var(--tart-border-width) dashed var(--tart-contrastActiveBorder);
   transition-property: top, left, right, bottom;
   transition-duration: 150ms;
   transition-timing-function: ease;
@@ -48,5 +48,5 @@
 }
 
 .p-DockPanel-overlay.p-mod-root-bottom {
-  background: var(--wm-panel-dropBackground);
+  background: var(--tart-panel-dropBackground);
 }

@@ -73,7 +73,7 @@ export class SourceTreeWidget extends TreeWidget {
   @postConstruct()
   protected init(): void {
     super.init();
-    this.addClass('wm-source-tree');
+    this.addClass('tart-source-tree');
     this.toDispose.push(this.model.onOpenNode(node => {
       if (TreeElementNode.is(node) && node.element.open) {
         node.element.open();
@@ -85,7 +85,7 @@ export class SourceTreeWidget extends TreeWidget {
     if (TreeSourceNode.is(model.root) && model.root.children.length === 0) {
       const {placeholder} = model.root.source;
       if (placeholder) {
-        return <div className='wm-tree-source-node-placeholder noselect'>{placeholder}</div>;
+        return <div className='tart-tree-source-node-placeholder noselect'>{placeholder}</div>;
       }
     }
     return super.renderTree(model);
@@ -101,7 +101,7 @@ export class SourceTreeWidget extends TreeWidget {
   }
 
   protected createTreeElementNodeClassNames(node: TreeElementNode): string[] {
-    return ['wm-tree-element-node'];
+    return ['tart-tree-element-node'];
   }
 
   protected superStoreState(): object {

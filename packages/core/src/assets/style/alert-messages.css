@@ -15,36 +15,36 @@
  ********************************************************************************/
 
 /* message container */
-.wm-alert-message-container {
+.tart-alert-message-container {
   flex: 1;
   padding: 10px;
 }
 
-.wm-alert-message-container i {
+.tart-alert-message-container i {
   transform: translateY(2px);
   padding-right: 3px;
 }
 
 /* information message */
-.wm-info-alert {
-  background-color: var(--wm-inputValidation-infoBackground);
-  border: var(--wm-border-width) solid var(--wm-inputValidation-infoBorder);
-  color: var(--wm-inputValidation-infoForeground);
+.tart-info-alert {
+  background-color: var(--tart-inputValidation-infoBackground);
+  border: var(--tart-border-width) solid var(--tart-inputValidation-infoBorder);
+  color: var(--tart-inputValidation-infoForeground);
   padding: 10px;
 }
 
 /* warning message */
-.wm-warning-alert {
-  background-color: var(--wm-inputValidation-warningBackground);
-  border: var(--wm-border-width) solid var(--wm-inputValidation-warningBorder);
-  color: var(--wm-inputValidation-warningForeground);
+.tart-warning-alert {
+  background-color: var(--tart-inputValidation-warningBackground);
+  border: var(--tart-border-width) solid var(--tart-inputValidation-warningBorder);
+  color: var(--tart-inputValidation-warningForeground);
   padding: 10px;
 }
 
 /* error message */
-.wm-error-alert {
-  background-color: var(--wm-inputValidation-errorBackground);
-  border: var(--wm-border-width) solid var(--wm-inputValidation-errorBorder);
-  color: var(--wm-inputValidation-errorForeground);
+.tart-error-alert {
+  background-color: var(--tart-inputValidation-errorBackground);
+  border: var(--tart-border-width) solid var(--tart-inputValidation-errorBorder);
+  color: var(--tart-inputValidation-errorForeground);
   padding: 10px;
 }

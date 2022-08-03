@@ -3,7 +3,7 @@ export type RequiredRecursive<T> = {
 };
 
 /**
- * Base configuration for the wm application.
+ * Base configuration for the tart application.
  */
 export interface ApplicationConfig {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -37,7 +37,7 @@ export namespace FrontendApplicationConfig {
     /**
      * The name of the application.
      *
-     * Defaults to `Eclipse wm`.
+     * Defaults to `Eclipse tart`.
      */
     readonly applicationName?: string;
   }

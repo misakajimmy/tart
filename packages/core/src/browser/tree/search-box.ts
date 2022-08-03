@@ -320,16 +320,16 @@ export namespace SearchBox {
    */
   export namespace Styles {
 
-    export const SEARCH_BOX = 'wm-search-box';
-    export const SEARCH_INPUT = 'wm-search-input';
-    export const SEARCH_BUTTONS_WRAPPER = 'wm-search-buttons-wrapper';
-    export const BUTTON = 'wm-search-button';
+    export const SEARCH_BOX = 'tart-search-box';
+    export const SEARCH_INPUT = 'tart-search-input';
+    export const SEARCH_BUTTONS_WRAPPER = 'tart-search-buttons-wrapper';
+    export const BUTTON = 'tart-search-button';
     export const FILTER = ['codicon', 'codicon-filter'];
     export const FILTER_ON = 'filter-active';
-    export const BUTTON_PREVIOUS = 'wm-search-button-previous';
-    export const BUTTON_NEXT = 'wm-search-button-next';
-    export const BUTTON_CLOSE = 'wm-search-button-close';
-    export const NON_SELECTABLE = 'wm-non-selectable';
+    export const BUTTON_PREVIOUS = 'tart-search-button-previous';
+    export const BUTTON_NEXT = 'tart-search-button-next';
+    export const BUTTON_CLOSE = 'tart-search-button-close';
+    export const NON_SELECTABLE = 'tart-non-selectable';
     export const NO_MATCH = 'no-match';
   }
 

@@ -14,15 +14,15 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-.wm-tooltip {
-  color: var(--wm-list-hoverForeground) !important;
-  background: var(--wm-list-hoverBackground) !important;
+.tart-tooltip {
+  color: var(--tart-list-hoverForeground) !important;
+  background: var(--tart-list-hoverBackground) !important;
   border: 1px solid !important;
-  border-color: var(--wm-list-hoverForeground) !important;
+  border-color: var(--tart-list-hoverForeground) !important;
 }
 
 /* Hide tooltip arrow */
-.wm-tooltip::before,
-.wm-tooltip::after {
+.tart-tooltip::before,
+.tart-tooltip::after {
   border: none !important;
 }

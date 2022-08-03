@@ -13,7 +13,7 @@ import {
   Title,
   Widget
 } from '@lumino/widgets';
-import {BOTTOM_AREA_ID, MAIN_AREA_ID, WmDockPanel} from './wm-dock-panel';
+import {BOTTOM_AREA_ID, MAIN_AREA_ID, TartDockPanel} from './tart-dock-panel';
 import {Disposable, DisposableCollection, Emitter, Event as CommonEvent, RecursivePartial} from '../../common';
 import {SidePanel, SidePanelHandler, SidePanelHandlerFactory} from './side-panel-handler';
 import {StatusBarAlignment, StatusBarEntry, StatusBarImpl} from '../status-bar';
@@ -48,15 +48,15 @@ export type ApplicationShellLayoutVersion =
 export const applicationShellLayoutVersion: ApplicationShellLayoutVersion = 5.0;
 
 /** The class name added to ApplicationShell instances. */
-const APPLICATION_SHELL_CLASS = 'wm-ApplicationShell';
+const APPLICATION_SHELL_CLASS = 'tart-ApplicationShell';
 /** The class name added to the main and bottom area panels. */
-const MAIN_BOTTOM_AREA_CLASS = 'wm-app-centers';
+const MAIN_BOTTOM_AREA_CLASS = 'tart-app-centers';
 /** Status bar entry identifier for the bottom panel toggle button. */
 const BOTTOM_PANEL_TOGGLE_ID = 'bottom-panel-toggle';
 /** The class name added to the main area panel. */
-const MAIN_AREA_CLASS = 'wm-app-main';
+const MAIN_AREA_CLASS = 'tart-app-main';
 /** The class name added to the bottom area panel. */
-const BOTTOM_AREA_CLASS = 'wm-app-bottom';
+const BOTTOM_AREA_CLASS = 'tart-app-bottom';
 
 export const ApplicationShellOptions = Symbol('ApplicationShellOptions');
 export const DockPanelRendererFactory = Symbol('DockPanelRendererFactory');
@@ -115,13 +115,13 @@ export class ApplicationShell extends Widget {
   /**
    * The dock panel in the main shell area. This is where editors usually go to.
    */
-  mainPanel: WmDockPanel;
+  mainPanel: TartDockPanel;
 
   /**
    * The dock panel in the bottom shell area. In contrast to the main panel, the bottom panel
    * can be collapsed and expanded.
    */
-  bottomPanel: WmDockPanel;
+  bottomPanel: TartDockPanel;
 
   /**
    * Handler for the left side panel. The primary application views go here, such as the
@@ -192,7 +192,7 @@ export class ApplicationShell extends Widget {
   ) {
     super();
     this.addClass(APPLICATION_SHELL_CLASS);
-    this.id = 'wm-app-shell';
+    this.id = 'tart-app-shell';
 
     // Merge the user-defined application options with the default options
     this.options = {
@@ -792,7 +792,7 @@ export class ApplicationShell extends Widget {
 
   toggleMaximized(): void {
     const area = this.currentWidget && this.getAreaPanelFor(this.currentWidget);
-    if (area instanceof WmDockPanel && (area === this.mainPanel || area === this.bottomPanel)) {
+    if (area instanceof TartDockPanel && (area === this.mainPanel || area === this.bottomPanel)) {
       area.toggleMaximized();
     }
   }
@@ -1079,11 +1079,11 @@ export class ApplicationShell extends Widget {
   /**
    * Create the dock panel in the main shell area.
    */
-  protected createMainPanel(): WmDockPanel {
+  protected createMainPanel(): TartDockPanel {
     // const renderer = this.dockPanelRendererFactory();
     // renderer.tabBarClasses.push(MAIN_BOTTOM_AREA_CLASS);
     // renderer.tabBarClasses.push(MAIN_AREA_CLASS);
-    const dockPanel = new WmDockPanel({
+    const dockPanel = new TartDockPanel({
       mode: 'multiple-document',
       spacing: 0,
     });
@@ -1094,8 +1094,8 @@ export class ApplicationShell extends Widget {
   /**
    * Create the dock panel in the bottom shell area.
    */
-  protected createBottomPanel(): WmDockPanel {
-    const dockPanel = new WmDockPanel({
+  protected createBottomPanel(): TartDockPanel {
+    const dockPanel = new TartDockPanel({
       mode: 'multiple-document',
       spacing: 0,
     });
@@ -1124,7 +1124,7 @@ export class ApplicationShell extends Widget {
    */
   protected createTopPanel(): Panel {
     const topPanel = new Panel();
-    topPanel.id = 'wm-top-panel';
+    topPanel.id = 'tart-top-panel';
     topPanel.hide();
     return topPanel;
   }
@@ -1446,7 +1446,7 @@ export class ApplicationShell extends Widget {
         {orientation: 'vertical', spacing: 0}
     );
     const panelForBottomArea = new SplitPanel({layout: bottomSplitLayout});
-    panelForBottomArea.id = 'wm-bottom-split-panel';
+    panelForBottomArea.id = 'tart-bottom-split-panel';
 
     const leftRightSplitLayout = this.createSplitLayout(
         [this.leftPanelHandler.container, panelForBottomArea, this.rightPanelHandler.container],
@@ -1454,7 +1454,7 @@ export class ApplicationShell extends Widget {
         {orientation: 'horizontal', spacing: 0}
     );
     const panelForSideAreas = new SplitPanel({layout: leftRightSplitLayout});
-    panelForSideAreas.id = 'wm-left-right-split-panel';
+    panelForSideAreas.id = 'tart-left-right-split-panel';
 
     return this.createBoxLayout(
         [this.topPanel, panelForSideAreas, this.statusBar],
@@ -1546,7 +1546,7 @@ export class ApplicationShell extends Widget {
       let w: Widget | null = oldValue;
       while (w) {
         // Remove the mark of the previously active widget
-        w.title.className = w.title.className.replace(' wm-mod-active', '');
+        w.title.className = w.title.className.replace(' tart-mod-active', '');
         w = w.parent;
       }
       // Reset the z-index to the default
@@ -1557,7 +1557,7 @@ export class ApplicationShell extends Widget {
       let w: Widget | null = newValue;
       while (w) {
         // Mark the tab of the active widget
-        w.title.className += ' wm-mod-active';
+        w.title.className += ' tart-mod-active';
         w = w.parent;
       }
       // Reveal the title of the active widget in its tab bar
@@ -1569,7 +1569,7 @@ export class ApplicationShell extends Widget {
         }
       }
       const panel = this.getAreaPanelFor(newValue);
-      if (panel instanceof WmDockPanel) {
+      if (panel instanceof TartDockPanel) {
         panel.markAsCurrent(newValue.title);
       }
       // Set the z-index so elements with `position: fixed` contained in the active widget are displayed correctly

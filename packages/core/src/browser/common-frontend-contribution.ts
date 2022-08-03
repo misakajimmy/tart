@@ -152,72 +152,72 @@ export namespace CommonCommands {
     id: 'core.nextTabInGroup',
     category: VIEW_CATEGORY,
     label: 'Switch to Next Tab in Group'
-  }, 'wm/core/common/showNextTabInGroup', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/showNextTabInGroup', VIEW_CATEGORY_KEY);
   export const PREVIOUS_TAB_IN_GROUP = Command.toLocalizedCommand({
     id: 'core.previousTabInGroup',
     category: VIEW_CATEGORY,
     label: 'Switch to Previous Tab in Group'
-  }, 'wm/core/common/showPreviousTabInGroup', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/showPreviousTabInGroup', VIEW_CATEGORY_KEY);
   export const NEXT_TAB_GROUP = Command.toLocalizedCommand({
     id: 'core.nextTabGroup',
     category: VIEW_CATEGORY,
     label: 'Switch to Next Tab Group'
-  }, 'wm/core/common/showNextTabGroup', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/showNextTabGroup', VIEW_CATEGORY_KEY);
   export const PREVIOUS_TAB_GROUP = Command.toLocalizedCommand({
     id: 'core.previousTabBar',
     category: VIEW_CATEGORY,
     label: 'Switch to Previous Tab Group'
-  }, 'wm/core/common/showPreviousTabGroup', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/showPreviousTabGroup', VIEW_CATEGORY_KEY);
   export const CLOSE_TAB = Command.toLocalizedCommand({
     id: 'core.close.tab',
     category: VIEW_CATEGORY,
     label: 'Close Tab'
-  }, 'wm/core/common/closeTab', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/closeTab', VIEW_CATEGORY_KEY);
   export const CLOSE_OTHER_TABS = Command.toLocalizedCommand({
     id: 'core.close.other.tabs',
     category: VIEW_CATEGORY,
     label: 'Close Other Tabs'
-  }, 'wm/core/common/closeOthers', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/closeOthers', VIEW_CATEGORY_KEY);
   export const CLOSE_RIGHT_TABS = Command.toLocalizedCommand({
     id: 'core.close.right.tabs',
     category: VIEW_CATEGORY,
     label: 'Close Tabs to the Right'
-  }, 'wm/core/common/closeRight', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/closeRight', VIEW_CATEGORY_KEY);
   export const CLOSE_ALL_TABS = Command.toLocalizedCommand({
     id: 'core.close.all.tabs',
     category: VIEW_CATEGORY,
     label: 'Close All Tabs'
-  }, 'wm/core/common/closeAll', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/closeAll', VIEW_CATEGORY_KEY);
   export const CLOSE_MAIN_TAB = Command.toLocalizedCommand({
     id: 'core.close.main.tab',
     category: VIEW_CATEGORY,
     label: 'Close Tab in Main Area'
-  }, 'wm/core/common/closeTabMain', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/closeTabMain', VIEW_CATEGORY_KEY);
   export const CLOSE_OTHER_MAIN_TABS = Command.toLocalizedCommand({
     id: 'core.close.other.main.tabs',
     category: VIEW_CATEGORY,
     label: 'Close Other Tabs in Main Area'
-  }, 'wm/core/common/closeOtherTabMain', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/closeOtherTabMain', VIEW_CATEGORY_KEY);
   export const CLOSE_ALL_MAIN_TABS = Command.toLocalizedCommand({
     id: 'core.close.all.main.tabs',
     category: VIEW_CATEGORY,
     label: 'Close All Tabs in Main Area'
-  }, 'wm/core/common/closeAllTabMain', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/closeAllTabMain', VIEW_CATEGORY_KEY);
   export const COLLAPSE_PANEL = Command.toLocalizedCommand({
     id: 'core.collapse.tab',
     category: VIEW_CATEGORY,
     label: 'Collapse Side Panel'
-  }, 'wm/core/common/collapseTab', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/collapseTab', VIEW_CATEGORY_KEY);
   export const COLLAPSE_ALL_PANELS = Command.toLocalizedCommand({
     id: 'core.collapse.all.tabs',
     category: VIEW_CATEGORY,
     label: 'Collapse All Side Panels'
-  }, 'wm/core/common/collapseAllTabs', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/collapseAllTabs', VIEW_CATEGORY_KEY);
   export const TOGGLE_BOTTOM_PANEL = Command.toLocalizedCommand({
     id: 'core.toggle.bottom.panel',
     category: VIEW_CATEGORY,
     label: 'Toggle Bottom Panel'
-  }, 'wm/core/common/collapseBottomPanel', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/collapseBottomPanel', VIEW_CATEGORY_KEY);
   export const TOGGLE_STATUS_BAR = Command.toDefaultLocalizedCommand({
     id: 'workbench.action.toggleStatusbarVisibility',
     category: VIEW_CATEGORY,
@@ -227,7 +227,7 @@ export namespace CommonCommands {
     id: 'core.toggleMaximized',
     category: VIEW_CATEGORY,
     label: 'Toggle Maximized'
-  }, 'wm/core/common/toggleMaximized', VIEW_CATEGORY_KEY);
+  }, 'tart/core/common/toggleMaximized', VIEW_CATEGORY_KEY);
   export const OPEN_VIEW = Command.toDefaultLocalizedCommand({
     id: 'core.openView',
     category: VIEW_CATEGORY,
@@ -910,7 +910,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
 
         // Lists and Trees colors should be aligned with https://code.visualstudio.com/api/references/theme-color#lists-and-trees
         // if not yet contributed by Monaco, check runtime css variables to learn.
-        // TODO: Following are not yet supported/no respective elements in wm:
+        // TODO: Following are not yet supported/no respective elements in tart:
         // list.focusBackground, list.focusForeground, list.inactiveFocusBackground, list.filterMatchBorder,
         // list.dropBackground, listFilterWidget.outline, listFilterWidget.noMatchesOutline
         // list.invalidItemForeground,
@@ -1542,7 +1542,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
           }, description: 'Settings editor number input box border.'
         },
 
-        // Wm Variable colors
+        // Tart Variable colors
         {
           id: 'variable.name.color', defaults: {
             dark: '#C586C0',
@@ -1584,7 +1584,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
           description: 'Value color of a string variable'
         },
 
-        // Wm ANSI colors
+        // Tart ANSI colors
         {
           id: 'ansi.black.color', defaults: {
             dark: '#A0A0A0',
@@ -1650,7 +1650,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
           description: 'ANSI white color'
         },
 
-        // Wm defaults
+        // Tart defaults
         // Base
         {
           id: 'errorBackground',
@@ -1691,7 +1691,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
             dark: 'editorWarning.foreground',
             light: 'editorWarning.foreground',
             hc: 'editorWarning.foreground'
-          }, description: 'Background of hovered statusbar item in case the wm server is offline.'
+          }, description: 'Background of hovered statusbar item in case the tart server is offline.'
         },
         {
           id: 'statusBar.offlineForeground',
@@ -1699,7 +1699,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
             dark: 'editor.background',
             light: 'editor.background',
             hc: 'editor.background'
-          }, description: 'Background of hovered statusbar item in case the wm server is offline.'
+          }, description: 'Background of hovered statusbar item in case the tart server is offline.'
         },
         {
           id: 'statusBarItem.offlineHoverBackground',
@@ -1707,7 +1707,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
             dark: Color.lighten('statusBar.offlineBackground', 0.4),
             light: Color.lighten('statusBar.offlineBackground', 0.4),
             hc: Color.lighten('statusBar.offlineBackground', 0.4)
-          }, description: 'Background of hovered statusbar item in case the wm server is offline.'
+          }, description: 'Background of hovered statusbar item in case the tart server is offline.'
         },
         {
           id: 'statusBarItem.offlineActiveBackground',
@@ -1715,7 +1715,7 @@ export class CommonFrontendContribution implements FrontendApplicationContributi
             dark: Color.lighten('statusBar.offlineBackground', 0.6),
             light: Color.lighten('statusBar.offlineBackground', 0.6),
             hc: Color.lighten('statusBar.offlineBackground', 0.6)
-          }, description: 'Background of active statusbar item in case the wm server is offline.'
+          }, description: 'Background of active statusbar item in case the tart server is offline.'
         },
         // Buttons
         {

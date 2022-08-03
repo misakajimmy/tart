@@ -26,7 +26,7 @@ export class ExternalUriService {
    * Maps local to remote URLs.
    * Should be no-op if the given URL is not a localhost URL.
    *
-   * By default maps to an origin serving wm.
+   * By default maps to an origin serving tart.
    *
    * Use `parseLocalhost` to retrieve localhost address and port information.
    */

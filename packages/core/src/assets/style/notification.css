@@ -15,19 +15,19 @@
  ********************************************************************************/
 
 :root {
-  --wm-notification-count-height: 15.5px;
-  --wm-notification-count-width: 15.5px;
+  --tart-notification-count-height: 15.5px;
+  --tart-notification-count-width: 15.5px;
 }
 
 .notification-count-container {
   align-self: center;
-  background-color: var(--wm-badge-background);
+  background-color: var(--tart-badge-background);
   border-radius: 20px;
-  color: var(--wm-badge-foreground);
+  color: var(--tart-badge-foreground);
   display: flex;
-  font-size: calc(var(--wm-ui-font-size0) * 0.8);
+  font-size: calc(var(--tart-ui-font-size0) * 0.8);
   font-weight: 500;
-  height: var(--wm-notification-count-height);
+  height: var(--tart-notification-count-height);
   justify-content: center;
   min-width: 6px;
   padding: 0 5px;

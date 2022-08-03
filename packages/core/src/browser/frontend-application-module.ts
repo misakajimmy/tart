@@ -118,7 +118,7 @@ export const FrontendApplicationModule = new ContainerModule((bind, unbind, isBo
   bind(SidePanelHandler).toSelf();
 
   bind(AboutDialog).toSelf().inSingletonScope();
-  bind(AboutDialogProps).toConstantValue({title: 'Wm'});
+  bind(AboutDialogProps).toConstantValue({title: 'Tart'});
 
   bindContributionProvider(bind, ApplicationShellLayoutMigration);
 

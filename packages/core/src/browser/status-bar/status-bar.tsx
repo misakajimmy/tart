@@ -84,7 +84,7 @@ export class StatusBarImpl extends ReactWidget implements StatusBar {
   ) {
     super();
     delete this.scrollOptions;
-    this.id = 'wm-statusBar';
+    this.id = 'tart-statusBar';
     this.addClass('noselect');
     // Hide the status bar until the `workbench.statusBar.visible` preference returns with a `true` value.
     this.hide();

@@ -51,19 +51,19 @@ import {MaybePromise} from '../../common/types';
 import {LabelProvider} from '../label-provider';
 import {CorePreferences} from '../core-preferences';
 
-export const TREE_CLASS = 'wm-Tree';
-export const TREE_CONTAINER_CLASS = 'wm-TreeContainer';
-export const TREE_NODE_CLASS = 'wm-TreeNode';
-export const TREE_NODE_CONTENT_CLASS = 'wm-TreeNodeContent';
-export const TREE_NODE_INFO_CLASS = 'wm-TreeNodeInfo';
-export const TREE_NODE_TAIL_CLASS = 'wm-TreeNodeTail';
-export const TREE_NODE_SEGMENT_CLASS = 'wm-TreeNodeSegment';
-export const TREE_NODE_SEGMENT_GROW_CLASS = 'wm-TreeNodeSegmentGrow';
+export const TREE_CLASS = 'tart-Tree';
+export const TREE_CONTAINER_CLASS = 'tart-TreeContainer';
+export const TREE_NODE_CLASS = 'tart-TreeNode';
+export const TREE_NODE_CONTENT_CLASS = 'tart-TreeNodeContent';
+export const TREE_NODE_INFO_CLASS = 'tart-TreeNodeInfo';
+export const TREE_NODE_TAIL_CLASS = 'tart-TreeNodeTail';
+export const TREE_NODE_SEGMENT_CLASS = 'tart-TreeNodeSegment';
+export const TREE_NODE_SEGMENT_GROW_CLASS = 'tart-TreeNodeSegmentGrow';
 
-export const EXPANDABLE_TREE_NODE_CLASS = 'wm-ExpandableTreeNode';
-export const COMPOSITE_TREE_NODE_CLASS = 'wm-CompositeTreeNode';
-export const TREE_NODE_CAPTION_CLASS = 'wm-TreeNodeCaption';
-export const TREE_NODE_INDENT_GUIDE_CLASS = 'wm-tree-node-indent';
+export const EXPANDABLE_TREE_NODE_CLASS = 'tart-ExpandableTreeNode';
+export const COMPOSITE_TREE_NODE_CLASS = 'tart-CompositeTreeNode';
+export const TREE_NODE_CAPTION_CLASS = 'tart-TreeNodeCaption';
+export const TREE_NODE_INDENT_GUIDE_CLASS = 'tart-tree-node-indent';
 
 export const TreeProps = Symbol('TreeProps');
 

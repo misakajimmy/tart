@@ -21,7 +21,7 @@ import darkCss from '../assets/style/variables-dark.useable.css';
 import lightCss from '../assets/style/variables-bright.useable.css';
 
 /**
- * @deprecated since 1.20.0. Import from `@wm/core/lib/common/theme` instead.
+ * @deprecated since 1.20.0. Import from `@tart/core/lib/common/theme` instead.
  */
 export * from '../common/theme';
 
@@ -148,8 +148,8 @@ export class BuiltinThemeProvider {
   static readonly darkTheme: Theme = {
     id: 'dark',
     type: 'dark',
-    label: 'Dark (Wm)',
-    editorTheme: 'dark-wm', // loaded in /packages/monaco/src/browser/textmate/monaco-theme-registry.ts
+    label: 'Dark (Tart)',
+    editorTheme: 'dark-tart', // loaded in /packages/monaco/src/browser/textmate/monaco-theme-registry.ts
     activate(): void {
       BuiltinThemeProvider.darkCss.use();
     },
@@ -161,8 +161,8 @@ export class BuiltinThemeProvider {
   static readonly lightTheme: Theme = {
     id: 'light',
     type: 'light',
-    label: 'Light (Wm)',
-    editorTheme: 'light-wm', // loaded in /packages/monaco/src/browser/textmate/monaco-theme-registry.ts
+    label: 'Light (Tart)',
+    editorTheme: 'light-tart', // loaded in /packages/monaco/src/browser/textmate/monaco-theme-registry.ts
     activate(): void {
       BuiltinThemeProvider.lightCss.use();
     },
@@ -172,10 +172,10 @@ export class BuiltinThemeProvider {
   };
 
   static readonly hcTheme: Theme = {
-    id: 'hc-wm',
+    id: 'hc-tart',
     type: 'hc',
-    label: 'High Contrast (Wm)',
-    editorTheme: 'hc-wm', // loaded in /packages/monaco/src/browser/textmate/monaco-theme-registry.ts
+    label: 'High Contrast (Tart)',
+    editorTheme: 'hc-tart', // loaded in /packages/monaco/src/browser/textmate/monaco-theme-registry.ts
     activate(): void {
       BuiltinThemeProvider.darkCss.use();
     },

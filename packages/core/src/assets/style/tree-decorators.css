@@ -14,67 +14,67 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-.wm-caption-prefix {
+.tart-caption-prefix {
   white-space: nowrap;
   padding-right: 2px;
 }
 
-.wm-caption-suffix {
+.tart-caption-suffix {
   white-space: nowrap;
   padding: 0px 2px 0px 2px;
 }
 
-.wm-caption-suffix-tail {
+.tart-caption-suffix-tail {
   min-width: 1rem;
   text-align: center;
-  font-size: var(--wm-ui-font-size0);
+  font-size: var(--tart-ui-font-size0);
 }
 
-.wm-icon-wrapper {
+.tart-icon-wrapper {
   top: 0px !important;
   position: relative;
   display: inline-flex;
 }
 
-.wm-decorator-size {
+.tart-decorator-size {
   transform: scale(0.7);
   text-align: center;
   height: 100%;
   width: 100%;
 }
 
-.wm-decorator-sidebar-size {
+.tart-decorator-sidebar-size {
   height: 100%;
   text-align: center;
   transform: scale(1.2);
   width: 100%;
 }
 
-.wm-top-right {
+.tart-top-right {
   position: absolute;
   bottom: 40%;
   left: 25%;
 }
 
-.wm-bottom-right {
+.tart-bottom-right {
   position: absolute;
   top: 40%;
   left: 25%;
 }
 
-.wm-bottom-right-sidebar {
+.tart-bottom-right-sidebar {
   position: absolute;
   top: 80%;
   left: 50%;
 }
 
-.wm-bottom-left {
+.tart-bottom-left {
   position: absolute;
   top: 40%;
   right: 25%;
 }
 
-.wm-top-left {
+.tart-top-left {
   position: absolute;
   bottom: 40%;
   right: 25%;

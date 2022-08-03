@@ -224,7 +224,7 @@ export interface SaveOptions {
 /**
  * The class name added to the dirty widget's title.
  */
-const DIRTY_CLASS = 'wm-mod-dirty';
+const DIRTY_CLASS = 'tart-mod-dirty';
 
 export function setDirty(widget: Widget, dirty: boolean): void {
   const dirtyClass = ` ${DIRTY_CLASS}`;
@@ -247,7 +247,7 @@ export class ShouldSaveDialog extends AbstractDialog<boolean> {
 
     const messageNode = document.createElement('div');
     messageNode.textContent = "Your changes will be lost if you don't save them.";
-    messageNode.setAttribute('style', 'flex: 1 100%; padding-bottom: calc(var(--wm-ui-padding)*3);');
+    messageNode.setAttribute('style', 'flex: 1 100%; padding-bottom: calc(var(--tart-ui-padding)*3);');
     this.contentNode.appendChild(messageNode);
     this.dontSaveButton = this.appendDontSaveButton();
     this.appendCloseButton();

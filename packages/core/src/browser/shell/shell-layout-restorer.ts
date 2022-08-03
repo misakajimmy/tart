@@ -117,7 +117,7 @@ export const RESET_LAYOUT = Command.toLocalizedCommand({
   id: 'reset.layout',
   category: CommonCommands.VIEW_CATEGORY,
   label: 'Reset Workbench Layout'
-}, 'wm/core/resetWorkbenchLayout', CommonCommands.VIEW_CATEGORY_KEY);
+}, 'tart/core/resetWorkbenchLayout', CommonCommands.VIEW_CATEGORY_KEY);
 
 @injectable()
 export class ShellLayoutRestorer implements CommandContribution {

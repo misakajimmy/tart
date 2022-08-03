@@ -21,8 +21,8 @@ import {ReactDialog} from './dialogs/react-dialog';
 import {ApplicationInfo, ApplicationServer, ExtensionInfo} from '../common/application-protocol';
 import {Message} from './widgets/widget';
 
-export const ABOUT_CONTENT_CLASS = 'wm-aboutDialog';
-export const ABOUT_EXTENSIONS_CLASS = 'wm-aboutExtensions';
+export const ABOUT_CONTENT_CLASS = 'tart-aboutDialog';
+export const ABOUT_EXTENSIONS_CLASS = 'tart-aboutExtensions';
 
 @injectable()
 export class AboutDialogProps extends DialogProps {
@@ -41,7 +41,7 @@ export class AboutDialog extends ReactDialog<void> {
       @inject(AboutDialogProps) protected readonly props: AboutDialogProps
   ) {
     super({
-      title: 'WM',
+      title: 'TART',
     });
     this.appendAcceptButton('Ok');
   }

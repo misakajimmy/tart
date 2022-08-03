@@ -347,7 +347,7 @@ export namespace KeyCode {
     const code = event.code;
     if (code && dispatch === 'code') {
       if (isOSX) {
-        // https://github.com/eclipse-wm/wm/issues/4986
+        // https://github.com/eclipse-tart/tart/issues/4986
         const char = event.key;
         if (code === 'IntlBackslash' && (char === '`' || char === '~')) {
           return Key.BACKQUOTE;
@@ -356,7 +356,7 @@ export namespace KeyCode {
         }
       }
 
-      // https://github.com/eclipse-wm/wm/issues/7315
+      // https://github.com/eclipse-tart/tart/issues/7315
       if (code.startsWith('Numpad') && event.key && event.key.length > 1) {
         const k = Key.getKey(event.key);
         if (k) {

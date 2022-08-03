@@ -25,7 +25,7 @@ export class ColorApplicationContribution implements FrontendApplicationContribu
   static initBackground(): void {
     const value = window.localStorage.getItem(this.themeBackgroundId) || '#1d1d1d';
     const documentElement = document.documentElement;
-    documentElement.style.setProperty('--wm-editor-background', value);
+    documentElement.style.setProperty('--tart-editor-background', value);
   }
 
   onStart(): void {
@@ -45,7 +45,7 @@ export class ColorApplicationContribution implements FrontendApplicationContribu
       return;
     }
     this.toUpdate.dispose();
-    const theme = 'wm-' + ThemeService.get().getCurrentTheme().type;
+    const theme = 'tart-' + ThemeService.get().getCurrentTheme().type;
     document.body.classList.add(theme);
     this.toUpdate.push(Disposable.create(() => document.body.classList.remove(theme)));
 

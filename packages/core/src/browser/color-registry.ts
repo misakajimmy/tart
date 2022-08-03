@@ -20,7 +20,7 @@ import {Emitter} from '../common';
 import {ColorCssVariable, ColorDefinition} from '../common/color';
 
 /**
- * @deprecated since 1.20.0. Import from `@wm/core/lib/common/color` instead.
+ * @deprecated since 1.20.0. Import from `@tart/core/lib/common/color` instead.
  */
 export * from '../common/color';
 
@@ -42,7 +42,7 @@ export class ColorRegistry {
     return {name, value};
   }
 
-  toCssVariableName(id: string, prefix = 'wm'): string {
+  toCssVariableName(id: string, prefix = 'tart'): string {
     return `--${prefix}-${id.replace(/\./g, '-')}`;
   }
 

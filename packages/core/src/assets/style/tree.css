@@ -15,184 +15,184 @@
  ********************************************************************************/
 
 :root {
-  --wm-welcomeView-horizontal-padding: 20px;
-  --wm-welcomeView-elements-margin: 13px;
-  --wm-welcomeView-button-maxWidth: 260px;
+  --tart-welcomeView-horizontal-padding: 20px;
+  --tart-welcomeView-elements-margin: 13px;
+  --tart-welcomeView-button-maxWidth: 260px;
 }
 
-.wm-Tree {
+.tart-Tree {
   overflow: hidden;
-  font-size: var(--wm-ui-font-size1);
-  max-height: calc(100% - var(--wm-border-width));
+  font-size: var(--tart-ui-font-size1);
+  max-height: calc(100% - var(--tart-border-width));
   position: relative;
 }
 
-.wm-Tree:focus .wm-TreeContainer.empty {
+.tart-Tree:focus .tart-TreeContainer.empty {
   outline-width: 1px;
   outline-style: solid;
   outline-offset: -1px;
   opacity: 1 !important;
-  outline-color: var(--wm-focusBorder);
+  outline-color: var(--tart-focusBorder);
 }
 
-.wm-Tree:focus,
-.wm-TreeContainer .ReactVirtualized__List:focus {
+.tart-Tree:focus,
+.tart-TreeContainer .ReactVirtualized__List:focus {
   outline: 0;
   box-shadow: none;
   border: none;
 }
 
-.wm-TreeContainer {
+.tart-TreeContainer {
   height: 100%;
 }
 
-.wm-TreeNode {
-  line-height: var(--wm-content-line-height);
+.tart-TreeNode {
+  line-height: var(--tart-content-line-height);
   display: flex;
 }
 
-.wm-TreeNode:hover {
-  background: var(--wm-list-hoverBackground);
-  color: var(--wm-list-hoverForeground);
+.tart-TreeNode:hover {
+  background: var(--tart-list-hoverBackground);
+  color: var(--tart-list-hoverForeground);
   cursor: pointer;
 }
 
-.wm-TreeNodeContent {
+.tart-TreeNodeContent {
   display: flex;
   align-items: center;
-  width: calc(100% - var(--wm-scrollbar-rail-width));
+  width: calc(100% - var(--tart-scrollbar-rail-width));
 }
 
-.wm-ExpansionToggle {
+.tart-ExpansionToggle {
   display: flex;
   justify-content: center;
-  padding-left: calc(var(--wm-ui-padding) / 2);
-  padding-right: calc(var(--wm-ui-padding) / 2);
-  min-width: var(--wm-icon-size);
-  min-height: var(--wm-icon-size);
+  padding-left: calc(var(--tart-ui-padding) / 2);
+  padding-right: calc(var(--tart-ui-padding) / 2);
+  min-width: var(--tart-icon-size);
+  min-height: var(--tart-icon-size);
 }
 
-.wm-ExpansionToggle.wm-mod-busy {
-  animation: wm-spin 1.25s linear infinite;
+.tart-ExpansionToggle.tart-mod-busy {
+  animation: tart-spin 1.25s linear infinite;
 }
 
-.wm-ExpansionToggle:not(.wm-mod-busy):hover {
+.tart-ExpansionToggle:not(.tart-mod-busy):hover {
   cursor: pointer;
 }
 
-.wm-ExpansionToggle.wm-mod-collapsed:not(.wm-mod-busy) {
+.tart-ExpansionToggle.tart-mod-collapsed:not(.tart-mod-busy) {
   transform: rotate(-90deg);
 }
 
-.wm-Tree:focus .wm-TreeNode.wm-mod-selected,
-.wm-Tree .ReactVirtualized__List:focus .wm-TreeNode.wm-mod-selected {
-  background: var(--wm-list-activeSelectionBackground);
-  color: var(--wm-list-activeSelectionForeground) !important;
+.tart-Tree:focus .tart-TreeNode.tart-mod-selected,
+.tart-Tree .ReactVirtualized__List:focus .tart-TreeNode.tart-mod-selected {
+  background: var(--tart-list-activeSelectionBackground);
+  color: var(--tart-list-activeSelectionForeground) !important;
 }
 
-.wm-Tree:focus .wm-TreeNode.wm-mod-selected .wm-TreeNodeTail,
-.wm-Tree .ReactVirtualized__List:focus .wm-TreeNode.wm-mod-selected .wm-TreeNodeTail,
-.wm-Tree:focus .wm-TreeNode.wm-mod-selected .wm-caption-suffix,
-.wm-Tree .ReactVirtualized__List:focus .wm-TreeNode.wm-mod-selected .wm-caption-suffix,
-.wm-Tree:focus .wm-TreeNode.wm-mod-selected .wm-TreeNodeInfo,
-.wm-Tree .ReactVirtualized__List:focus .wm-TreeNode.wm-mod-selected .wm-TreeNodeInfo {
-  color: var(--wm-list-activeSelectionForeground) !important;
+.tart-Tree:focus .tart-TreeNode.tart-mod-selected .tart-TreeNodeTail,
+.tart-Tree .ReactVirtualized__List:focus .tart-TreeNode.tart-mod-selected .tart-TreeNodeTail,
+.tart-Tree:focus .tart-TreeNode.tart-mod-selected .tart-caption-suffix,
+.tart-Tree .ReactVirtualized__List:focus .tart-TreeNode.tart-mod-selected .tart-caption-suffix,
+.tart-Tree:focus .tart-TreeNode.tart-mod-selected .tart-TreeNodeInfo,
+.tart-Tree .ReactVirtualized__List:focus .tart-TreeNode.tart-mod-selected .tart-TreeNodeInfo {
+  color: var(--tart-list-activeSelectionForeground) !important;
 }
 
-.wm-TreeNodeInfo {
-  color: var(--wm-foreground);
+.tart-TreeNodeInfo {
+  color: var(--tart-foreground);
   opacity: 0.7;
 }
 
-.wm-Tree .wm-TreeNode.wm-mod-selected {
-  background: var(--wm-list-inactiveSelectionBackground);
-  color: var(--wm-list-inactiveSelectionForeground);
+.tart-Tree .tart-TreeNode.tart-mod-selected {
+  background: var(--tart-list-inactiveSelectionBackground);
+  color: var(--tart-list-inactiveSelectionForeground);
 }
 
-.wm-TreeNode.wm-mod-not-selectable {
-  color: var(--wm-descriptionForeground);
+.tart-TreeNode.tart-mod-not-selectable {
+  color: var(--tart-descriptionForeground);
 }
 
-.wm-TreeNode.wm-mod-not-selectable:hover {
+.tart-TreeNode.tart-mod-not-selectable:hover {
   background: none;
   cursor: default;
 }
 
-.wm-TreeNodeSegment {
+.tart-TreeNodeSegment {
   flex-grow: 0;
   user-select: none;
   white-space: nowrap;
 }
 
-.wm-TreeNodeSegmentGrow {
+.tart-TreeNodeSegmentGrow {
   flex-grow: 1 !important;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.wm-TreeNodeTail {
+.tart-TreeNodeTail {
   min-width: 1rem;
   text-align: center;
 }
 
-.wm-TreeNodeSegment mark {
-  background-color: var(--wm-list-filterMatchBackground);
-  color: var(--wm-list-inactiveSelectionForeground);
+.tart-TreeNodeSegment mark {
+  background-color: var(--tart-list-filterMatchBackground);
+  color: var(--tart-list-inactiveSelectionForeground);
 }
 
-.wm-tree-source-node-placeholder {
+.tart-tree-source-node-placeholder {
   text-align: center;
   font-style: italic;
-  opacity: var(--wm-mod-disabled-opacity);
+  opacity: var(--tart-mod-disabled-opacity);
 }
 
-.wm-tree-element-node {
+.tart-tree-element-node {
   width: 100%
 }
 
-.wm-tree-node-indent {
+.tart-tree-node-indent {
   position: absolute;
-  height: var(--wm-content-line-height);
-  border-right: var(--wm-border-width) solid transparent;
+  height: var(--tart-content-line-height);
+  border-right: var(--tart-border-width) solid transparent;
 }
 
-.wm-tree-node-indent.always,
-.wm-TreeContainer:hover .wm-tree-node-indent.hover {
-  border-color: var(--wm-tree-inactiveIndentGuidesStroke);
+.tart-tree-node-indent.always,
+.tart-TreeContainer:hover .tart-tree-node-indent.hover {
+  border-color: var(--tart-tree-inactiveIndentGuidesStroke);
 }
 
-.wm-tree-node-indent.active {
-  border-color: var(--wm-tree-indentGuidesStroke);
+.tart-tree-node-indent.active {
+  border-color: var(--tart-tree-indentGuidesStroke);
 }
 
-.wm-TreeContainer .wm-WelcomeView {
-  padding-top: var(--wm-ui-padding);
-  padding-right: var(--wm-welcomeView-horizontal-padding);
-  padding-left: var(--wm-welcomeView-horizontal-padding);
+.tart-TreeContainer .tart-WelcomeView {
+  padding-top: var(--tart-ui-padding);
+  padding-right: var(--tart-welcomeView-horizontal-padding);
+  padding-left: var(--tart-welcomeView-horizontal-padding);
 }
 
-.wm-TreeContainer .wm-WelcomeView > * {
-  margin: var(--wm-welcomeView-elements-margin) 0;
+.tart-TreeContainer .tart-WelcomeView > * {
+  margin: var(--tart-welcomeView-elements-margin) 0;
 }
 
-.wm-TreeContainer .wm-WelcomeView .wm-WelcomeViewButtonWrapper {
+.tart-TreeContainer .tart-WelcomeView .tart-WelcomeViewButtonWrapper {
   display: flex;
-  padding: 0 var(--wm-ui-padding);
+  padding: 0 var(--tart-ui-padding);
 }
 
-.wm-TreeContainer .wm-WelcomeView .wm-WelcomeViewButton {
+.tart-TreeContainer .tart-WelcomeView .tart-WelcomeViewButton {
   width: 100%;
-  max-width: var(--wm-welcomeView-button-maxWidth);
+  max-width: var(--tart-welcomeView-button-maxWidth);
   margin: auto;
 }
 
-.wm-TreeContainer .wm-WelcomeView .wm-WelcomeViewCommandLink {
+.tart-TreeContainer .tart-WelcomeView .tart-WelcomeViewCommandLink {
   cursor: pointer;
 }
 
-.wm-TreeContainer .wm-WelcomeView .wm-WelcomeViewCommandLink.disabled {
+.tart-TreeContainer .tart-WelcomeView .tart-WelcomeViewCommandLink.disabled {
   pointer-events: none;
   cursor: default;
-  opacity: var(--wm-mod-disabled-opacity);
+  opacity: var(--tart-mod-disabled-opacity);
 }
