@@ -1,0 +1,113 @@
+/********************************************************************************
+ * Copyright (C) 2017 TypeFox and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+:root {
+  --wm-statusBar-height: 22px;
+}
+
+#wm-statusBar {
+  background: var(--wm-statusBar-background);
+  display: flex;
+  min-height: var(--wm-statusBar-height);
+  white-space: nowrap;
+  border-top: var(--wm-border-width) solid var(--wm-statusBar-border);
+}
+
+body.wm-no-open-workspace #wm-statusBar {
+  background: var(--wm-statusBar-noFolderBackground);
+  color: var(--wm-statusBar-noFolderForeground);
+  border-top: var(--wm-border-width) solid var(--wm-statusBar-noFolderBorder);
+}
+
+#wm-statusBar .area {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+#wm-statusBar .area.left {
+  justify-content: flex-start;
+  padding-left: calc(var(--wm-ui-padding) * 2);
+}
+
+#wm-statusBar .area.right {
+  justify-content: flex-end;
+  padding-right: calc(var(--wm-ui-padding) * 2);
+}
+
+#wm-statusBar .area .element {
+  color: var(--wm-statusBar-foreground);
+  display: flex;
+  align-items: center;
+  font-size: var(--wm-statusBar-font-size);
+}
+
+#wm-statusBar .area .element > * {
+  margin-left: calc(var(--wm-ui-padding) / 2);
+}
+
+#wm-statusBar .area .element .codicon {
+  /* Scaling down codicons from 16 to 14 pixels */
+  font-size: 14px;
+}
+
+#wm-statusBar .area .element > *:last-child {
+  margin-right: calc(var(--wm-ui-padding) / 2);
+}
+
+#wm-statusBar .area .element.hasCommand:hover {
+  background-color: var(--wm-statusBarItem-hoverBackground);
+  cursor: pointer;
+}
+
+#wm-statusBar .area .element.hasCommand:active {
+  background-color: var(--wm-statusBarItem-activeBackground);
+}
+
+.wm-mod-offline #wm-statusBar {
+  background-color: var(--wm-statusBar-offlineBackground) !important;
+}
+
+.wm-mod-offline #wm-statusBar .area .element {
+  color: var(--wm-statusBar-offlineForeground) !important;
+}
+
+.wm-mod-offline #wm-statusBar .area .element.hasCommand:hover {
+  background-color: var(--wm-statusBarItem-offlineHoverBackground) !important;
+}
+
+.wm-mod-offline #wm-statusBar .area .element.hasCommand:active {
+  background-color: var(--wm-statusBarItem-offlineActiveBackground) !important;
+}
+
+#wm-statusBar .area.left .element {
+  margin-right: var(--wm-ui-padding);
+}
+
+#wm-statusBar .area.right .element {
+  margin-left: var(--wm-ui-padding);
+}
+
+#wm-statusBar .element {
+  /* https://css-tricks.com/os-specific-fonts-css/#article-header-id-0 */
+  /* https://github.com/Microsoft/vscode/blob/5dbdc8d19c8cf6dd10d558eabcc48bba962ea45f/src/vs/workbench/browser/media/style.css#L8-L24 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif;
+  font-size: 12px;
+  text-rendering: auto;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

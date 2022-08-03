@@ -1,0 +1,79 @@
+:root {
+
+  /* Borders: Width and color (dark to bright) */
+
+  --wm-border-width: 1px;
+  --wm-panel-border-width: 2px;
+
+
+  /* UI fonts: Family, size and color (bright to dark)
+    ---------------------------------------------------
+     The UI font CSS variables are used for the typography all of the wm
+     user interface elements that are not directly user-generated content.
+  */
+
+  --wm-ui-font-scale-factor: 1.2;
+  --wm-ui-font-size0: calc(var(--wm-ui-font-size1) / var(--wm-ui-font-scale-factor));
+  --wm-ui-font-size1: 13px; /* Base font size */
+  --wm-ui-font-size2: calc(var(--wm-ui-font-size1) * var(--wm-ui-font-scale-factor));
+  --wm-ui-font-size3: calc(var(--wm-ui-font-size2) * var(--wm-ui-font-scale-factor));
+  --wm-ui-icon-font-size: 14px; /* Ensures px perfect FontAwesome icons */
+  --wm-ui-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Content fonts: Family, size and color (bright to dark)
+     Content font variables are used for typography of user-generated content.
+  */
+
+  --wm-content-font-size: 13px;
+  --wm-content-line-height: 25px;
+
+  --wm-code-font-size: 13px;
+  --wm-code-line-height: 17px;
+  --wm-code-padding: 5px;
+  --wm-code-font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+  --wm-monospace-font-family: monospace;
+  --wm-ui-padding: 6px;
+
+  /* Icons */
+  --wm-icon-chevron-right: url(../icons/chevron-right-dark.svg);
+  --wm-icon-loading: url(../icons/loading-dark.svg);
+  --wm-icon-close: url(../icons/close-dark.svg);
+  --wm-icon-arrow-up: url(../icons/arrow-up-dark.svg);
+  --wm-icon-arrow-down: url(../icons/arrow-down-dark.svg);
+  --wm-sprite-y-offset: -20px;
+  --wm-icon-circle: url(../icons/circle-dark.svg);
+  --wm-preloader: url(../icons/spinner.gif);
+  --wm-icon-case-sensitive: url(../icons/case-sensitive-dark.svg);
+  --wm-icon-regex: url(../icons/regex-dark.svg);
+  --wm-icon-whole-word: url(../icons/whole-word-dark.svg);
+  --wm-icon-refresh: url(../icons/Refresh_inverse.svg);
+  --wm-loading: url(../icons/loading.gif);
+  --wm-icon-expand: url(../icons/expand.svg);
+  --wm-icon-close-all: url(../icons/close-all-dark.svg);
+  --wm-icon-collapse: url(../icons/collapse.svg);
+  --wm-icon-collapse-all: url(../icons/CollapseAll_inverse.svg);
+  --wm-icon-remove-all: url(../icons/remove-all-inverse.svg);
+  --wm-icon-add: url(../icons/add-inverse.svg);
+  --wm-icon-clear: url(../icons/clear-search-results-dark.svg);
+  --wm-icon-replace: url(../icons/replace-inverse.svg);
+  --wm-icon-replace-all: url(../icons/replace-all-inverse.svg);
+  --wm-icon-open-file: url(../icons/open-file-dark.svg);
+  --wm-icon-open-change: url(../icons/open-change-dark.svg);
+  --wm-icon-preview: url(../icons/preview-dark.svg);
+  --wm-icon-open-json: url(../icons/edit-json-dark.svg);
+  --wm-icon-serial-connect: url(../icons/serial-connect.svg);
+  --wm-icon-serial-disconnect: url(../icons/serial-disconnect.svg);
+  --wm-icon-firmware-update: url(../icons/firmware-update.svg);
+  --wm-icon-blockly: url(../icons/blockly.svg);
+  --wm-icon-size: 16px;
+
+  /* Scrollbars */
+  --wm-scrollbar-width: 10px;
+  --wm-scrollbar-rail-width: 10px;
+
+  /* Statusbar */
+  --wm-statusBar-font-size: 12px;
+
+  /* Opacity for disabled mod  */
+  --wm-mod-disabled-opacity: 0.4;
+}

@@ -1,0 +1,198 @@
+/********************************************************************************
+ * Copyright (C) 2017, 2018 TypeFox and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+:root {
+  --wm-welcomeView-horizontal-padding: 20px;
+  --wm-welcomeView-elements-margin: 13px;
+  --wm-welcomeView-button-maxWidth: 260px;
+}
+
+.wm-Tree {
+  overflow: hidden;
+  font-size: var(--wm-ui-font-size1);
+  max-height: calc(100% - var(--wm-border-width));
+  position: relative;
+}
+
+.wm-Tree:focus .wm-TreeContainer.empty {
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: -1px;
+  opacity: 1 !important;
+  outline-color: var(--wm-focusBorder);
+}
+
+.wm-Tree:focus,
+.wm-TreeContainer .ReactVirtualized__List:focus {
+  outline: 0;
+  box-shadow: none;
+  border: none;
+}
+
+.wm-TreeContainer {
+  height: 100%;
+}
+
+.wm-TreeNode {
+  line-height: var(--wm-content-line-height);
+  display: flex;
+}
+
+.wm-TreeNode:hover {
+  background: var(--wm-list-hoverBackground);
+  color: var(--wm-list-hoverForeground);
+  cursor: pointer;
+}
+
+.wm-TreeNodeContent {
+  display: flex;
+  align-items: center;
+  width: calc(100% - var(--wm-scrollbar-rail-width));
+}
+
+.wm-ExpansionToggle {
+  display: flex;
+  justify-content: center;
+  padding-left: calc(var(--wm-ui-padding) / 2);
+  padding-right: calc(var(--wm-ui-padding) / 2);
+  min-width: var(--wm-icon-size);
+  min-height: var(--wm-icon-size);
+}
+
+.wm-ExpansionToggle.wm-mod-busy {
+  animation: wm-spin 1.25s linear infinite;
+}
+
+.wm-ExpansionToggle:not(.wm-mod-busy):hover {
+  cursor: pointer;
+}
+
+.wm-ExpansionToggle.wm-mod-collapsed:not(.wm-mod-busy) {
+  transform: rotate(-90deg);
+}
+
+.wm-Tree:focus .wm-TreeNode.wm-mod-selected,
+.wm-Tree .ReactVirtualized__List:focus .wm-TreeNode.wm-mod-selected {
+  background: var(--wm-list-activeSelectionBackground);
+  color: var(--wm-list-activeSelectionForeground) !important;
+}
+
+.wm-Tree:focus .wm-TreeNode.wm-mod-selected .wm-TreeNodeTail,
+.wm-Tree .ReactVirtualized__List:focus .wm-TreeNode.wm-mod-selected .wm-TreeNodeTail,
+.wm-Tree:focus .wm-TreeNode.wm-mod-selected .wm-caption-suffix,
+.wm-Tree .ReactVirtualized__List:focus .wm-TreeNode.wm-mod-selected .wm-caption-suffix,
+.wm-Tree:focus .wm-TreeNode.wm-mod-selected .wm-TreeNodeInfo,
+.wm-Tree .ReactVirtualized__List:focus .wm-TreeNode.wm-mod-selected .wm-TreeNodeInfo {
+  color: var(--wm-list-activeSelectionForeground) !important;
+}
+
+.wm-TreeNodeInfo {
+  color: var(--wm-foreground);
+  opacity: 0.7;
+}
+
+.wm-Tree .wm-TreeNode.wm-mod-selected {
+  background: var(--wm-list-inactiveSelectionBackground);
+  color: var(--wm-list-inactiveSelectionForeground);
+}
+
+.wm-TreeNode.wm-mod-not-selectable {
+  color: var(--wm-descriptionForeground);
+}
+
+.wm-TreeNode.wm-mod-not-selectable:hover {
+  background: none;
+  cursor: default;
+}
+
+.wm-TreeNodeSegment {
+  flex-grow: 0;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.wm-TreeNodeSegmentGrow {
+  flex-grow: 1 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wm-TreeNodeTail {
+  min-width: 1rem;
+  text-align: center;
+}
+
+.wm-TreeNodeSegment mark {
+  background-color: var(--wm-list-filterMatchBackground);
+  color: var(--wm-list-inactiveSelectionForeground);
+}
+
+.wm-tree-source-node-placeholder {
+  text-align: center;
+  font-style: italic;
+  opacity: var(--wm-mod-disabled-opacity);
+}
+
+.wm-tree-element-node {
+  width: 100%
+}
+
+.wm-tree-node-indent {
+  position: absolute;
+  height: var(--wm-content-line-height);
+  border-right: var(--wm-border-width) solid transparent;
+}
+
+.wm-tree-node-indent.always,
+.wm-TreeContainer:hover .wm-tree-node-indent.hover {
+  border-color: var(--wm-tree-inactiveIndentGuidesStroke);
+}
+
+.wm-tree-node-indent.active {
+  border-color: var(--wm-tree-indentGuidesStroke);
+}
+
+.wm-TreeContainer .wm-WelcomeView {
+  padding-top: var(--wm-ui-padding);
+  padding-right: var(--wm-welcomeView-horizontal-padding);
+  padding-left: var(--wm-welcomeView-horizontal-padding);
+}
+
+.wm-TreeContainer .wm-WelcomeView > * {
+  margin: var(--wm-welcomeView-elements-margin) 0;
+}
+
+.wm-TreeContainer .wm-WelcomeView .wm-WelcomeViewButtonWrapper {
+  display: flex;
+  padding: 0 var(--wm-ui-padding);
+}
+
+.wm-TreeContainer .wm-WelcomeView .wm-WelcomeViewButton {
+  width: 100%;
+  max-width: var(--wm-welcomeView-button-maxWidth);
+  margin: auto;
+}
+
+.wm-TreeContainer .wm-WelcomeView .wm-WelcomeViewCommandLink {
+  cursor: pointer;
+}
+
+.wm-TreeContainer .wm-WelcomeView .wm-WelcomeViewCommandLink.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: var(--wm-mod-disabled-opacity);
+}

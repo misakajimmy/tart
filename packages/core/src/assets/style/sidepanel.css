@@ -1,0 +1,357 @@
+/********************************************************************************
+ * Copyright (C) 2017, 2018 TypeFox and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+/*-----------------------------------------------------------------------------
+| Variables
+|----------------------------------------------------------------------------*/
+
+:root {
+  --wm-private-sidebar-tab-width: 48px;
+  --wm-private-sidebar-tab-height: 48px;
+  --wm-private-sidebar-tab-padding-top-and-bottom: 11px;
+  --wm-private-sidebar-tab-padding-left-and-right: 10px;
+  --wm-private-sidebar-scrollbar-rail-width: 7px;
+  --wm-private-sidebar-scrollbar-width: 5px;
+  --wm-private-sidebar-icon-size: 24px;
+}
+
+
+/*-----------------------------------------------------------------------------
+| SideBars (left and right)
+|----------------------------------------------------------------------------*/
+
+.p-TabBar.wm-app-sides {
+  display: block;
+  color: var(--wm-activityBar-inactiveForeground);
+  background: var(--wm-activityBar-background);
+  font-size: var(--wm-ui-font-size1);
+  min-width: var(--wm-private-sidebar-tab-width);
+  max-width: var(--wm-private-sidebar-tab-width);
+}
+
+.p-TabBar-content {
+  gap: 4px 0px;
+}
+
+.p-TabBar.wm-app-sides .p-TabBar-content {
+  z-index: 1;
+}
+
+.p-TabBar.wm-app-sides .p-TabBar-tab {
+  position: relative;
+  background: var(--wm-activityBar-background);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: var(--wm-private-sidebar-tab-height);
+  cursor: pointer;
+}
+
+.p-TabBar.wm-app-left .p-TabBar-tab {
+  border-left: var(--wm-panel-border-width) solid transparent;
+}
+
+.p-TabBar.wm-app-left.wm-app-sides {
+  border-right: var(--wm-panel-border-width) solid var(--wm-activityBar-border);
+}
+
+.p-TabBar.wm-app-right .p-TabBar-tab {
+  border-right: var(--wm-panel-border-width) solid transparent;
+}
+
+.p-Widget.p-TabBar.wm-app-right.wm-app-sides {
+  border-left: var(--wm-panel-border-width) solid var(--wm-activityBar-border);
+}
+
+.p-TabBar.wm-app-sides .p-TabBar-tab.p-mod-current,
+.p-TabBar.wm-app-sides .p-TabBar-tab:hover {
+  color: var(--wm-activityBar-foreground);
+  background-color: var(--wm-activityBar-activeBackground);
+  min-height: var(--wm-private-sidebar-tab-height);
+  height: var(--wm-private-sidebar-tab-height);
+  border-top: none;
+}
+
+.p-TabBar.wm-app-left .p-TabBar-tab.p-mod-current {
+  border-left: var(--wm-panel-border-width) solid var(--wm-activityBar-activeBorder);
+  border-top-color: transparent;
+}
+
+.p-TabBar.wm-app-left .p-TabBar-tab.p-mod-current.wm-mod-active {
+  border-left: var(--wm-panel-border-width) solid var(--wm-focusBorder);
+}
+
+.p-TabBar.wm-app-right .p-TabBar-tab.p-mod-current {
+  border-right: var(--wm-panel-border-width) solid var(--wm-activityBar-activeBorder);
+  border-top-color: transparent;
+}
+
+.p-TabBar.wm-app-right .p-TabBar-tab.p-mod-current.wm-mod-active {
+  border-right: var(--wm-panel-border-width) solid var(--wm-focusBorder);
+}
+
+.p-TabBar.wm-app-sides .p-TabBar-tabLabel,
+.p-TabBar.wm-app-sides .p-TabBar-tabCloseIcon {
+  display: none;
+}
+
+/* inactive common icons */
+.p-TabBar.wm-app-sides .p-TabBar-tabIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--wm-private-sidebar-icon-size);
+  text-align: center;
+  color: inherit;
+
+  /* svg */
+  width: var(--wm-private-sidebar-tab-width);
+  height: var(--wm-private-sidebar-tab-width);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: var(--wm-private-sidebar-icon-size);
+  -webkit-mask-size: var(--wm-private-sidebar-icon-size);
+  mask-position: 50% 50%;
+  -webkit-mask-position: 50% 50%;
+}
+
+/* inactive legacy/plugin icons */
+.p-TabBar.wm-app-sides .p-TabBar-tabIcon:not(.codicon) {
+  background: var(--wm-activityBar-inactiveForeground);
+}
+
+/* inactive file icons */
+.p-TabBar.wm-app-sides .file-icon.p-TabBar-tabIcon {
+  background: inherit !important;
+}
+
+/* inactive font-awesome icons */
+.p-TabBar.wm-app-sides .fa.p-TabBar-tabIcon {
+  background: none !important;
+}
+
+/* active icons */
+.p-TabBar.wm-app-sides .p-TabBar-tabIcon:hover,
+.p-TabBar.wm-app-sides .p-mod-current .p-TabBar-tabIcon {
+  color: var(--wm-activityBar-foreground);
+}
+
+/* active legacy/plugin icons */
+.p-TabBar.wm-app-sides .p-TabBar-tabIcon:not(.codicon):hover,
+.p-TabBar.wm-app-sides .p-mod-current .p-TabBar-tabIcon:not(.codicon) {
+  background-color: var(--wm-activityBar-foreground);
+}
+
+.p-TabBar.wm-app-left .p-TabBar-tabLabel {
+  transform-origin: top left 0;
+  transform: rotate(-90deg) translateX(-100%);
+}
+
+.p-TabBar.wm-app-right .p-TabBar-tabLabel {
+  transform-origin: top left 0;
+  transform: rotate(90deg) translateY(-50%);
+}
+
+#wm-left-content-panel.wm-mod-collapsed,
+#wm-right-content-panel.wm-mod-collapsed {
+  max-width: var(--wm-private-sidebar-tab-width);
+}
+
+#wm-left-content-panel > .p-Panel {
+  border-right: var(--wm-panel-border-width) solid var(--wm-activityBar-border);
+}
+
+#wm-right-content-panel > .p-Panel {
+  border-left: var(--wm-panel-border-width) solid var(--wm-activityBar-border);
+}
+
+.wm-side-panel {
+  background-color: var(--wm-sideBar-background);
+}
+
+.p-Widget.wm-side-panel .p-Widget,
+.p-Widget .wm-sidepanel-toolbar {
+  color: var(--wm-sideBar-foreground);
+}
+
+.wm-app-sidebar-container {
+  min-width: var(--wm-private-sidebar-tab-width);
+  max-width: var(--wm-private-sidebar-tab-width);
+  background: var(--wm-activityBar-background);
+  display: flex;
+  flex-direction: column;
+}
+
+.wm-app-sidebar-container .wm-app-sides {
+  flex-grow: 1;
+}
+
+.wm-app-sidebar-container .wm-sidebar-menu {
+  flex-shrink: 0;
+}
+
+.p-Widget.wm-sidebar-menu {
+  background-color: var(--wm-activityBar-background);
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.p-Widget.wm-sidebar-menu i {
+  padding: var(--wm-private-sidebar-tab-padding-top-and-bottom) var(--wm-private-sidebar-tab-padding-left-and-right);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--wm-activityBar-inactiveForeground);
+  background-color: var(--wm-activityBar-background);
+  font-size: var(--wm-private-sidebar-icon-size);
+}
+
+.wm-sidebar-menu i:hover {
+  color: var(--wm-activityBar-foreground);
+}
+
+.wm-sidebar-menu > i.codicon-menu {
+  font-size: 16px;
+}
+
+/*-----------------------------------------------------------------------------
+| Perfect scrollbar
+|----------------------------------------------------------------------------*/
+
+.p-TabBar.wm-app-sides > .ps__rail-y {
+  width: var(--wm-private-sidebar-scrollbar-rail-width);
+  z-index: 1000;
+}
+
+#wm-app-shell .p-TabBar.wm-app-sides > .ps__rail-y > .ps__thumb-y {
+  width: var(--wm-private-sidebar-scrollbar-width);
+  right: calc((var(--wm-private-sidebar-scrollbar-rail-width) - var(--wm-private-sidebar-scrollbar-width)) / 2);
+}
+
+.p-TabBar.wm-app-sides > .ps__rail-y:hover,
+.p-TabBar.wm-app-sides > .ps__rail-y:focus {
+  width: var(--wm-private-sidebar-scrollbar-rail-width);
+}
+
+.p-TabBar.wm-app-sides > .ps__rail-y:hover > .ps__thumb-y,
+.p-TabBar.wm-app-sides > .ps__rail-y:focus > .ps__thumb-y {
+  width: var(--wm-private-sidebar-scrollbar-width);
+  right: calc((var(--wm-private-sidebar-scrollbar-rail-width) - var(--wm-private-sidebar-scrollbar-width)) / 2);
+}
+
+
+/*-----------------------------------------------------------------------------
+| Bottom content panel
+|----------------------------------------------------------------------------*/
+
+#wm-bottom-content-panel {
+  background: var(--wm-panel-background);
+}
+
+#wm-bottom-content-panel .wm-input {
+  border-color: var(--wm-panelInput-border);
+}
+
+#wm-bottom-content-panel .p-DockPanel-handle[data-orientation='horizontal'] {
+  border-left: var(--wm-border-width) solid var(--wm-panel-border);
+}
+
+#wm-bottom-content-panel .p-TabBar {
+  border-top: var(--wm-border-width) solid var(--wm-panel-border);
+  background: inherit;
+}
+
+#wm-bottom-content-panel .p-TabBar-tab {
+  background: inherit;
+}
+
+#wm-bottom-content-panel .p-TabBar-tab:not(.p-mod-current) {
+  color: var(--wm-panelTitle-inactiveForeground);
+}
+
+#wm-bottom-content-panel .p-TabBar-tab.p-mod-current {
+  color: var(--wm-panelTitle-activeForeground);
+  border-top: var(--wm-border-width) solid var(--wm-panelTitle-activeBorder);
+}
+
+#wm-bottom-content-panel .p-TabBar-tab.p-mod-current.wm-mod-active {
+  border-top-color: var(--wm-focusBorder);
+}
+
+/*-----------------------------------------------------------------------------
+| Hidden tab bars used for rendering vertical side bars
+|----------------------------------------------------------------------------*/
+
+.wm-TabBar-hidden-content {
+  display: flex;
+  position: absolute;
+  visibility: hidden;
+}
+
+.p-TabBar.wm-app-sides > .wm-TabBar-hidden-content .p-TabBar-tab {
+  line-height: var(--wm-private-sidebar-tab-width);
+}
+
+.p-TabBar.wm-app-left > .wm-TabBar-hidden-content .p-TabBar-tabLabel {
+  transform: none;
+}
+
+.p-TabBar.wm-app-right > .wm-TabBar-hidden-content .p-TabBar-tabLabel {
+  transform: none;
+}
+
+/*-----------------------------------------------------------------------------
+| Sidepanel Toolbar
+|----------------------------------------------------------------------------*/
+
+.wm-sidepanel-toolbar {
+  min-height: calc(var(--wm-private-horizontal-tab-height) + var(--wm-private-horizontal-tab-scrollbar-rail-height) / 2);
+  display: flex;
+  padding-left: 5px;
+  align-items: center;
+  background-color: var(--wm-sideBar-background);
+}
+
+.wm-sidepanel-toolbar .wm-sidepanel-title {
+  color: var(--wm-settings-headerForeground);
+  flex: 1;
+  margin-left: 14px;
+  text-transform: uppercase;
+  font-size: var(--wm-ui-font-size0);
+}
+
+.wm-sidepanel-toolbar .p-TabBar-toolbar .item {
+  color: var(--wm-icon-foreground);
+}
+
+.wm-sidepanel-toolbar .p-TabBar-toolbar .item > div {
+  height: 18px;
+  width: 18px;
+  background-repeat: no-repeat;
+}
+
+.noWrapInfo {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.noWrapInfoTree {
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

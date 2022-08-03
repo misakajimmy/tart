@@ -1,0 +1,155 @@
+/********************************************************************************
+ * Copyright (C) 2017, 2018 TypeFox and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+@import url('../../../../../node_modules/perfect-scrollbar/css/perfect-scrollbar.css');
+
+::-webkit-scrollbar {
+  height: var(--wm-scrollbar-width);
+  width: var(--wm-scrollbar-width);
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--wm-scrollbarSlider-background);
+}
+
+::-webkit-scrollbar:hover {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--wm-scrollbarSlider-hoverBackground);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--wm-scrollbarSlider-activeBackground);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+/*-----------------------------------------------------------------------------
+| Perfect scrollbar
+|----------------------------------------------------------------------------*/
+
+#wm-app-shell .ps__rail-x,
+#wm-dialog-shell .ps__rail-x,
+#wm-breadcrumbs-popups-overlay .ps__rail-x {
+  height: var(--wm-scrollbar-rail-width);
+}
+
+#wm-app-shell .ps__rail-x > .ps__thumb-x,
+#wm-dialog-shell .ps__rail-x > .ps__thumb-x,
+#wm-breadcrumbs-popups-overlay .ps__thumb-x {
+  height: var(--wm-scrollbar-width);
+  bottom: calc((var(--wm-scrollbar-rail-width) - var(--wm-scrollbar-width)) / 2);
+  background: var(--wm-scrollbarSlider-background);
+  border-radius: 0px;
+}
+
+#wm-app-shell .ps__rail-x:hover,
+#wm-app-shell .ps__rail-x:focus,
+#wm-dialog-shell .ps__rail-x:hover,
+#wm-dialog-shell .ps__rail-x:focus,
+#wm-breadcrumbs-popups-overlay .ps__rail-x:hover,
+#wm-breadcrumbs-popups-overlay .ps__rail-x:focus {
+  height: var(--wm-scrollbar-rail-width);
+}
+
+#wm-app-shell .ps__rail-x:hover > .ps__thumb-x,
+#wm-app-shell .ps__rail-x:focus > .ps__thumb-x,
+#wm-app-shell .ps__rail-x.ps--clicking .ps__thumb-x,
+#wm-dialog-shell .ps__rail-x:hover > .ps__thumb-x,
+#wm-dialog-shell .ps__rail-x:focus > .ps__thumb-x,
+#wm-dialog-shell .ps__rail-x.ps--clicking .ps__thumb-x,
+#wm-breadcrumbs-popups-overlay .ps__rail-x:hover > .ps__thumb-x,
+#wm-breadcrumbs-popups-overlay .ps__rail-x:focus > .ps__thumb-x,
+#wm-breadcrumbs-popups-overlay .ps__rail-x.ps--clicking .ps__thumb-x {
+  height: var(--wm-scrollbar-width);
+}
+
+#wm-app-shell .ps__rail-y,
+#wm-dialog-shell .ps__rail-y,
+#wm-breadcrumbs-popups-overlay .ps__rail-y {
+  width: var(--wm-scrollbar-rail-width);
+}
+
+#wm-app-shell .ps__rail-y > .ps__thumb-y,
+#wm-dialog-shell .ps__rail-y > .ps__thumb-y,
+#wm-breadcrumbs-popups-overlay .ps__rail-y > .ps__thumb-y {
+  width: var(--wm-scrollbar-width);
+  right: calc((var(--wm-scrollbar-rail-width) - var(--wm-scrollbar-width)) / 2);
+  background: var(--wm-scrollbarSlider-background);
+  border-radius: 0px;
+}
+
+#wm-app-shell .ps__rail-y:hover,
+#wm-app-shell .ps__rail-y:focus,
+#wm-dialog-shell .ps__rail-y:hover,
+#wm-dialog-shell .ps__rail-y:focus,
+#wm-breadcrumbs-popups-overlay .ps__rail-y:hover,
+#wm-breadcrumbs-popups-overlay .ps__rail-y:focus {
+  width: var(--wm-scrollbar-rail-width);
+}
+
+#wm-app-shell .ps__rail-y:hover > .ps__thumb-y,
+#wm-app-shell .ps__rail-y:focus > .ps__thumb-y,
+#wm-app-shell .ps__rail-y.ps--clicking .ps__thumb-y,
+#wm-dialog-shell .ps__rail-y:hover > .ps__thumb-y,
+#wm-dialog-shell .ps__rail-y:focus > .ps__thumb-y,
+#wm-dialog-shell .ps__rail-y.ps--clicking .ps__thumb-y,
+#wm-breadcrumbs-popups-overlay .ps__rail-y:hover > .ps__thumb-y,
+#wm-breadcrumbs-popups-overlay .ps__rail-y:focus > .ps__thumb-y,
+#wm-breadcrumbs-popups-overlay .ps__rail-y.ps--clicking .ps__thumb-y {
+  right: calc((var(--wm-scrollbar-rail-width) - var(--wm-scrollbar-width)) / 2);
+  width: var(--wm-scrollbar-width);
+}
+
+#wm-app-shell .ps [class^='ps__rail'].ps--clicking > [class^='ps__thumb'],
+#wm-dialog-shell .ps [class^='ps__rail'].ps--clicking > [class^='ps__thumb'],
+#wm-breadcrumbs-popups-overlay .ps [class^='ps__rail'].ps--clicking > [class^='ps__thumb'] {
+  background-color: var(--wm-scrollbarSlider-activeBackground);
+}
+
+#wm-app-shell .ps [class^='ps__rail'] > [class^='ps__thumb']:hover,
+#wm-app-shell .ps [class^='ps__rail'] > [class^='ps__thumb']:focus,
+#wm-dialog-shell .ps [class^='ps__rail'] > [class^='ps__thumb']:hover,
+#wm-dialog-shell .ps [class^='ps__rail'] > [class^='ps__thumb']:focus,
+#wm-breadcrumbs-popups-overlay .ps [class^='ps__rail'] > [class^='ps__thumb']:hover,
+#wm-breadcrumbs-popups-overlay .ps [class^='ps__rail'] > [class^='ps__thumb']:focus {
+  background: var(--wm-scrollbarSlider-hoverBackground);
+}
+
+#wm-app-shell .ps [class^='ps__rail'] > [class^='ps__thumb']:active,
+#wm-dialog-shell .ps [class^='ps__rail'] > [class^='ps__thumb']:active,
+#wm-breadcrumbs-popups-overlay .ps [class^='ps__rail'] > [class^='ps__thumb']:active {
+  background: var(--wm-scrollbarSlider-activeBackground);
+}
+
+#wm-app-shell .ps:hover > [class^='ps__rail'],
+#wm-app-shell .ps--focus > [class^='ps__rail'],
+#wm-app-shell .ps--scrolling-y > [class^='ps__rail'],
+#wm-dialog-shell .ps:hover > [class^='ps__rail'],
+#wm-dialog-shell .ps--focus > [class^='ps__rail'],
+#wm-dialog-shell .ps--scrolling-y > [class^='ps__rail'],
+#wm-breadcrumbs-popups-overlay .ps:hover > [class^='ps__rail'],
+#wm-breadcrumbs-popups-overlay .ps--focus > [class^='ps__rail'],
+#wm-breadcrumbs-popups-overlay .ps--scrolling-y > [class^='ps__rail'] {
+  opacity: 1;
+  background: transparent;
+}

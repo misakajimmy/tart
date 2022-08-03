@@ -4,7 +4,6 @@ import {FrontendApplication} from '@tart/core/lib/browser/frontend-application';
 import {Promise} from 'bluebird';
 
 let inited = false;
-
 export function TartCore() {
   const coreRef = useRef<HTMLDivElement>(undefined);
   const [containerLoader] = useState<ContainerLoader>(new ContainerLoader());

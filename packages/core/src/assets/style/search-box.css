@@ -1,0 +1,121 @@
+/********************************************************************************
+ * Copyright (C) 2018 TypeFox and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+:root {
+  --wm-search-box-padding: 3px;
+  --wm-search-box-radius: 2px;
+  --wm-search-box-spacing: 4px;
+  --wm-search-box-max-width: 500px;
+}
+
+.wm-search-box {
+  position: absolute;
+  display: flex;
+  top: var(--wm-search-box-spacing);
+  right: var(--wm-search-box-spacing);
+  box-shadow: var(--wm-border-width) var(--wm-border-width) var(--wm-widget-shadow);
+  background-color: var(--wm-listFilterWidget-background);
+  z-index: calc(var(--wm-tabbar-toolbar-z-index) + 1);
+  border-radius: var(--wm-search-box-radius);
+  padding: var(--wm-search-box-padding);
+  border: var(--wm-border-width) solid rgba(0, 0, 0, 0)
+}
+
+.wm-search-box.no-match {
+  border: var(--wm-border-width) solid var(--wm-inputValidation-errorBorder)
+}
+
+.wm-search-input {
+  flex-grow: 1;
+  user-select: none;
+}
+
+.wm-search-box > .wm-search-buttons-wrapper {
+  max-width: 0px;
+  transition: max-width .2s ease-out;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.wm-search-box:hover > .wm-search-buttons-wrapper {
+  max-width: var(--wm-search-box-max-width);
+  transition: max-width .2s ease-in;
+}
+
+.wm-search-button {
+  min-width: 1rem;
+  text-align: center;
+  flex-grow: 0;
+  font-family: FontAwesome;
+  font-size: calc(var(--wm-content-font-size) * 0.8);
+  color: var(--wm-editorWidget-foreground);
+}
+
+.wm-search-button.codicon.codicon-filter {
+  color: var(--wm-editorWidget-foreground);
+  align-self: flex-end;
+  margin-left: var(--wm-search-box-spacing);
+}
+
+.wm-search-button.codicon-filter:not(.filter-active):before {
+  content: "\eb85";
+}
+
+.wm-search-button.codicon-filter.filter-active:before {
+  content: "\eb83";
+}
+
+.wm-search-button-next:before {
+  content: "\f107";
+}
+
+.wm-search-button-next:hover,
+.wm-search-button-previous:hover,
+.wm-search-button-close:hover,
+.wm-search-button.codicon-filter:hover {
+  cursor: pointer;
+}
+
+.wm-search-button-next:hover:before {
+  content: "\f107";
+}
+
+.wm-search-button-previous:before {
+  content: "\f106";
+}
+
+.wm-search-button-previous:hover:before {
+  content: "\f106";
+}
+
+.wm-search-button-close:before {
+  content: "\f00d";
+}
+
+.wm-search-button-close:hover:before {
+  content: "\f00d";
+}
+
+.wm-non-selectable {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
+}
