@@ -23,3 +23,4 @@ export * from './strings';
 export * from './selection';
 export * from './selection-command-handler';
 export * from './uri-command-handler';
+export * from './container';

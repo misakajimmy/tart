@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {ContainerLoader} from '@tart/core';
 import {FrontendApplication} from '@tart/core/lib/browser/frontend-application';
 import {Promise} from 'bluebird';
+import {ContainerLoader} from '@tart/core/lib/common';
 
 let inited = false;
 export function TartCore() {
