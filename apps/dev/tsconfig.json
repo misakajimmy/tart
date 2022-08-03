@@ -15,6 +15,7 @@
       "ESNext"
     ],
     "types": [
+      "reflect-metadata"
     ]
   },
   "exclude": [

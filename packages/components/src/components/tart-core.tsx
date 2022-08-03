@@ -1,5 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {ContainerLoader} from '@tart/core';
+import {FrontendApplication} from '@tart/core/lib/browser/frontend-application';
+import {Promise} from 'bluebird';
 
 let inited = false;
 
@@ -13,18 +15,12 @@ export function TartCore() {
       const modules = [
         '@tart/core/lib/browser/frontend-application-module.js'
       ];
-      let frontendApplication;
-      import('@tart/core/lib/browser').then((module) => {
-        frontendApplication = module.FrontendApplication;
+      containerLoader.importModules(modules).then(() => {
+        return Promise.delay(1000);
       }).then(() => {
-        containerLoader.importModules(modules).then(() => {
-          // @ts-ignore
-          // console.log(containerLoader.container.getAll());
-          // const frontendApplication = FrontendApplication;
-          containerLoader.getService(frontendApplication);
-          // containerLoader.getService(FrontendApplication).start({host: coreRef.current});
-        });
-      })
+        console.log(containerLoader.container);
+        containerLoader.getService<FrontendApplication>(FrontendApplication).start({host: coreRef.current});
+      });
       // frontendApplication.
     }
   });

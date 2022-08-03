@@ -31,7 +31,16 @@ export class ContainerLoader {
   }
 
   getService<T>(service: interfaces.ServiceIdentifier<T>): T {
-    console.log(this._container);
     return this._container.get(service);
   }
+}
+
+/**
+ * The namespace for `ApplicationShell` class statics.
+ */
+export namespace ApplicationShell {
+  /**
+   * The areas of the application shell where widgets can reside.
+   */
+  export type Area = 'main' | 'top' | 'left' | 'right' | 'bottom';
 }

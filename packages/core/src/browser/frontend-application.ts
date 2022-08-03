@@ -1,6 +1,13 @@
-import {inject, injectable} from 'inversify';
+import {inject, injectable, named} from 'inversify';
 import {ContributionProvider, MaybePromise} from '../common';
 import {FrontendApplicationStateService} from './frontend-application-state';
+import {Widget} from '@lumino/widgets';
+import {ApplicationShell} from './shell';
+
+/**
+ * Clients can implement to get a callback for contributing widgets to a shell on start.
+ */
+export const FrontendApplicationContribution = Symbol('FrontendApplicationContribution');
 
 export interface FrontendApplicationContribution {
   /**
@@ -31,14 +38,31 @@ export interface IFrontendApplicationStartProps {
 export class FrontendApplication {
 
   constructor(
+      @inject(ContributionProvider) @named(FrontendApplicationContribution)
       protected readonly contributions: ContributionProvider<FrontendApplicationContribution>,
+      @inject(ApplicationShell) protected readonly _shell: ApplicationShell,
       @inject(FrontendApplicationStateService) protected readonly stateService: FrontendApplicationStateService,
   ) {
+  }
+
+  get shell(): ApplicationShell {
+    return this._shell;
   }
 
   async start(props: IFrontendApplicationStartProps): Promise<void> {
     await this.startContributions();
     this.stateService.state = 'started_contributions';
+
+    const {host} = props;
+    this.attachShell(host);
+  }
+
+  /**
+   * Attach the application shell to the host element. If a startup indicator is present, the shell is
+   * inserted before that indicator so it is not visible yet.
+   */
+  protected attachShell(host: HTMLElement): void {
+    Widget.attach(this.shell, host);
   }
 
   /**
