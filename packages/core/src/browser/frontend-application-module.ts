@@ -62,6 +62,7 @@ import {ColorRegistry} from './color-registry';
 import {ColorApplicationContribution, ColorContribution} from './color-application-contribution';
 import {ThemeService} from './theming';
 import {
+  DefaultQuickAccessRegistry,
   QuickAccessContribution,
   QuickCommandFrontendContribution,
   QuickCommandService,
@@ -84,7 +85,7 @@ import {LocalizationProvider} from '../common/i18n/localization-provider';
 import {HttpOpenHandler} from './http-open-handler';
 import {ExternalUriService} from './external-uri-service';
 
-require('../assets/style/materialcolors.css').use();
+import '../assets/style/materialcolors.css';
 
 // FrontendApplicationConfigProvider.set();
 
@@ -96,6 +97,8 @@ export const FrontendApplicationModule = new ContainerModule((bind, unbind, isBo
   bind(NoneIconTheme).toSelf().inSingletonScope();
   bind(LabelProviderContribution).toService(NoneIconTheme);
   bind(IconThemeService).toSelf().inSingletonScope();
+
+  // bind(QuickAccessRegistry).toService(DefaultQuickAccessRegistry);
 
   bind(ColorRegistry).toSelf().inSingletonScope();
   bindContributionProvider(bind, ColorContribution);
@@ -276,6 +279,9 @@ export const FrontendApplicationModule = new ContainerModule((bind, unbind, isBo
 
   bind(LocalizationProvider).toSelf().inSingletonScope();
   bindCorePreferences(bind);
+
+  bind(DefaultQuickAccessRegistry).toSelf().inSingletonScope();
+
 });
 
 export default FrontendApplicationModule;

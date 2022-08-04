@@ -1,5 +1,6 @@
 import {CancellationToken, Disposable} from '../../common';
 import {QuickPicks} from '../../common/quick-pick-service';
+import {injectable} from 'inversify';
 
 export const QuickAccessContribution = Symbol('QuickAccessContribution');
 
@@ -61,4 +62,23 @@ export interface QuickAccessRegistry {
   getQuickAccessProvider(prefix: string): QuickAccessProviderDescriptor | undefined;
 
   clear(): void;
+}
+
+@injectable()
+export class DefaultQuickAccessRegistry implements QuickAccessRegistry {
+  clear(): void {
+  }
+
+  getQuickAccessProvider(prefix: string): QuickAccessProviderDescriptor | undefined {
+    return undefined;
+  }
+
+  getQuickAccessProviders(): QuickAccessProviderDescriptor[] {
+    return [];
+  }
+
+  registerQuickAccessProvider(provider: QuickAccessProviderDescriptor): Disposable {
+    return undefined;
+  }
+
 }

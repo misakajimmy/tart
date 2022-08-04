@@ -12,21 +12,37 @@ export class ContainerLoader {
   }
 
   async importModules(modules: string[]) {
+    console.log(modules);
     await modules.map(async module => {
       await this.importModule(module);
     });
+    console.log('over');
+  }
+
+  async loadsAsync(jsModules: Promise<any[]>) {
+    const modules = (await jsModules).map(jsModule => {
+      return jsModule.default;
+    });
+    console.log(modules);
+    await this.loads(modules);
   }
 
   protected async importModule(module: string) {
-    const m = await import(`@tart_module/${module}`);
-    await this.load(m);
+    console.log('start');
+    // const m = await import(`@tart_module/${module}`);
+    // await this.load(m.default);
+  }
+
+  protected async loads(jsModules: any[]) {
+    await jsModules.map(async (jsModule) => {
+      await this.load(jsModule);
+    });
   }
 
   protected async load(jsModule: any) {
-    const module = await jsModule.default;
-    if (!this._modules.includes(module)) {
-      this._modules.push(module);
-      this._container.load(module);
+    if (!this._modules.includes(jsModule)) {
+      this._modules.push(jsModule);
+      this._container.load(jsModule);
     }
   }
 
