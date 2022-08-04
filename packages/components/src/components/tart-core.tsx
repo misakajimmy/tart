@@ -18,8 +18,6 @@ export function TartCore() {
       containerLoader.loadsAsync(modules).then(() => {
         return Promise.delay(3000);
       }).then(() => {
-        console.log(containerLoader.container);
-        console.log(containerLoader.container.isBound(QuickAccessRegistry));
         containerLoader.getService<FrontendApplication>(FrontendApplication).start({host: coreRef.current});
       });
       // frontendApplication.
@@ -27,6 +25,5 @@ export function TartCore() {
   });
 
   return <div className={'tart-core'} ref={coreRef}>
-    tart core
   </div>;
 }
