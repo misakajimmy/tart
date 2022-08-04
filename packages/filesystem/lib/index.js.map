@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.ts"],"names":[],"mappings":"AAAA,cAAc,WAAW,CAAC","file":"../src/index.js","sourcesContent":["export * from './browser';\r\n"]}

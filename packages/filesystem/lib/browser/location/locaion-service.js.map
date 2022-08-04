@@ -1,0 +1,1 @@
+{"version":3,"sources":["browser/location/locaion-service.ts"],"names":[],"mappings":"","file":"../../../src/browser/location/locaion-service.js","sourcesContent":["import URI from '@tart/core/lib/common/uri';\r\n\r\nexport interface LocationService {\r\n    location: URI | undefined;\r\n\r\n    drives(): Promise<URI[]>;\r\n}\r\n"]}

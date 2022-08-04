@@ -1,0 +1,1 @@
+{"version":3,"sources":["browser/location/index.ts"],"names":[],"mappings":"AAAA,cAAc,mBAAmB,CAAC;AAClC,cAAc,mBAAmB,CAAC","file":"../../../src/browser/location/index.js","sourcesContent":["export * from './loaction-render';\r\nexport * from './locaion-service';\r\n"]}

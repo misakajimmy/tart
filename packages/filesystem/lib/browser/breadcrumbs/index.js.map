@@ -1,0 +1,1 @@
+{"version":3,"sources":["browser/breadcrumbs/index.ts"],"names":[],"mappings":"AAAA,cAAc,uBAAuB,CAAC;AACtC,cAAc,kCAAkC,CAAC;AACjD,cAAc,qCAAqC,CAAC","file":"../../../src/browser/breadcrumbs/index.js","sourcesContent":["export * from './filepath-breadcrumb';\r\nexport * from './filepath-breadcrumbs-container';\r\nexport * from './filepath-breadcrumbs-contribution';\r\n"]}

@@ -16,6 +16,7 @@ export function TartCore() {
             }).then(() => {
                 containerLoader.getService(FrontendApplication).start({ host: coreRef.current });
             });
+            // frontendApplication.
         }
     });
     return React.createElement("div", { className: 'tart-core', ref: coreRef });

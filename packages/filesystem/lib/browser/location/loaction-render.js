@@ -1,0 +1,321 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var LocationListRenderer_1;
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { DisposableCollection, Emitter, Path } from '@tart/core/lib/common';
+import { FileService } from '../file-service';
+import URI from '@tart/core/lib/common/uri';
+import { inject, injectable, postConstruct } from 'inversify';
+import { codicon, ReactRenderer } from '@tart/core';
+class ResolvedDirectoryCache {
+    constructor(fileService) {
+        this.fileService = fileService;
+        this.pendingResolvedDirectories = new Map();
+        this.cachedDirectories = new Map();
+        this.directoryResolvedEmitter = new Emitter();
+        this.onDirectoryDidResolve = this.directoryResolvedEmitter.event;
+    }
+    tryResolveChildDirectories(inputAsURI) {
+        const parentDirectory = inputAsURI.path.dir.toString();
+        const cachedDirectories = this.cachedDirectories.get(parentDirectory);
+        const pendingDirectories = this.pendingResolvedDirectories.get(parentDirectory);
+        if (cachedDirectories) {
+            return cachedDirectories;
+        }
+        else if (!pendingDirectories) {
+            this.pendingResolvedDirectories.set(parentDirectory, this.createResolutionPromise(parentDirectory));
+        }
+        return undefined;
+    }
+    async createResolutionPromise(directoryToResolve) {
+        return this.fileService.resolve(new URI(directoryToResolve)).then(({ children }) => {
+            if (children) {
+                const childDirectories = children.filter(child => child.isDirectory)
+                    .map(directory => `${directory.resource.path}/`);
+                this.cachedDirectories.set(directoryToResolve, childDirectories);
+                this.directoryResolvedEmitter.fire({ parent: directoryToResolve, children: childDirectories });
+            }
+        }).catch(e => {
+            // no-op
+        });
+    }
+}
+export const LocationListRendererFactory = Symbol('LocationListRendererFactory');
+export const LocationListRendererOptions = Symbol('LocationListRendererOptions');
+let LocationListRenderer = LocationListRenderer_1 = class LocationListRenderer extends ReactRenderer {
+    constructor(options) {
+        super(options.host);
+        this.options = options;
+        this.toDisposeOnNewCache = new DisposableCollection();
+        this.doAttemptAutocomplete = true;
+        this._doShowTextInput = false;
+        this.doAfterRender = () => {
+            const locationList = this.locationList;
+            const locationListTextInput = this.locationTextInput;
+            if (locationList) {
+                const currentLocation = this.service.location;
+                locationList.value = currentLocation ? currentLocation.toString() : '';
+            }
+            else if (locationListTextInput) {
+                locationListTextInput.focus();
+            }
+        };
+        this.handleLocationChanged = (e) => this.onLocationChanged(e);
+        this.handleTextInputOnChange = (e) => this.trySuggestDirectory(e);
+        this.handleTextInputKeyDown = (e) => this.handleControlKeys(e);
+        this.handleIconKeyDown = (e) => this.toggleInputOnKeyDown(e);
+        this.handleTextInputOnBlur = () => this.toggleToSelectInput();
+        this.handleTextInputMouseDown = (e) => this.toggleToTextInputOnMouseDown(e);
+        this.service = options.model;
+        this.doLoadDrives();
+    }
+    get doShowTextInput() {
+        return this._doShowTextInput;
+    }
+    set doShowTextInput(doShow) {
+        this._doShowTextInput = doShow;
+        if (doShow) {
+            this.initResolveDirectoryCache();
+        }
+    }
+    get locationList() {
+        const locationList = this.host.getElementsByClassName(LocationListRenderer_1.Styles.LOCATION_LIST_CLASS)[0];
+        if (locationList instanceof HTMLSelectElement) {
+            return locationList;
+        }
+        return undefined;
+    }
+    get locationTextInput() {
+        const locationTextInput = this.host.getElementsByClassName(LocationListRenderer_1.Styles.LOCATION_TEXT_INPUT_CLASS)[0];
+        if (locationTextInput instanceof HTMLInputElement) {
+            return locationTextInput;
+        }
+        return undefined;
+    }
+    async init() {
+        // const homeDirWithPrefix = await this.variablesServer.getHomeDirUri();
+        // this.homeDir = (new URI(homeDirWithPrefix)).path.toString();
+        this.homeDir = (new URI()).path.toString();
+    }
+    render() {
+        ReactDOM.render(this.doRender(), this.host, this.doAfterRender);
+    }
+    dispose() {
+        super.dispose();
+        this.toDisposeOnNewCache.dispose();
+    }
+    initResolveDirectoryCache() {
+        this.toDisposeOnNewCache.dispose();
+        this.directoryCache = new ResolvedDirectoryCache(this.fileService);
+        this.toDisposeOnNewCache.push(this.directoryCache.onDirectoryDidResolve(({ parent, children }) => {
+            if (this.locationTextInput) {
+                const expandedPath = Path.untildify(this.locationTextInput.value, this.homeDir);
+                const inputParent = (new URI(expandedPath)).path.dir.toString();
+                if (inputParent === parent) {
+                    this.tryRenderFirstMatch(this.locationTextInput, children);
+                }
+            }
+        }));
+    }
+    doRender() {
+        return (React.createElement(React.Fragment, null,
+            this.renderInputIcon(),
+            this.doShowTextInput
+                ? this.renderTextInput()
+                : this.renderSelectInput()));
+    }
+    renderInputIcon() {
+        return (React.createElement("span", { 
+            // onMouseDown is used since it will fire before 'onBlur'. This prevents
+            // a re-render when textinput is in focus and user clicks toggle icon
+            onMouseDown: this.handleTextInputMouseDown, onKeyDown: this.handleIconKeyDown, className: LocationListRenderer_1.Styles.LOCATION_INPUT_TOGGLE_CLASS, tabIndex: 0, id: `${this.doShowTextInput ? 'text-input' : 'select-input'}`, title: this.doShowTextInput
+                ? LocationListRenderer_1.Tooltips.TOGGLE_SELECT_INPUT
+                : LocationListRenderer_1.Tooltips.TOGGLE_TEXT_INPUT },
+            React.createElement("i", { className: codicon(this.doShowTextInput ? 'folder-opened' : 'edit') })));
+    }
+    renderTextInput() {
+        var _a;
+        return (React.createElement("input", { className: 'tart-select ' + LocationListRenderer_1.Styles.LOCATION_TEXT_INPUT_CLASS, defaultValue: (_a = this.service.location) === null || _a === void 0 ? void 0 : _a.path.toString(), onBlur: this.handleTextInputOnBlur, onChange: this.handleTextInputOnChange, onKeyDown: this.handleTextInputKeyDown, spellCheck: false }));
+    }
+    renderSelectInput() {
+        const options = this.collectLocations().map(value => this.renderLocation(value));
+        return (React.createElement("select", { className: `tart-select ${LocationListRenderer_1.Styles.LOCATION_LIST_CLASS}`, onChange: this.handleLocationChanged }, ...options));
+    }
+    toggleInputOnKeyDown(e) {
+        if (e.key === 'Enter') {
+            this.doShowTextInput = true;
+            this.render();
+        }
+    }
+    toggleToTextInputOnMouseDown(e) {
+        if (e.currentTarget.id === 'select-input') {
+            e.preventDefault();
+            this.doShowTextInput = true;
+            this.render();
+        }
+    }
+    toggleToSelectInput() {
+        if (this.doShowTextInput) {
+            this.doShowTextInput = false;
+            this.render();
+        }
+    }
+    /**
+     * Collects the available locations based on the currently selected, and appends the available drives to it.
+     */
+    collectLocations() {
+        const location = this.service.location;
+        const locations = (!!location ? location.allLocations : []).map(uri => ({ uri }));
+        if (this._drives) {
+            const drives = this._drives.map(uri => ({ uri, isDrive: true }));
+            // `URI.allLocations` returns with the URI without the trailing slash unlike `FileUri.create(fsPath)`.
+            // to be able to compare file:///path/to/resource with file:///path/to/resource/.
+            const toUriString = (uri) => {
+                const toString = uri.toString();
+                return toString.endsWith('/') ? toString.slice(0, -1) : toString;
+            };
+            drives.forEach(drive => {
+                const index = locations.findIndex(loc => toUriString(loc.uri) === toUriString(drive.uri));
+                // Ignore drives which are already discovered as a location based on the current model root URI.
+                if (index === -1) {
+                    // Make sure, it does not have the trailing slash.
+                    locations.push({ uri: new URI(toUriString(drive.uri)), isDrive: true });
+                }
+                else {
+                    // This is necessary for Windows to be able to show `/e:/` as a drive and `c:` as "non-drive" in the same way.
+                    // `URI.path.toString()` Vs. `URI.displayName` behaves a bit differently on Windows.
+                    // https://github.com/eclipse-tart/tart/pull/3038#issuecomment-425944189
+                    locations[index].isDrive = true;
+                }
+            });
+        }
+        this.doLoadDrives();
+        return locations;
+    }
+    /**
+     * Asynchronously loads the drives (if not yet available) and triggers a UI update on success with the new values.
+     */
+    doLoadDrives() {
+        if (!this._drives) {
+            this.service.drives().then(drives => {
+                // If the `drives` are empty, something already went wrong.
+                if (drives.length > 0) {
+                    this._drives = drives;
+                    this.render();
+                }
+            });
+        }
+    }
+    renderLocation(location) {
+        const { uri, isDrive } = location;
+        const value = uri.toString();
+        return React.createElement("option", { value: value, key: uri.toString() }, isDrive ? uri.path.toString() : uri.displayName);
+    }
+    onLocationChanged(e) {
+        const locationList = this.locationList;
+        if (locationList) {
+            const value = locationList.value;
+            const uri = new URI(value);
+            this.trySetNewLocation(uri);
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    }
+    trySetNewLocation(newLocation) {
+        var _a;
+        if (this.lastUniqueTextInputLocation === undefined) {
+            this.lastUniqueTextInputLocation = this.service.location;
+        }
+        // prevent consecutive repeated locations from being added to location history
+        if (((_a = this.lastUniqueTextInputLocation) === null || _a === void 0 ? void 0 : _a.path.toString()) !== newLocation.path.toString()) {
+            this.lastUniqueTextInputLocation = newLocation;
+            this.service.location = newLocation;
+        }
+    }
+    trySuggestDirectory(e) {
+        if (this.doAttemptAutocomplete) {
+            const inputElement = e.currentTarget;
+            const { value } = inputElement;
+            if ((value.startsWith('/') || value.startsWith('~/')) && value.slice(-1) !== '/') {
+                const expandedPath = Path.untildify(value, this.homeDir);
+                const valueAsURI = new URI(expandedPath);
+                const autocompleteDirectories = this.directoryCache.tryResolveChildDirectories(valueAsURI);
+                if (autocompleteDirectories) {
+                    this.tryRenderFirstMatch(inputElement, autocompleteDirectories);
+                }
+            }
+        }
+    }
+    tryRenderFirstMatch(inputElement, children) {
+        const { value, selectionStart } = inputElement;
+        if (this.locationTextInput) {
+            const expandedPath = Path.untildify(value, this.homeDir);
+            const firstMatch = children === null || children === void 0 ? void 0 : children.find(child => child.includes(expandedPath));
+            if (firstMatch) {
+                const contractedPath = value.startsWith('~') ? Path.tildify(firstMatch, this.homeDir) : firstMatch;
+                this.locationTextInput.value = contractedPath;
+                this.locationTextInput.selectionStart = selectionStart;
+                this.locationTextInput.selectionEnd = firstMatch.length;
+            }
+        }
+    }
+    handleControlKeys(e) {
+        this.doAttemptAutocomplete = e.key !== 'Backspace';
+        if (e.key === 'Enter') {
+            const locationTextInput = this.locationTextInput;
+            if (locationTextInput) {
+                // expand '~' if present and remove extra whitespace and any trailing slashes or periods.
+                const sanitizedInput = locationTextInput.value.trim().replace(/[\/\\.]*$/, '');
+                const untildifiedInput = Path.untildify(sanitizedInput, this.homeDir);
+                const uri = new URI(untildifiedInput);
+                this.trySetNewLocation(uri);
+                this.toggleToSelectInput();
+            }
+        }
+        else if (e.key === 'Escape') {
+            this.toggleToSelectInput();
+        }
+        else if (e.key === 'Tab') {
+            e.preventDefault();
+            const textInput = this.locationTextInput;
+            if (textInput) {
+                textInput.selectionStart = textInput.value.length;
+            }
+        }
+        e.stopPropagation();
+    }
+};
+__decorate([
+    inject(FileService)
+], LocationListRenderer.prototype, "fileService", void 0);
+__decorate([
+    postConstruct()
+], LocationListRenderer.prototype, "init", null);
+LocationListRenderer = LocationListRenderer_1 = __decorate([
+    injectable(),
+    __param(0, inject(LocationListRendererOptions))
+], LocationListRenderer);
+export { LocationListRenderer };
+(function (LocationListRenderer) {
+    let Styles;
+    (function (Styles) {
+        Styles.LOCATION_LIST_CLASS = 'tart-LocationList';
+        Styles.LOCATION_INPUT_TOGGLE_CLASS = 'tart-LocationInputToggle';
+        Styles.LOCATION_TEXT_INPUT_CLASS = 'tart-LocationTextInput';
+    })(Styles = LocationListRenderer.Styles || (LocationListRenderer.Styles = {}));
+    let Tooltips;
+    (function (Tooltips) {
+        Tooltips.TOGGLE_TEXT_INPUT = 'Switch to text-based input';
+        Tooltips.TOGGLE_SELECT_INPUT = 'Switch to location list';
+    })(Tooltips = LocationListRenderer.Tooltips || (LocationListRenderer.Tooltips = {}));
+})(LocationListRenderer || (LocationListRenderer = {}));
+
+//# sourceMappingURL=../../../lib/browser/location/loaction-render.js.map

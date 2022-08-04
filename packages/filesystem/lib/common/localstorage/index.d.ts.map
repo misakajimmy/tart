@@ -1,0 +1,1 @@
+{"version":3,"sources":["common/localstorage/index.ts"],"names":[],"mappings":"AAAA,cAAc,cAAc,CAAC;AAC7B,cAAc,mBAAmB,CAAC","file":"../../../src/common/localstorage/index.d.ts","sourcesContent":["export * from './fs-pointer';\r\nexport * from './localstorage-fs';\r\n"]}
