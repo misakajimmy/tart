@@ -8,13 +8,13 @@ export class CoreInit implements TartInit {
 
   async initContainer(): Promise<any[]> {
     let modules = [];
-    const frontendApplication = await import('@tart/core/lib/browser/frontend-application-module.js');
+    const frontendApplication = await import('./browser/frontend-application-module.js');
     modules.push(frontendApplication);
-    const browserMenu = await import('@tart/core/lib/browser/menu/browser-menu-module.js');
+    const browserMenu = await import('./browser/menu/browser-menu-module.js');
     modules.push(browserMenu);
-    const browserWindow = await import('@tart/core/lib/browser/window/browser-window-module.js');
+    const browserWindow = await import('./browser/window/browser-window-module.js');
     modules.push(browserWindow);
-    const browserKeyboard = await import('@tart/core/lib/browser/keyboard/browser-keyboard-module.js');
+    const browserKeyboard = await import('./browser/keyboard/browser-keyboard-module');
     modules.push(browserKeyboard);
     return modules;
   }
