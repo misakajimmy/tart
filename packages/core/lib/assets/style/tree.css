@@ -1,0 +1,198 @@
+/********************************************************************************
+ * Copyright (C) 2017, 2018 TypeFox and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+:root {
+  --tart-welcomeView-horizontal-padding: 20px;
+  --tart-welcomeView-elements-margin: 13px;
+  --tart-welcomeView-button-maxWidth: 260px;
+}
+
+.tart-Tree {
+  overflow: hidden;
+  font-size: var(--tart-ui-font-size1);
+  max-height: calc(100% - var(--tart-border-width));
+  position: relative;
+}
+
+.tart-Tree:focus .tart-TreeContainer.empty {
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: -1px;
+  opacity: 1 !important;
+  outline-color: var(--tart-focusBorder);
+}
+
+.tart-Tree:focus,
+.tart-TreeContainer .ReactVirtualized__List:focus {
+  outline: 0;
+  box-shadow: none;
+  border: none;
+}
+
+.tart-TreeContainer {
+  height: 100%;
+}
+
+.tart-TreeNode {
+  line-height: var(--tart-content-line-height);
+  display: flex;
+}
+
+.tart-TreeNode:hover {
+  background: var(--tart-list-hoverBackground);
+  color: var(--tart-list-hoverForeground);
+  cursor: pointer;
+}
+
+.tart-TreeNodeContent {
+  display: flex;
+  align-items: center;
+  width: calc(100% - var(--tart-scrollbar-rail-width));
+}
+
+.tart-ExpansionToggle {
+  display: flex;
+  justify-content: center;
+  padding-left: calc(var(--tart-ui-padding) / 2);
+  padding-right: calc(var(--tart-ui-padding) / 2);
+  min-width: var(--tart-icon-size);
+  min-height: var(--tart-icon-size);
+}
+
+.tart-ExpansionToggle.tart-mod-busy {
+  animation: tart-spin 1.25s linear infinite;
+}
+
+.tart-ExpansionToggle:not(.tart-mod-busy):hover {
+  cursor: pointer;
+}
+
+.tart-ExpansionToggle.tart-mod-collapsed:not(.tart-mod-busy) {
+  transform: rotate(-90deg);
+}
+
+.tart-Tree:focus .tart-TreeNode.tart-mod-selected,
+.tart-Tree .ReactVirtualized__List:focus .tart-TreeNode.tart-mod-selected {
+  background: var(--tart-list-activeSelectionBackground);
+  color: var(--tart-list-activeSelectionForeground) !important;
+}
+
+.tart-Tree:focus .tart-TreeNode.tart-mod-selected .tart-TreeNodeTail,
+.tart-Tree .ReactVirtualized__List:focus .tart-TreeNode.tart-mod-selected .tart-TreeNodeTail,
+.tart-Tree:focus .tart-TreeNode.tart-mod-selected .tart-caption-suffix,
+.tart-Tree .ReactVirtualized__List:focus .tart-TreeNode.tart-mod-selected .tart-caption-suffix,
+.tart-Tree:focus .tart-TreeNode.tart-mod-selected .tart-TreeNodeInfo,
+.tart-Tree .ReactVirtualized__List:focus .tart-TreeNode.tart-mod-selected .tart-TreeNodeInfo {
+  color: var(--tart-list-activeSelectionForeground) !important;
+}
+
+.tart-TreeNodeInfo {
+  color: var(--tart-foreground);
+  opacity: 0.7;
+}
+
+.tart-Tree .tart-TreeNode.tart-mod-selected {
+  background: var(--tart-list-inactiveSelectionBackground);
+  color: var(--tart-list-inactiveSelectionForeground);
+}
+
+.tart-TreeNode.tart-mod-not-selectable {
+  color: var(--tart-descriptionForeground);
+}
+
+.tart-TreeNode.tart-mod-not-selectable:hover {
+  background: none;
+  cursor: default;
+}
+
+.tart-TreeNodeSegment {
+  flex-grow: 0;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.tart-TreeNodeSegmentGrow {
+  flex-grow: 1 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tart-TreeNodeTail {
+  min-width: 1rem;
+  text-align: center;
+}
+
+.tart-TreeNodeSegment mark {
+  background-color: var(--tart-list-filterMatchBackground);
+  color: var(--tart-list-inactiveSelectionForeground);
+}
+
+.tart-tree-source-node-placeholder {
+  text-align: center;
+  font-style: italic;
+  opacity: var(--tart-mod-disabled-opacity);
+}
+
+.tart-tree-element-node {
+  width: 100%
+}
+
+.tart-tree-node-indent {
+  position: absolute;
+  height: var(--tart-content-line-height);
+  border-right: var(--tart-border-width) solid transparent;
+}
+
+.tart-tree-node-indent.always,
+.tart-TreeContainer:hover .tart-tree-node-indent.hover {
+  border-color: var(--tart-tree-inactiveIndentGuidesStroke);
+}
+
+.tart-tree-node-indent.active {
+  border-color: var(--tart-tree-indentGuidesStroke);
+}
+
+.tart-TreeContainer .tart-WelcomeView {
+  padding-top: var(--tart-ui-padding);
+  padding-right: var(--tart-welcomeView-horizontal-padding);
+  padding-left: var(--tart-welcomeView-horizontal-padding);
+}
+
+.tart-TreeContainer .tart-WelcomeView > * {
+  margin: var(--tart-welcomeView-elements-margin) 0;
+}
+
+.tart-TreeContainer .tart-WelcomeView .tart-WelcomeViewButtonWrapper {
+  display: flex;
+  padding: 0 var(--tart-ui-padding);
+}
+
+.tart-TreeContainer .tart-WelcomeView .tart-WelcomeViewButton {
+  width: 100%;
+  max-width: var(--tart-welcomeView-button-maxWidth);
+  margin: auto;
+}
+
+.tart-TreeContainer .tart-WelcomeView .tart-WelcomeViewCommandLink {
+  cursor: pointer;
+}
+
+.tart-TreeContainer .tart-WelcomeView .tart-WelcomeViewCommandLink.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: var(--tart-mod-disabled-opacity);
+}

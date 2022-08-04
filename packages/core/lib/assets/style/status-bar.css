@@ -1,0 +1,113 @@
+/********************************************************************************
+ * Copyright (C) 2017 TypeFox and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+:root {
+  --tart-statusBar-height: 22px;
+}
+
+#tart-statusBar {
+  background: var(--tart-statusBar-background);
+  display: flex;
+  min-height: var(--tart-statusBar-height);
+  white-space: nowrap;
+  border-top: var(--tart-border-width) solid var(--tart-statusBar-border);
+}
+
+body.tart-no-open-workspace #tart-statusBar {
+  background: var(--tart-statusBar-noFolderBackground);
+  color: var(--tart-statusBar-noFolderForeground);
+  border-top: var(--tart-border-width) solid var(--tart-statusBar-noFolderBorder);
+}
+
+#tart-statusBar .area {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+#tart-statusBar .area.left {
+  justify-content: flex-start;
+  padding-left: calc(var(--tart-ui-padding) * 2);
+}
+
+#tart-statusBar .area.right {
+  justify-content: flex-end;
+  padding-right: calc(var(--tart-ui-padding) * 2);
+}
+
+#tart-statusBar .area .element {
+  color: var(--tart-statusBar-foreground);
+  display: flex;
+  align-items: center;
+  font-size: var(--tart-statusBar-font-size);
+}
+
+#tart-statusBar .area .element > * {
+  margin-left: calc(var(--tart-ui-padding) / 2);
+}
+
+#tart-statusBar .area .element .codicon {
+  /* Scaling down codicons from 16 to 14 pixels */
+  font-size: 14px;
+}
+
+#tart-statusBar .area .element > *:last-child {
+  margin-right: calc(var(--tart-ui-padding) / 2);
+}
+
+#tart-statusBar .area .element.hasCommand:hover {
+  background-color: var(--tart-statusBarItem-hoverBackground);
+  cursor: pointer;
+}
+
+#tart-statusBar .area .element.hasCommand:active {
+  background-color: var(--tart-statusBarItem-activeBackground);
+}
+
+.tart-mod-offline #tart-statusBar {
+  background-color: var(--tart-statusBar-offlineBackground) !important;
+}
+
+.tart-mod-offline #tart-statusBar .area .element {
+  color: var(--tart-statusBar-offlineForeground) !important;
+}
+
+.tart-mod-offline #tart-statusBar .area .element.hasCommand:hover {
+  background-color: var(--tart-statusBarItem-offlineHoverBackground) !important;
+}
+
+.tart-mod-offline #tart-statusBar .area .element.hasCommand:active {
+  background-color: var(--tart-statusBarItem-offlineActiveBackground) !important;
+}
+
+#tart-statusBar .area.left .element {
+  margin-right: var(--tart-ui-padding);
+}
+
+#tart-statusBar .area.right .element {
+  margin-left: var(--tart-ui-padding);
+}
+
+#tart-statusBar .element {
+  /* https://css-tricks.com/os-specific-fonts-css/#article-header-id-0 */
+  /* https://github.com/Microsoft/vscode/blob/5dbdc8d19c8cf6dd10d558eabcc48bba962ea45f/src/vs/workbench/browser/media/style.css#L8-L24 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif;
+  font-size: 12px;
+  text-rendering: auto;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

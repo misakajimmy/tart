@@ -1,0 +1,155 @@
+/********************************************************************************
+ * Copyright (C) 2017, 2018 TypeFox and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+@import url('../../../../../node_modules/perfect-scrollbar/css/perfect-scrollbar.css');
+
+::-webkit-scrollbar {
+  height: var(--tart-scrollbar-width);
+  width: var(--tart-scrollbar-width);
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tart-scrollbarSlider-background);
+}
+
+::-webkit-scrollbar:hover {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tart-scrollbarSlider-hoverBackground);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--tart-scrollbarSlider-activeBackground);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+/*-----------------------------------------------------------------------------
+| Perfect scrollbar
+|----------------------------------------------------------------------------*/
+
+#tart-app-shell .ps__rail-x,
+#tart-dialog-shell .ps__rail-x,
+#tart-breadcrumbs-popups-overlay .ps__rail-x {
+  height: var(--tart-scrollbar-rail-width);
+}
+
+#tart-app-shell .ps__rail-x > .ps__thumb-x,
+#tart-dialog-shell .ps__rail-x > .ps__thumb-x,
+#tart-breadcrumbs-popups-overlay .ps__thumb-x {
+  height: var(--tart-scrollbar-width);
+  bottom: calc((var(--tart-scrollbar-rail-width) - var(--tart-scrollbar-width)) / 2);
+  background: var(--tart-scrollbarSlider-background);
+  border-radius: 0px;
+}
+
+#tart-app-shell .ps__rail-x:hover,
+#tart-app-shell .ps__rail-x:focus,
+#tart-dialog-shell .ps__rail-x:hover,
+#tart-dialog-shell .ps__rail-x:focus,
+#tart-breadcrumbs-popups-overlay .ps__rail-x:hover,
+#tart-breadcrumbs-popups-overlay .ps__rail-x:focus {
+  height: var(--tart-scrollbar-rail-width);
+}
+
+#tart-app-shell .ps__rail-x:hover > .ps__thumb-x,
+#tart-app-shell .ps__rail-x:focus > .ps__thumb-x,
+#tart-app-shell .ps__rail-x.ps--clicking .ps__thumb-x,
+#tart-dialog-shell .ps__rail-x:hover > .ps__thumb-x,
+#tart-dialog-shell .ps__rail-x:focus > .ps__thumb-x,
+#tart-dialog-shell .ps__rail-x.ps--clicking .ps__thumb-x,
+#tart-breadcrumbs-popups-overlay .ps__rail-x:hover > .ps__thumb-x,
+#tart-breadcrumbs-popups-overlay .ps__rail-x:focus > .ps__thumb-x,
+#tart-breadcrumbs-popups-overlay .ps__rail-x.ps--clicking .ps__thumb-x {
+  height: var(--tart-scrollbar-width);
+}
+
+#tart-app-shell .ps__rail-y,
+#tart-dialog-shell .ps__rail-y,
+#tart-breadcrumbs-popups-overlay .ps__rail-y {
+  width: var(--tart-scrollbar-rail-width);
+}
+
+#tart-app-shell .ps__rail-y > .ps__thumb-y,
+#tart-dialog-shell .ps__rail-y > .ps__thumb-y,
+#tart-breadcrumbs-popups-overlay .ps__rail-y > .ps__thumb-y {
+  width: var(--tart-scrollbar-width);
+  right: calc((var(--tart-scrollbar-rail-width) - var(--tart-scrollbar-width)) / 2);
+  background: var(--tart-scrollbarSlider-background);
+  border-radius: 0px;
+}
+
+#tart-app-shell .ps__rail-y:hover,
+#tart-app-shell .ps__rail-y:focus,
+#tart-dialog-shell .ps__rail-y:hover,
+#tart-dialog-shell .ps__rail-y:focus,
+#tart-breadcrumbs-popups-overlay .ps__rail-y:hover,
+#tart-breadcrumbs-popups-overlay .ps__rail-y:focus {
+  width: var(--tart-scrollbar-rail-width);
+}
+
+#tart-app-shell .ps__rail-y:hover > .ps__thumb-y,
+#tart-app-shell .ps__rail-y:focus > .ps__thumb-y,
+#tart-app-shell .ps__rail-y.ps--clicking .ps__thumb-y,
+#tart-dialog-shell .ps__rail-y:hover > .ps__thumb-y,
+#tart-dialog-shell .ps__rail-y:focus > .ps__thumb-y,
+#tart-dialog-shell .ps__rail-y.ps--clicking .ps__thumb-y,
+#tart-breadcrumbs-popups-overlay .ps__rail-y:hover > .ps__thumb-y,
+#tart-breadcrumbs-popups-overlay .ps__rail-y:focus > .ps__thumb-y,
+#tart-breadcrumbs-popups-overlay .ps__rail-y.ps--clicking .ps__thumb-y {
+  right: calc((var(--tart-scrollbar-rail-width) - var(--tart-scrollbar-width)) / 2);
+  width: var(--tart-scrollbar-width);
+}
+
+#tart-app-shell .ps [class^='ps__rail'].ps--clicking > [class^='ps__thumb'],
+#tart-dialog-shell .ps [class^='ps__rail'].ps--clicking > [class^='ps__thumb'],
+#tart-breadcrumbs-popups-overlay .ps [class^='ps__rail'].ps--clicking > [class^='ps__thumb'] {
+  background-color: var(--tart-scrollbarSlider-activeBackground);
+}
+
+#tart-app-shell .ps [class^='ps__rail'] > [class^='ps__thumb']:hover,
+#tart-app-shell .ps [class^='ps__rail'] > [class^='ps__thumb']:focus,
+#tart-dialog-shell .ps [class^='ps__rail'] > [class^='ps__thumb']:hover,
+#tart-dialog-shell .ps [class^='ps__rail'] > [class^='ps__thumb']:focus,
+#tart-breadcrumbs-popups-overlay .ps [class^='ps__rail'] > [class^='ps__thumb']:hover,
+#tart-breadcrumbs-popups-overlay .ps [class^='ps__rail'] > [class^='ps__thumb']:focus {
+  background: var(--tart-scrollbarSlider-hoverBackground);
+}
+
+#tart-app-shell .ps [class^='ps__rail'] > [class^='ps__thumb']:active,
+#tart-dialog-shell .ps [class^='ps__rail'] > [class^='ps__thumb']:active,
+#tart-breadcrumbs-popups-overlay .ps [class^='ps__rail'] > [class^='ps__thumb']:active {
+  background: var(--tart-scrollbarSlider-activeBackground);
+}
+
+#tart-app-shell .ps:hover > [class^='ps__rail'],
+#tart-app-shell .ps--focus > [class^='ps__rail'],
+#tart-app-shell .ps--scrolling-y > [class^='ps__rail'],
+#tart-dialog-shell .ps:hover > [class^='ps__rail'],
+#tart-dialog-shell .ps--focus > [class^='ps__rail'],
+#tart-dialog-shell .ps--scrolling-y > [class^='ps__rail'],
+#tart-breadcrumbs-popups-overlay .ps:hover > [class^='ps__rail'],
+#tart-breadcrumbs-popups-overlay .ps--focus > [class^='ps__rail'],
+#tart-breadcrumbs-popups-overlay .ps--scrolling-y > [class^='ps__rail'] {
+  opacity: 1;
+  background: transparent;
+}

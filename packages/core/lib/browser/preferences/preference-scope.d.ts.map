@@ -1,0 +1,1 @@
+{"version":3,"sources":["browser/preferences/preference-scope.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,eAAe,EAAC,MAAM,2CAA2C,CAAC;AAE1E,OAAO,EAAC,eAAe,EAAC,CAAC","file":"../../../src/browser/preferences/preference-scope.d.ts","sourcesContent":["import {PreferenceScope} from '../../common/preferences/preference-scope';\n\nexport {PreferenceScope};\n"]}

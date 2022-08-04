@@ -1,0 +1,1 @@
+{"version":3,"sources":["browser/widgets/index.ts"],"names":[],"mappings":"AAAA,cAAc,UAAU,CAAC;AACzB,cAAc,kBAAkB,CAAC;AACjC,cAAc,gBAAgB,CAAC","file":"../../../src/browser/widgets/index.js","sourcesContent":["export * from './widget';\nexport * from './react-renderer';\nexport * from './react-widget';\n"]}

@@ -1,0 +1,148 @@
+/********************************************************************************
+ * Copyright (C) 2018 TypeFox and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+:root {
+  --tart-view-container-title-height: var(--tart-content-line-height);
+  --tart-view-container-content-height: calc(100% - var(--tart-view-container-title-height));
+}
+
+
+.tart-view-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tart-view-container > .p-SplitPanel {
+  height: 100%;
+  width: 100%;
+}
+
+.tart-view-container > .p-SplitPanel > .p-SplitPanel-child {
+  min-width: 50px;
+  min-height: var(--tart-content-line-height);
+}
+
+.tart-view-container > .p-SplitPanel > .p-SplitPanel-handle:after {
+  background-color: var(--tart-sideBarSectionHeader-border);
+  min-height: 2px;
+  min-width: 2px
+}
+
+.tart-view-container > .p-SplitPanel > .p-SplitPanel-handle {
+  background-color: var(--tart-sideBarSectionHeader-border);
+}
+
+.tart-view-container .part {
+  height: 100%;
+}
+
+.tart-view-container-part-header {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: var(--tart-sideBarSectionHeader-background);
+  line-height: var(--tart-view-container-title-height);
+  z-index: 10;
+  color: var(--tart-sideBarSectionHeader-foreground);
+  font-weight: 700;
+}
+
+.tart-view-container-part-header .tart-ExpansionToggle {
+  padding-left: 4px;
+}
+
+.tart-view-container > .p-SplitPanel[data-orientation='horizontal'] .part > .tart-header .tart-ExpansionToggle::before {
+  display: none;
+  padding-left: 0px;
+}
+
+.tart-view-container > .p-SplitPanel[data-orientation='horizontal'] .part > .tart-header .tart-ExpansionToggle {
+  padding-left: 0px;
+}
+
+.tart-view-container-part-header .label {
+  flex: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tart-view-container-part-header .description {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-left: var(--tart-ui-padding);
+  text-transform: none;
+  opacity: 0.6;
+}
+
+.tart-view-container .part > .body {
+  height: var(--tart-view-container-content-height);
+  min-width: 50px;
+  min-height: 50px;
+  position: relative;
+}
+
+.tart-view-container .part > .body .tart-tree-source-node-placeholder {
+  padding-top: 4px;
+  height: 100%;
+}
+
+.tart-view-container .part:hover > .body {
+  display: block;
+}
+
+.tart-view-container .part.drop-target {
+  background: var(--tart-list-dropBackground);
+  border: var(--tart-border-width) dashed var(--tart-contrastActiveBorder);
+  transition-property: top, left, right, bottom;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
+
+.tart-view-container-drag-image {
+  background: var(--tart-sideBarSectionHeader-background);
+  color: var(--tart-sideBarSectionHeader-foreground);
+  line-height: var(--tart-content-line-height);
+  position: absolute;
+  z-index: 999;
+  text-transform: uppercase;
+  font-size: var(--tart-ui-font-size0);
+  font-weight: 500;
+  padding: 0 var(--tart-ui-padding) 0 var(--tart-ui-padding);
+}
+
+.p-TabBar-toolbar.tart-view-container-part-title {
+  padding: 0px;
+  padding-right: calc(var(--tart-ui-padding) * 2 / 3);
+}
+
+.tart-view-container-part-title .item > div {
+  width: var(--tart-icon-size);
+  background-size: var(--tart-icon-size);
+  line-height: var(--tart-icon-size);
+}
+
+.tart-view-container-part-title {
+  display: none;
+}
+
+.tart-view-container-part-title.menu-open,
+.p-Widget.part:not(.collapsed):hover .tart-view-container-part-header .tart-view-container-part-title,
+.p-Widget.part:not(.collapsed):focus-within .tart-view-container-part-header .tart-view-container-part-title {
+  display: flex;
+}

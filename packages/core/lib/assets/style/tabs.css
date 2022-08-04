@@ -1,0 +1,463 @@
+/*-----------------------------------------------------------------------------
+| Variables
+|----------------------------------------------------------------------------*/
+
+:root {
+  /* These need to be root because tabs get attached to the body during dragging. */
+  --tart-private-horizontal-tab-height: 28.5px;
+  --tart-private-horizontal-tab-scrollbar-rail-height: 7px;
+  --tart-private-horizontal-tab-scrollbar-height: 5px;
+  --tart-tabbar-toolbar-z-index: 1001;
+  --tart-toolbar-active-transform-scale: 1.272019649;
+  --tart-horizontal-toolbar-height: calc(var(--tart-private-horizontal-tab-height) + var(--tart-private-horizontal-tab-scrollbar-rail-height) / 2);
+  --tart-dragover-tab-border-width: 2px;
+}
+
+/*-----------------------------------------------------------------------------
+| General tab bar style
+|----------------------------------------------------------------------------*/
+
+.p-TabBar {
+  font-size: var(--tart-ui-font-size1);
+}
+
+.p-TabBar[data-orientation='horizontal'] {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  min-height: var(--tart-horizontal-toolbar-height);
+}
+
+.p-TabBar .p-TabBar-content {
+  cursor: pointer;
+}
+
+.p-TabBar[data-orientation='horizontal'] .p-TabBar-tab {
+  flex: none;
+  height: var(--tart-horizontal-toolbar-height);
+  min-width: 35px;
+  line-height: var(--tart-private-horizontal-tab-height);
+  padding: 0px 8px;
+  align-items: center;
+}
+
+.p-TabBar[data-orientation='vertical'] .p-TabBar-tab {
+  border-top: var(--tart-dragover-tab-border-width) solid transparent !important;
+  border-bottom: var(--tart-dragover-tab-border-width) solid transparent !important;
+}
+
+.p-TabBar[data-orientation='vertical'] .p-TabBar-tab.drop-target-top {
+  border-top-color: var(--tart-activityBar-activeBorder) !important;
+}
+
+.p-TabBar[data-orientation='vertical'] .p-TabBar-tab.drop-target-bottom {
+  border-bottom-color: var(--tart-activityBar-activeBorder) !important;
+}
+
+.p-TabBar[data-orientation='horizontal'] .p-TabBar-tab .tart-tab-icon-label,
+.p-TabBar-tab.p-mod-drag-image .tart-tab-icon-label {
+  display: flex;
+  line-height: var(--tart-content-line-height);
+  align-items: center;
+}
+
+
+/*-----------------------------------------------------------------------------
+| Tabs in the center area (main and bottom)
+|----------------------------------------------------------------------------*/
+
+#tart-main-content-panel,
+#tart-main-content-panel .p-Widget.p-DockPanel-widget {
+  background: var(--tart-editor-background);
+}
+
+#tart-main-content-panel .p-DockPanel-handle[data-orientation='horizontal'] {
+  border-left: var(--tart-border-width) solid var(--tart-editorGroup-border);
+}
+
+#tart-main-content-panel .p-DockPanel-handle[data-orientation='vertical'] + .p-TabBar {
+  border-top: var(--tart-border-width) solid var(--tart-editorGroup-border);
+}
+
+#tart-main-content-panel .p-TabBar .p-TabBar-tab {
+  border-right: 1px solid var(--tart-tab-border);
+}
+
+#tart-main-content-panel .p-TabBar .p-TabBar-tab:hover.tart-mod-active {
+  background: var(--tart-tab-hoverBackground) !important;
+  box-shadow: var(--tart-tab-hoverBorder) 0 -1px inset !important;
+}
+
+#tart-main-content-panel .p-TabBar .p-TabBar-tab:hover:not(.tart-mod-active) {
+  background: var(--tart-tab-unfocusedHoverBackground) !important;
+  box-shadow: var(--tart-tab-unfocusedHoverBorder) 0 -1px inset !important;
+}
+
+/* active tab in an active group */
+body.tart-editor-highlightModifiedTabs
+#tart-main-content-panel .p-TabBar .p-TabBar-tab.p-mod-current.tart-mod-active.tart-mod-dirty {
+  border-top: 1px solid var(--tart-tab-activeModifiedBorder);
+}
+
+#tart-main-content-panel .p-TabBar .p-TabBar-tab.p-mod-current.tart-mod-active {
+  background: var(--tart-tab-activeBackground);
+  color: var(--tart-tab-activeForeground);
+  border-top: 1px solid var(--tart-tab-activeBorderTop);
+  border-bottom: 1px solid var(--tart-tab-activeBorder);
+}
+
+/* inactive tab in an active group */
+body.tart-editor-highlightModifiedTabs
+#tart-main-content-panel .p-TabBar .p-TabBar-tab:not(.p-mod-current).tart-mod-active.tart-mod-dirty {
+  border-top: 1px solid var(--tart-tab-inactiveModifiedBorder);
+}
+
+#tart-main-content-panel .p-TabBar .p-TabBar-tab:not(.p-mod-current).tart-mod-active {
+  background: var(--tart-tab-inactiveBackground);
+  color: var(--tart-tab-inactiveForeground);
+}
+
+/* active tab in an unfocused group */
+body.tart-editor-highlightModifiedTabs
+#tart-main-content-panel .p-TabBar .p-TabBar-tab.p-mod-current:not(.tart-mod-active).tart-mod-dirty {
+  border-top: 1px solid var(--tart-tab-unfocusedActiveModifiedBorder);
+}
+
+#tart-main-content-panel .p-TabBar .p-TabBar-tab.p-mod-current:not(.tart-mod-active) {
+  background: var(--tart-tab-unfocusedActiveBackground);
+  color: var(--tart-tab-unfocusedActiveForeground);
+  border-top: 1px solid var(--tart-tab-unfocusedActiveBorderTop);
+  border-bottom: 1px solid var(--tart-tab-unfocusedActiveBorder);
+}
+
+/* inactive tab in an unfocused group */
+body.tart-editor-highlightModifiedTabs
+#tart-main-content-panel .p-TabBar .p-TabBar-tab:not(.p-mod-current):not(.tart-mod-active).tart-mod-dirty {
+  border-top: 1px solid var(--tart-tab-unfocusedInactiveModifiedBorder);
+}
+
+#tart-main-content-panel .p-TabBar .p-TabBar-tab:not(.p-mod-current):not(.tart-mod-active) {
+  background: var(--tart-tab-inactiveBackground);
+  color: var(--tart-tab-inactiveForeground);
+}
+
+.p-TabBar.tart-app-centers {
+  background: var(--tart-editorGroupHeader-tabsBackground);
+}
+
+.p-TabBar.tart-app-centers::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background-color: var(--tart-editorGroupHeader-tabsBorder);
+  width: 100%;
+  height: 1px;
+}
+
+.p-TabBar.tart-app-centers .p-TabBar-tabIcon,
+.p-TabBar.tart-app-centers .p-TabBar-tabLabel,
+.p-TabBar.tart-app-centers .p-TabBar-tabLabelDetails,
+.p-TabBar.tart-app-centers .p-TabBar-tabCloseIcon {
+  display: inline-block;
+}
+
+.p-TabBar.tart-app-centers .p-TabBar-tabLabelDetails {
+  margin-left: 5px;
+  color: var(--tart-descriptionForeground);
+  flex: 1 1 auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.p-TabBar.tart-app-centers .p-TabBar-tabLabelWrapper {
+  display: flex;
+}
+
+.p-TabBar-tab-secondary-label {
+  color: var(--tart-settings-headerForeground);
+  cursor: pointer;
+  font-size: var(--tart-ui-font-size0);
+  margin-left: 5px;
+  text-decoration-line: underline;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--tart-icon-foreground) 50%), linear-gradient(135deg, var(--tart-icon-foreground) 50%, transparent 50%);
+  background-position: calc(100% - 6px) 8px, calc(100% - 2px) 8px, 100% 0;
+  background-size: 4px 5px;
+  background-repeat: no-repeat;
+  padding: 2px 14px 0 0;
+}
+
+.p-TabBar .p-TabBar-tabIcon,
+.p-TabBar-tab.p-mod-drag-image .p-TabBar-tabIcon {
+  width: 15px;
+  line-height: 1.7;
+  font-size: 12px;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+/* common icons */
+.p-TabBar.tart-app-centers .p-TabBar-tabIcon,
+.p-TabBar-tab.p-mod-drag-image .p-TabBar-tabIcon {
+  min-height: 14px;
+  background-size: 13px;
+  background-position-y: 3px;
+  background: var(--tart-icon-foreground);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: auto 13px;
+  mask-repeat: no-repeat;
+  mask-size: auto 13px;
+  padding-right: 8px;
+}
+
+/* codicons */
+.p-TabBar.tart-app-centers .p-TabBar-tabIcon.codicon,
+.p-TabBar-tab.p-mod-drag-image .p-TabBar-tabIcon.codicon {
+  background: none;
+}
+
+/* file icons */
+.p-TabBar[data-orientation='horizontal'] .p-TabBar-tabIcon.file-icon,
+.p-TabBar-tab.p-mod-drag-image .p-TabBar-tabIcon.file-icon {
+  background: none;
+  padding-bottom: 0px;
+  min-height: 20px;
+}
+
+.p-TabBar[data-orientation='horizontal'] .p-TabBar-tabIcon.fa,
+.p-TabBar-tab.p-mod-drag-image .p-TabBar-tabIcon.fa {
+  background: none;
+  min-height: 0;
+  height: inherit;
+}
+
+.p-TabBar.tart-app-centers .p-TabBar-tab, .p-mod-closable > .p-TabBar-tabCloseIcon {
+  height: var(--tart-icon-size);
+  width: var(--tart-icon-size);
+  font: normal normal normal 16px/1 codicon;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.p-TabBar.tart-app-centers .p-TabBar-tab.p-mod-closable > .p-TabBar-tabCloseIcon:hover {
+  border-radius: 5px;
+  background-color: rgba(50%, 50%, 50%, 0.2);
+}
+
+.p-TabBar.tart-app-centers .p-TabBar-tab.p-mod-closable {
+  padding-right: 4px;
+}
+
+.p-TabBar.tart-app-centers .p-TabBar-tab.p-mod-current > .tart-tab-icon-label > .p-TabBar-tabIcon {
+  margin-top: -2px;
+}
+
+.p-TabBar.tart-app-centers .p-TabBar-tab.p-mod-current > .p-TabBar-tabCloseIcon {
+  margin-top: 0px;
+}
+
+.p-TabBar.tart-app-centers .p-TabBar-tab.p-mod-closable:not(.tart-mod-dirty):hover > .p-TabBar-tabCloseIcon:before,
+.p-TabBar.tart-app-centers .p-TabBar-tab.p-mod-closable:not(.tart-mod-dirty).p-TabBar-tab.p-mod-current > .p-TabBar-tabCloseIcon:before,
+.p-TabBar-tab.p-mod-closable:not(.tart-mod-dirty) > .p-TabBar-tabCloseIcon:before,
+.p-TabBar.tart-app-centers .p-TabBar-tab.p-mod-closable.tart-mod-dirty > .p-TabBar-tabCloseIcon:hover:before {
+  content: "\ea76" !important;
+  font-family: inherit !important;
+}
+
+.p-TabBar.tart-app-centers .p-TabBar-tab.p-mod-closable, .tart-mod-dirty > .p-TabBar-tabCloseIcon:before {
+  content: "\ea71" !important;
+  font-family: inherit !important;
+}
+
+.p-TabBar-tabIcon.no-icon {
+  display: none !important;
+}
+
+.p-TabBar .tart-badge-decorator-sidebar {
+  background-color: var(--tart-activityBarBadge-background);
+  border-radius: 20px;
+  color: var(--tart-activityBarBadge-foreground);
+  font-size: calc(var(--tart-ui-font-size0) * 0.85);
+  font-weight: 600;
+  height: var(--tart-notification-count-height);
+  width: var(--tart-notification-count-width);
+  padding: calc(var(--tart-ui-padding) / 6);
+  line-height: calc(var(--tart-content-line-height) * 0.70);
+  position: absolute;
+  top: calc(var(--tart-ui-padding) * 4);
+  right: calc(var(--tart-ui-padding) * 1.33);
+  text-align: center;
+}
+
+.p-TabBar .tart-badge-decorator-horizontal {
+  background-color: var(--tart-badge-background);
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: var(--tart-activityBarBadge-foreground);
+  font-size: calc(var(--tart-ui-font-size0) * 0.8);
+  font-weight: 400;
+  height: var(--tart-notification-count-height);
+  width: var(--tart-notification-count-width);
+  padding: calc(var(--tart-ui-padding) / 6);
+  line-height: calc(var(--tart-content-line-height) * 0.61);
+  margin-left: var(--tart-ui-padding);
+  text-align: center;
+}
+
+/*-----------------------------------------------------------------------------
+| Perfect scrollbar
+|----------------------------------------------------------------------------*/
+
+.p-TabBar[data-orientation='horizontal'] .p-TabBar-content-container > .ps__rail-x {
+  height: var(--tart-private-horizontal-tab-scrollbar-rail-height);
+  z-index: 1000;
+}
+
+.p-TabBar[data-orientation='horizontal'] .p-TabBar-content-container > .ps__rail-x > .ps__thumb-x {
+  height: var(--tart-private-horizontal-tab-scrollbar-height) !important;
+  bottom: calc((var(--tart-private-horizontal-tab-scrollbar-rail-height) - var(--tart-private-horizontal-tab-scrollbar-height)) / 2);
+}
+
+.p-TabBar[data-orientation='horizontal'] .p-TabBar-content-container > .ps__rail-x:hover,
+.p-TabBar[data-orientation='horizontal'] .p-TabBar-content-container > .ps__rail-x:focus {
+  height: var(--tart-private-horizontal-tab-scrollbar-rail-height) !important;
+}
+
+.p-TabBar[data-orientation='horizontal'] .p-TabBar-content-container > .ps__rail-x:hover > .ps__thumb-x,
+.p-TabBar[data-orientation='horizontal'] .p-TabBar-content-container > .ps__rail-x:focus > .ps__thumb-x {
+  height: calc(var(--tart-private-horizontal-tab-scrollbar-height) / 2) !important;
+  bottom: calc((var(--tart-private-horizontal-tab-scrollbar-rail-height) - var(--tart-private-horizontal-tab-scrollbar-height)) / 2);
+}
+
+
+/*-----------------------------------------------------------------------------
+| Dragged tabs
+|----------------------------------------------------------------------------*/
+
+.p-TabBar-tab.p-mod-drag-image {
+  transform: translateX(-40%) translateY(-58%);
+  opacity: 0.8;
+  line-height: var(--tart-private-horizontal-tab-height);
+  height: var(--tart-private-horizontal-tab-height);
+  min-height: var(--tart-private-horizontal-tab-height);
+  padding: 0px 10px;
+  font-size: var(--tart-ui-font-size1);
+  background: var(--tart-editorGroupHeader-tabsBackground);
+  border: var(--tart-border-width) solid var(--tart-contrastBorder);
+  box-shadow: 1px 1px 2px var(--tart-widget-shadow);
+  display: flex;
+  align-items: center;
+}
+
+/*-----------------------------------------------------------------------------
+| Tab-bar toolbar
+|----------------------------------------------------------------------------*/
+
+.p-TabBar-toolbar {
+  z-index: var(--tart-tabbar-toolbar-z-index); /* Due to the scrollbar (`z-index: 1000;`) it has a greater `z-index`. */
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 4px;
+  padding-left: 0px;
+  margin-right: 4px;
+}
+
+.p-TabBar-content-container {
+  display: flex;
+  flex: 1;
+  position: relative; /* This is necessary for perfect-scrollbar */
+}
+
+.p-TabBar-toolbar .item {
+  display: flex;
+  align-items: center;
+  margin-left: 4px; /* `padding` + `margin-right` from the container toolbar */
+  opacity: var(--tart-mod-disabled-opacity);
+  cursor: default;
+}
+
+.p-TabBar-toolbar .item.enabled {
+  opacity: 1.0;
+  cursor: pointer;
+}
+
+.p-TabBar-toolbar :not(.item.enabled) .action-item {
+  background: transparent;
+  cursor: default;
+}
+
+.p-TabBar-toolbar .item.toggled {
+  border: var(--tart-border-width) var(--tart-inputOption-activeBorder) solid;
+  background-color: var(--tart-inputOption-activeBackground);
+}
+
+.p-TabBar-toolbar .item > div {
+  height: 18px;
+  width: 18px;
+  background-repeat: no-repeat;
+  line-height: 18px;
+}
+
+.p-TabBar-toolbar .item .collapse-all {
+  background: var(--tart-icon-collapse-all) no-repeat;
+}
+
+.p-TabBar-toolbar .item .close {
+  background: var(--tart-icon-collapse-all) no-repeat;
+}
+
+.p-TabBar-toolbar .item .clear-all {
+  background: var(--tart-icon-clear) no-repeat;
+}
+
+.p-TabBar-toolbar .item .refresh {
+  background: var(--tart-icon-refresh) no-repeat;
+}
+
+.p-TabBar-toolbar .item .cancel {
+  background: var(--tart-icon-close) no-repeat;
+}
+
+.tart-tabBar-breadcrumb-row {
+  min-width: 100%;
+}
+
+.p-TabBar.tart-tabBar-multirow[data-orientation='horizontal'] {
+  min-height: calc(var(--tart-breadcrumbs-height) + var(--tart-horizontal-toolbar-height));
+  flex-direction: column;
+}
+
+.tart-tabBar-tab-row {
+  display: flex;
+  flex-flow: row nowrap;
+  min-width: 100%;
+}
+
+.lm-TabBar-tab {
+  border: unset;
+  max-height: unset;
+  flex: unset;
+}
+
+.lm-TabBar-content {
+  border-bottom: unset;
+  align-items: unset;
+}
+
+.lm-TabBar {
+  max-height: unset;
+}
+
+.lm-TabBar-tab.lm-mod-current {
+  max-height: unset;
+}

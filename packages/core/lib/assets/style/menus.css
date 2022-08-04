@@ -1,0 +1,224 @@
+/********************************************************************************
+ * Copyright (C) 2017, 2018 TypeFox and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+/*-----------------------------------------------------------------------------
+| Variables
+|----------------------------------------------------------------------------*/
+
+
+:root {
+  --tart-private-menubar-height: 32px;
+  --tart-private-menu-item-height: 24px;
+  --tart-menu-z-index: 10000;
+}
+
+
+/*-----------------------------------------------------------------------------
+| MenuBar
+|----------------------------------------------------------------------------*/
+
+
+.p-Widget.p-MenuBar {
+  padding-left: 5px;
+  font-size: var(--tart-ui-font-size1);
+}
+
+
+.p-MenuBar-menu {
+  transform: translateY(calc(-2 * var(--tart-border-width)));
+}
+
+
+.p-MenuBar-item {
+  padding: 0px 8px;
+  border-left: var(--tart-border-width) solid var(--tart-menu-border);
+  border-right: var(--tart-border-width) solid var(--tart-menu-border);
+  line-height: var(--tart-private-menubar-height);
+}
+
+.p-MenuBar-item .p-MenuBar-itemLabel {
+  white-space: pre;
+}
+
+
+.p-MenuBar-item.p-mod-active {
+  background: var(--tart-menubar-selectionBackground);
+  color: var(--tart-menubar-selectionForeground);
+  opacity: 1;
+}
+
+
+.p-MenuBar.p-mod-active .p-MenuBar-item.p-mod-active {
+  z-index: calc(var(--tart-menu-z-index) - 1);
+  background: var(--tart-menubar-selectionBackground);
+  border-left: var(--tart-border-width) solid var(--tart-menubar-selectionBorder);
+  border-right: var(--tart-border-width) solid var(--tart-menubar-selectionBorder);
+}
+
+
+.p-MenuBar-item.p-mod-disabled {
+  opacity: var(--tart-mod-disabled-opacity);
+}
+
+
+.p-MenuBar-item.p-type-separator {
+  margin: 2px;
+  padding: 0;
+  border: none;
+  border-left: var(--tart-border-width) solid var(--tart-menu-separatorBackground);
+}
+
+
+.p-MenuBar-itemMnemonic {
+  text-decoration: underline;
+}
+
+
+#tart-top-panel {
+  background: var(--tart-titleBar-activeBackground);
+  color: var(--tart-titleBar-activeForeground);
+  display: flex;
+  min-height: var(--tart-private-menubar-height);
+  border-bottom: 1px solid var(--tart-titleBar-border);
+}
+
+#tart-top-panel:window-inactive,
+#tart-top-panel:-moz-window-inactive {
+  background: var(--tart-titleBar-inactiveBackground);
+  color: var(--tart-titleBar-inactiveForeground);
+}
+
+/*-----------------------------------------------------------------------------
+| Menu
+|----------------------------------------------------------------------------*/
+
+
+.p-Menu {
+  z-index: var(--tart-menu-z-index);
+  padding: 4px 0px;
+  background: var(--tart-menu-background);
+  color: var(--tart-menu-foreground);
+  font-size: var(--tart-ui-font-size1);
+  box-shadow: 0px 1px 6px var(--tart-widget-shadow);
+  border: 1px solid var(--tart-menu-border);
+}
+
+.p-Menu-item {
+  min-height: var(--tart-private-menu-item-height);
+  max-height: var(--tart-private-menu-item-height);
+  padding: 0px;
+  line-height: var(--tart-private-menu-item-height);
+}
+
+
+.p-Menu-item.p-mod-active {
+  background: var(--tart-menu-selectionBackground);
+  color: var(--tart-menu-selectionForeground);
+  border: thin solid var(--tart-menu-selectionBorder);
+  opacity: 1;
+}
+
+
+.p-Menu-item.p-mod-disabled {
+  opacity: var(--tart-mod-disabled-opacity);
+}
+
+
+.p-Menu-itemIcon {
+  width: 21px;
+  padding: 0px 2px 0px 4px;
+  margin-top: -2px;
+}
+
+
+.p-Menu-itemLabel {
+  padding: 0px 32px 0px 2px;
+}
+
+
+.p-Menu-itemMnemonic {
+  text-decoration: underline;
+}
+
+
+.p-Menu-itemShortcut {
+  padding: 0px;
+}
+
+
+.p-Menu-itemSubmenuIcon {
+  width: var(--tart-icon-size);
+  padding: 0px 10px 0px 0px;
+}
+
+
+.p-Menu-item[data-type='separator'] > div {
+  padding: 0;
+  height: 9px;
+  opacity: 0.36;
+}
+
+
+.p-Menu-item[data-type='separator'] > div::after {
+  content: '';
+  display: block;
+  position: relative;
+  top: 4px;
+  border-top: var(--tart-border-width) solid var(--tart-menu-separatorBackground);
+}
+
+.p-Menu-item[data-type='separator'] > div.p-Menu-itemIcon::after {
+  margin-left: 12px;
+}
+
+.p-Menu-item[data-type='separator'] > div.p-Menu-itemSubmenuIcon::after {
+  margin-right: 12px;
+}
+
+.p-Menu-itemIcon::before,
+.p-Menu-itemSubmenuIcon::before {
+  font: normal normal normal 16px/1 codicon;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  transform: translateY(20%);
+}
+
+
+.p-Menu-item.p-mod-toggled > .p-Menu-itemIcon::before {
+  content: '\eab2';
+  transform: scale(0.8) translateY(20%);
+}
+
+
+.p-Menu-item[data-type='submenu'] > .p-Menu-itemSubmenuIcon::before {
+  content: '\eab6';
+}
+
+.lm-MenuBar {
+  background: var(--tart-titleBar-activeBackground);
+  border-bottom: unset;
+}
+
+.lm-MenuBar {
+  color: var(--tart-titleBar-activeForeground);
+}
