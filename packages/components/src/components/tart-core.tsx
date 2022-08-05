@@ -3,7 +3,6 @@ import React, {useEffect, useRef, useState} from 'react';
 import {FrontendApplication} from '@tart/core/lib/browser/frontend-application';
 import {ContainerLoader} from '@tart/core/lib/common';
 import {CoreInit} from '@tart/core/lib/init';
-import {QuickAccessRegistry} from '@tart/core/lib/browser/quick-input/quick-access';
 
 let inited = false;
 
@@ -20,7 +19,6 @@ export function TartCore() {
       }).then(() => {
         containerLoader.getService<FrontendApplication>(FrontendApplication).start({host: coreRef.current});
       });
-      // frontendApplication.
     }
   });
 
