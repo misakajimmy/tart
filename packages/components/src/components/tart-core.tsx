@@ -19,7 +19,6 @@ export function TartCore() {
         FilesystemInit.init(),
       ];
       containerLoader.loadsAsync(modules).then(() => {
-        return Promise.delay(3000);
       }).then(() => {
         containerLoader.getService<FrontendApplication>(FrontendApplication).start({host: coreRef.current});
       });
