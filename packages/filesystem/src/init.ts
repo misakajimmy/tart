@@ -1,8 +1,8 @@
 import {TartInit} from '@tart/core/lib/common';
 
-export class CoreInit implements TartInit {
+export class FilesystemInit implements TartInit {
   static async init(): Promise<any[]> {
-    const core = new CoreInit();
+    const core = new FilesystemInit();
     return core.initContainer();
   }
 
@@ -18,4 +18,4 @@ export class CoreInit implements TartInit {
   }
 }
 
-export default CoreInit;
+export default FilesystemInit;

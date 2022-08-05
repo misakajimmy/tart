@@ -24,6 +24,7 @@
     "inversify": "^6.0.1",
     "reflect-metadata": "^0.1.13",
     "@tart/core": "^1.0.0",
+    "@tart/filesystem": "^1.0.0",
     "bluebird": "^3.7.2"
   },
   "devDependencies": {

@@ -19,12 +19,15 @@ export class ContainerLoader {
     console.log('over');
   }
 
-  async loadsAsync(jsModules: Promise<any[]>) {
-    const modules = (await jsModules).map(jsModule => {
-      return jsModule.default;
-    });
-    console.log(modules);
-    await this.loads(modules);
+  async loadsAsync(jsModules: Promise<any[]>[]) {
+    console.log(jsModules);
+    let tmp = [];
+    for (let jsModule of jsModules) {
+      const modules = await jsModule;
+      tmp.push(modules.map(module => module.default));
+    }
+    tmp = tmp.flat();
+    await this.loads(tmp);
   }
 
   protected async importModule(module: string) {
