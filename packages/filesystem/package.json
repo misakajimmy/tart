@@ -19,8 +19,8 @@
     "dev": "yarn build && yarn watch"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "inversify": "^5.1.1",
     "reflect-metadata": "^0.1.13",
     "@tart/core": "^1.0.0",
@@ -31,8 +31,8 @@
     "@lumino/messaging": "^1.10.1"
   },
   "devDependencies": {
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
+    "@types/react": "^17",
+    "@types/react-dom": "^17.0.17",
     "typescript": "^4.7.4",
     "gulp": "^4.0.2",
     "gulp-less": "^5.0.0",

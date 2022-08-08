@@ -5,6 +5,8 @@ import {CoreInit} from '@tart/core/lib/init';
 import FilesystemInit from '@tart/filesystem/lib/init';
 import EditorInit from '@tart/editor/lib/init';
 import MonacoInit from '@tart/monaco/lib/init';
+import WorkspaceInit from '@tart/workspace/lib/init';
+import NavigatorInit from '@tart/navigator/lib/init';
 
 let inited = false;
 
@@ -20,6 +22,8 @@ export function TartCore() {
         FilesystemInit.init(),
         EditorInit.init(),
         MonacoInit.init(),
+        WorkspaceInit.init(),
+        NavigatorInit.init(),
       ];
       containerLoader.loadsAsync(modules).then(() => {
       }).then(() => {
