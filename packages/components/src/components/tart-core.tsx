@@ -1,9 +1,10 @@
-import {Promise} from 'bluebird';
 import React, {useEffect, useRef, useState} from 'react';
 import {FrontendApplication} from '@tart/core/lib/browser/frontend-application';
 import {ContainerLoader} from '@tart/core/lib/common';
 import {CoreInit} from '@tart/core/lib/init';
 import FilesystemInit from '@tart/filesystem/lib/init';
+import EditorInit from '@tart/editor/lib/init';
+import MonacoInit from '@tart/monaco/lib/init';
 
 let inited = false;
 
@@ -17,6 +18,8 @@ export function TartCore() {
       const modules = [
         CoreInit.init(),
         FilesystemInit.init(),
+        EditorInit.init(),
+        MonacoInit.init(),
       ];
       containerLoader.loadsAsync(modules).then(() => {
       }).then(() => {

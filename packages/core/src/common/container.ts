@@ -12,11 +12,9 @@ export class ContainerLoader {
   }
 
   async importModules(modules: string[]) {
-    console.log(modules);
     await modules.map(async module => {
       await this.importModule(module);
     });
-    console.log('over');
   }
 
   async loadsAsync(jsModules: Promise<any[]>[]) {
@@ -24,9 +22,11 @@ export class ContainerLoader {
     let tmp = [];
     for (let jsModule of jsModules) {
       const modules = await jsModule;
-      tmp.push(modules.map(module => module.default));
+      for (let module of modules) {
+        const m = await module.default;
+        tmp.push(m)
+      }
     }
-    tmp = tmp.flat();
     await this.loads(tmp);
   }
 
