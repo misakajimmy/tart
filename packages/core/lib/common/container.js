@@ -8,18 +8,20 @@ export class ContainerLoader {
         return this._container;
     }
     async importModules(modules) {
-        console.log(modules);
         await modules.map(async (module) => {
             await this.importModule(module);
         });
-        console.log('over');
     }
     async loadsAsync(jsModules) {
-        const modules = (await jsModules).map(jsModule => {
-            return jsModule.default;
-        });
-        console.log(modules);
-        await this.loads(modules);
+        let tmp = [];
+        for (let jsModule of jsModules) {
+            const modules = await jsModule;
+            for (let module of modules) {
+                const m = await module.default;
+                tmp.push(m);
+            }
+        }
+        await this.loads(tmp);
     }
     async importModule(module) {
         console.log('start');

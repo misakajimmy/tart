@@ -1,0 +1,37 @@
+import { MonacoTextmateService, OnigasmPromise } from './monaco-textmate-service';
+import { FrontendApplicationContribution } from '@tart/core';
+import { bindContributionProvider } from '@tart/core/lib/common';
+import { LanguageGrammarDefinitionContribution } from './textmate-contribution';
+import { TextmateRegistry } from './textmate-registry';
+import { isBasicWasmSupported } from '@tart/core/lib/browser/browser';
+import wasm from 'onigasm/lib/onigasm.wasm';
+import { loadWASM, OnigScanner, OnigString } from 'onigasm';
+import { MonacoThemeRegistry } from './monaco-theme-registry';
+export class OnigasmLib {
+    createOnigScanner(sources) {
+        return new OnigScanner(sources);
+    }
+    createOnigString(sources) {
+        return new OnigString(sources);
+    }
+}
+export default (bind, unbind, isBound, rebind) => {
+    bind(OnigasmPromise).toDynamicValue(dynamicOnigasmLib).inSingletonScope();
+    bind(MonacoTextmateService).toSelf().inSingletonScope();
+    bind(FrontendApplicationContribution).toService(MonacoTextmateService);
+    bindContributionProvider(bind, LanguageGrammarDefinitionContribution);
+    bind(TextmateRegistry).toSelf().inSingletonScope();
+    bind(MonacoThemeRegistry).toDynamicValue(() => MonacoThemeRegistry.SINGLETON).inSingletonScope();
+};
+export async function dynamicOnigasmLib(ctx) {
+    return createOnigasmLib();
+}
+export async function createOnigasmLib() {
+    if (!isBasicWasmSupported) {
+        throw new Error('wasm not supported');
+    }
+    await loadWASM(wasm);
+    return new OnigasmLib();
+}
+
+//# sourceMappingURL=../../../lib/browser/textmate/monaco-textmate-frontend-bindings.js.map

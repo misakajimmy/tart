@@ -19,15 +19,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var QuickViewService_1;
 import { inject, injectable } from 'inversify';
 import { Disposable } from '../../common';
 import { ContextKeyService } from '../context-key-service';
+import { QuickAccessRegistry } from './quick-access';
 import { filterItems } from '../../common/quick-pick-service';
-let QuickViewService = class QuickViewService {
+let QuickViewService = QuickViewService_1 = class QuickViewService {
     static PREFIX = 'view ';
     items = [];
-    // @inject(QuickAccessRegistry)
-    // protected readonly quickAccessRegistry: QuickAccessRegistry;
+    quickAccessRegistry;
     contextKexService;
     hiddenItemLabels = new Set();
     registerItem(item) {
@@ -52,12 +53,12 @@ let QuickViewService = class QuickViewService {
         this.hiddenItemLabels.delete(label);
     }
     registerQuickAccessProvider() {
-        // this.quickAccessRegistry.registerQuickAccessProvider({
-        //   getInstance: () => this,
-        //   prefix: QuickViewService.PREFIX,
-        //   placeholder: '',
-        //   helpEntries: [{description: 'Open View', needsEditor: false}]
-        // });
+        this.quickAccessRegistry.registerQuickAccessProvider({
+            getInstance: () => this,
+            prefix: QuickViewService_1.PREFIX,
+            placeholder: '',
+            helpEntries: [{ description: 'Open View', needsEditor: false }]
+        });
     }
     getPicks(filter, token) {
         const items = this.items.filter(item => (item.when === undefined || this.contextKexService.match(item.when)) &&
@@ -66,9 +67,12 @@ let QuickViewService = class QuickViewService {
     }
 };
 __decorate([
+    inject(QuickAccessRegistry)
+], QuickViewService.prototype, "quickAccessRegistry", void 0);
+__decorate([
     inject(ContextKeyService)
 ], QuickViewService.prototype, "contextKexService", void 0);
-QuickViewService = __decorate([
+QuickViewService = QuickViewService_1 = __decorate([
     injectable()
 ], QuickViewService);
 export { QuickViewService };

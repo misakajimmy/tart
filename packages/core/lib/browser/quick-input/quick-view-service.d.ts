@@ -15,7 +15,7 @@
  ********************************************************************************/
 import { CancellationToken, Disposable } from '../../common';
 import { ContextKeyService } from '../context-key-service';
-import { QuickAccessContribution, QuickAccessProvider } from './quick-access';
+import { QuickAccessContribution, QuickAccessProvider, QuickAccessRegistry } from './quick-access';
 import { QuickPickItem, QuickPicks } from '../../common/quick-pick-service';
 export interface QuickViewItem {
     readonly label: string;
@@ -27,6 +27,7 @@ export declare class QuickViewService implements QuickAccessContribution, QuickA
     protected readonly items: (QuickPickItem & {
         when?: string;
     })[];
+    protected readonly quickAccessRegistry: QuickAccessRegistry;
     protected readonly contextKexService: ContextKeyService;
     private hiddenItemLabels;
     registerItem(item: QuickViewItem): Disposable;

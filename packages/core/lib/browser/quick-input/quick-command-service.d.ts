@@ -1,5 +1,5 @@
 import { CancellationToken, Command, CommandRegistry, Disposable } from '../../common';
-import { QuickAccessContribution, QuickAccessProvider } from './quick-access';
+import { QuickAccessContribution, QuickAccessProvider, QuickAccessRegistry } from './quick-access';
 import { ContextKeyService } from '../context-key-service';
 import { CorePreferences } from '../core-preferences';
 import { KeybindingRegistry } from '../keybinding';
@@ -12,6 +12,7 @@ export declare class QuickCommandService implements QuickAccessContribution, Qui
     protected readonly contextKeyService: ContextKeyService;
     protected readonly commandRegistry: CommandRegistry;
     protected readonly corePreferences: CorePreferences;
+    protected readonly quickAccessRegistry: QuickAccessRegistry;
     protected readonly keybindingRegistry: KeybindingRegistry;
     protected readonly contexts: Map<string, string[]>;
     private recentItems;

@@ -5,11 +5,11 @@ export class CoreInit {
     }
     async initContainer() {
         let modules = [];
-        const frontendApplication = await import('./browser/frontend-application-module.js');
+        const frontendApplication = await import('./browser/frontend-application-module');
         modules.push(frontendApplication);
-        const browserMenu = await import('./browser/menu/browser-menu-module.js');
+        const browserMenu = await import('./browser/menu/browser-menu-module');
         modules.push(browserMenu);
-        const browserWindow = await import('./browser/window/browser-window-module.js');
+        const browserWindow = await import('./browser/window/browser-window-module');
         modules.push(browserWindow);
         const browserKeyboard = await import('./browser/keyboard/browser-keyboard-module');
         modules.push(browserKeyboard);

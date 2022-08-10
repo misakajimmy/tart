@@ -1,0 +1,1 @@
+{"version":3,"sources":["browser/editor-menu.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,QAAQ,EAAC,MAAM,uBAAuB,CAAC;AAE/C,eAAO,MAAM,mBAAmB,EAAE,QAAkC,CAAC","file":"../../src/browser/editor-menu.d.ts","sourcesContent":["import {MenuPath} from '@tart/core/lib/common';\r\n\r\nexport const EDITOR_CONTEXT_MENU: MenuPath = ['editor_context_menu'];\r\n"]}

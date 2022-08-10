@@ -1,1 +1,4 @@
-export declare function TartCore(): JSX.Element;
+export interface ITartCoreProps {
+    modules?: [];
+}
+export declare function TartCore(props: ITartCoreProps): JSX.Element;

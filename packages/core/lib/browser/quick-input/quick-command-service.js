@@ -4,8 +4,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var QuickCommandService_1;
 import { Command, CommandRegistry, Disposable } from '../../common';
 import { inject, injectable } from 'inversify';
+import { QuickAccessRegistry } from './quick-access';
 import { ContextKeyService } from '../context-key-service';
 import { CorePreferences } from '../core-preferences';
 import { KeybindingRegistry } from '../keybinding';
@@ -18,7 +20,7 @@ export const CLEAR_COMMAND_HISTORY = Command.toDefaultLocalizedCommand({
     id: 'clear.command.history',
     label: 'Clear Command History'
 });
-let QuickCommandService = class QuickCommandService {
+let QuickCommandService = QuickCommandService_1 = class QuickCommandService {
     static PREFIX = '>';
     // The list of exempted commands not to be displayed in the recently used list.
     exemptedCommands = [
@@ -27,19 +29,18 @@ let QuickCommandService = class QuickCommandService {
     contextKeyService;
     commandRegistry;
     corePreferences;
-    // @inject(QuickAccessRegistry)
-    // protected readonly quickAccessRegistry: QuickAccessRegistry;
+    quickAccessRegistry;
     keybindingRegistry;
     contexts = new Map();
     recentItems = [];
     otherItems = [];
     registerQuickAccessProvider() {
-        // this.quickAccessRegistry.registerQuickAccessProvider({
-        //   getInstance: () => this,
-        //   prefix: QuickCommandService.PREFIX,
-        //   placeholder: '',
-        //   helpEntries: [{description: 'Quick Command', needsEditor: false}]
-        // });
+        this.quickAccessRegistry.registerQuickAccessProvider({
+            getInstance: () => this,
+            prefix: QuickCommandService_1.PREFIX,
+            placeholder: '',
+            helpEntries: [{ description: 'Quick Command', needsEditor: false }]
+        });
     }
     reset() {
         const { recent, other } = this.getCommands();
@@ -195,9 +196,12 @@ __decorate([
     inject(CorePreferences)
 ], QuickCommandService.prototype, "corePreferences", void 0);
 __decorate([
+    inject(QuickAccessRegistry)
+], QuickCommandService.prototype, "quickAccessRegistry", void 0);
+__decorate([
     inject(KeybindingRegistry)
 ], QuickCommandService.prototype, "keybindingRegistry", void 0);
-QuickCommandService = __decorate([
+QuickCommandService = QuickCommandService_1 = __decorate([
     injectable()
 ], QuickCommandService);
 export { QuickCommandService };

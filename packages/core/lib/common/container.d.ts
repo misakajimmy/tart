@@ -5,7 +5,7 @@ export declare class ContainerLoader {
     constructor();
     get container(): Container;
     importModules(modules: string[]): Promise<void>;
-    loadsAsync(jsModules: Promise<any[]>): Promise<void>;
+    loadsAsync(jsModules: Promise<any[]>[]): Promise<void>;
     protected importModule(module: string): Promise<void>;
     protected loads(jsModules: any[]): Promise<void>;
     protected load(jsModule: any): Promise<void>;
