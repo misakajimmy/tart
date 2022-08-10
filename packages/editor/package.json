@@ -1,6 +1,9 @@
 {
-  "name": "@tart/editor",
-  "version": "1.0.0",
+  "name": "@tartjs/editor",
+  "version": "0.0.6",
+  "publishConfig": {
+    "access": "public"
+  },
   "directories": {
     "lib": "lib/"
   },
@@ -19,18 +22,19 @@
     "dev": "yarn build && yarn watch"
   },
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "@tartjs/core": "^0.0.6",
     "inversify": "^5.1.1",
-    "@tart/core": "^1.0.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@types/react": "^17",
     "@types/react-dom": "^17.0.17",
-    "typescript": "^4.7.4",
     "gulp": "^4.0.2",
     "gulp-less": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-typescript": "^5.0.1",
-    "gulp-sourcemaps": "^3.0.0"
-  }
+    "typescript": "^4.7.4"
+  },
+  "gitHead": "efc8c66b963111c557c3aca4b65a7ff57e50745a"
 }

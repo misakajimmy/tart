@@ -7,7 +7,7 @@ import {
     QuickAccessContribution,
     QuickAccessProvider,
     QuickAccessRegistry
-} from '@tart/core';
+} from '@tartjs/core';
 import {
     CancellationToken,
     Command,
@@ -17,16 +17,16 @@ import {
     MenuContribution,
     MenuModelRegistry,
     SelectionService
-} from '@tart/core/lib/common';
+} from '@tartjs/core/lib/common';
 import {
     findMatches,
     QuickInputService,
     QuickPickItem,
     QuickPicks
-} from '@tart/core/lib/common/quick-pick-service';
-import {nls} from '@tart/core/lib/common/nls';
+} from '@tartjs/core/lib/common/quick-pick-service';
+import {nls} from '@tartjs/core/lib/common/nls';
 import {WorkspaceSymbolParams} from 'vscode-languageserver-protocol';
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 import {Position, Range, SymbolInformation} from 'vscode-languageserver-types';
 import {MonacoLanguages, WorkspaceSymbolProvider} from './monaco-languages';
 

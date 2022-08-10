@@ -1,10 +1,10 @@
-import {CompositeTreeNode, ExpandableTreeNode, SelectableTreeNode, TreeImpl, TreeNode} from '@tart/core';
-import {MessageService, Mutable, UriSelection} from '@tart/core/lib/common';
+import {CompositeTreeNode, ExpandableTreeNode, SelectableTreeNode, TreeImpl, TreeNode} from '@tartjs/core';
+import {MessageService, Mutable, UriSelection} from '@tartjs/core/lib/common';
 import {FileSelection} from '../file-selection';
 import {FileStat as DeprecatedFileStat} from '../../common/filesystem';
 import {FileOperationError, FileOperationResult, FileStat, FileType, Stat} from '../../common/files';
 import {inject, injectable} from 'inversify';
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 import {FileService} from '../file-service';
 
 @injectable()

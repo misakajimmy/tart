@@ -1,9 +1,9 @@
 import {inject, injectable, postConstruct} from 'inversify';
 import {DirNode, FileNode, FileStatNode, FileTreeModel} from '../file-tree';
-import {Emitter, Event} from '@tart/core/lib/common';
-import URI from '@tart/core/lib/common/uri';
-import {TreeNode} from '@tart/core/lib/browser';
-import {SelectableTreeNode} from '@tart/core';
+import {Emitter, Event} from '@tartjs/core/lib/common';
+import URI from '@tartjs/core/lib/common/uri';
+import {TreeNode} from '@tartjs/core/lib/browser';
+import {SelectableTreeNode} from '@tartjs/core';
 import {FileDialogTree} from './file-dialog-tree';
 
 @injectable()

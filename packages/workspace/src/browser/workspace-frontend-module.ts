@@ -1,7 +1,7 @@
 import {ContainerModule} from 'inversify';
 import {WorkspaceFrontendContribution} from './workspace-frontend-contribution';
-import {FrontendApplicationContribution, KeybindingContribution, LabelProviderContribution} from '@tart/core';
-import {CommandContribution, MenuContribution} from '@tart/core/lib/common';
+import {FrontendApplicationContribution, KeybindingContribution, LabelProviderContribution} from '@tartjs/core';
+import {CommandContribution, MenuContribution} from '@tartjs/core/lib/common';
 import {bindWorkspacePreferences} from './workspace-preference';
 import {WorkspaceService} from './workspace-service';
 import {FileMenuContribution, WorkspaceCommandContribution} from './workspace-commands';
@@ -15,7 +15,7 @@ import {
   SaveFileDialog,
   SaveFileDialogFactory,
   SaveFileDialogProps
-} from '@tart/filesystem';
+} from '@tartjs/filesystem';
 import {WorkspaceDeleteHandler} from './workspace-delete-handler';
 import {WorkspaceUtils} from './workspace-utils';
 

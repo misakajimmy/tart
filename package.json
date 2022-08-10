@@ -1,10 +1,10 @@
 {
-  "name": "@tart/root",
+  "name": "@tartjs/root",
   "private": true,
   "version": "0.0.1",
   "scripts": {
     "prepare": "lerna run prepare",
-    "publish": "lerna publish --no-private"
+    "publish": "lerna publish --no-private --skip-git"
   },
   "dependencies": {
   },

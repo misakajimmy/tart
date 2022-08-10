@@ -14,9 +14,9 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-import {KeybindingRegistry} from '@tart/core/lib/browser/keybinding';
-import {Key, KeyCode, KeyModifier, KeySequence, Keystroke} from '@tart/core/lib/browser/keys';
-import {isOSX} from '@tart/core/lib/common/os';
+import {KeybindingRegistry} from '@tartjs/core/lib/browser/keybinding';
+import {Key, KeyCode, KeyModifier, KeySequence, Keystroke} from '@tartjs/core/lib/browser/keys';
+import {isOSX} from '@tartjs/core/lib/common/os';
 import {KEY_CODE_MAP} from './monaco-keycode-map';
 
 export class MonacoResolvedKeybinding extends monaco.keybindings.ResolvedKeybinding {

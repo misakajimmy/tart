@@ -5,13 +5,13 @@ import {
     CommandRegistry,
     SelectionService,
     UriAwareCommandHandler
-} from '@tart/core/lib/common';
-import {CommonCommands} from '@tart/core';
-import URI from '@tart/core/lib/common/uri';
+} from '@tartjs/core/lib/common';
+import {CommonCommands} from '@tartjs/core';
+import URI from '@tartjs/core/lib/common/uri';
 import {FileService} from '../file-service';
 import FileSaver from 'file-saver';
 import JSZip from 'jszip';
-import {nls} from "@tart/core/lib/common/nls";
+import {nls} from "@tartjs/core/lib/common/nls";
 
 @injectable()
 export class FileDownloadCommandContribution implements CommandContribution {

@@ -1,9 +1,9 @@
 import {Container, interfaces} from 'inversify';
 import {FileNavigatorWidget} from './navigator-widget';
 import {FileNavigatorModel} from './navigator-model';
-import {createFileTreeContainer, FileTree, FileTreeModel, FileTreeWidget} from '@tart/filesystem';
+import {createFileTreeContainer, FileTree, FileTreeModel, FileTreeWidget} from '@tartjs/filesystem';
 import {FileNavigatorTree} from './navigator-tree';
-import {defaultTreeProps, Tree, TreeDecoratorService, TreeModel, TreeProps} from '@tart/core';
+import {defaultTreeProps, Tree, TreeDecoratorService, TreeModel, TreeProps} from '@tartjs/core';
 import {NAVIGATOR_CONTEXT_MENU} from './navigator-contribution';
 import {NavigatorDecoratorService} from './navigator-decorator-service';
 

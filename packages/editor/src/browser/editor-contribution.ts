@@ -1,14 +1,14 @@
 import {inject, injectable, optional} from 'inversify';
-import {DiffUris, FrontendApplicationContribution, KeybindingContribution, KeybindingRegistry} from '@tart/core';
-import {Command, CommandContribution, CommandRegistry, DisposableCollection} from '@tart/core/lib/common';
-import {ContextKeyService} from '@tart/core/lib/browser/context-key-service';
+import {DiffUris, FrontendApplicationContribution, KeybindingContribution, KeybindingRegistry} from '@tartjs/core';
+import {Command, CommandContribution, CommandRegistry, DisposableCollection} from '@tartjs/core/lib/common';
+import {ContextKeyService} from '@tartjs/core/lib/browser/context-key-service';
 import {EditorManager} from './editor-manager';
 import {TextEditor} from './editor';
-import {StatusBar, StatusBarAlignment} from '@tart/core/lib/browser/status-bar';
-import {LanguageService} from '@tart/core/lib/browser/language-service';
+import {StatusBar, StatusBarAlignment} from '@tartjs/core/lib/browser/status-bar';
+import {LanguageService} from '@tartjs/core/lib/browser/language-service';
 import {EditorCommands} from './editor-command';
-import {SUPPORTED_ENCODINGS} from '@tart/core/lib/browser/supported-encodings';
-import {QuickInputService} from '@tart/core/lib/common/quick-pick-service';
+import {SUPPORTED_ENCODINGS} from '@tartjs/core/lib/browser/supported-encodings';
+import {QuickInputService} from '@tartjs/core/lib/common/quick-pick-service';
 
 export const TEST = Command.toDefaultLocalizedCommand({
   id: 'textEditor.commands.configEol',

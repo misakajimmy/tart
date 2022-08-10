@@ -15,8 +15,8 @@
  ********************************************************************************/
 
 import {inject, injectable, named} from 'inversify';
-import {ContributionProvider} from '@tart/core/lib/common/contribution-provider';
-import {AbstractTreeDecoratorService, TreeDecorator} from '@tart/core/lib/browser/tree/tree-decorator';
+import {ContributionProvider} from '@tartjs/core/lib/common/contribution-provider';
+import {AbstractTreeDecoratorService, TreeDecorator} from '@tartjs/core/lib/browser/tree/tree-decorator';
 
 /**
  * Symbol for all decorators that would like to contribute into the navigator.

@@ -6,9 +6,9 @@ import {
   PreferenceSchema,
   PreferenceSchemaProperties,
   PreferenceService
-} from '@tart/core';
-import {nls} from '@tart/core/lib/common/nls';
-import {isOSX, isWindows, OS} from '@tart/core/lib/common';
+} from '@tartjs/core';
+import {nls} from '@tartjs/core/lib/common/nls';
+import {isOSX, isWindows, OS} from '@tartjs/core/lib/common';
 import {interfaces} from 'inversify';
 
 const DEFAULT_WINDOWS_FONT_FAMILY = 'Consolas, \'Courier New\', monospace';

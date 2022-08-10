@@ -8,10 +8,10 @@ import {
   SelectableTreeNode,
   TabBar,
   Widget
-} from '@tart/core';
-import {FileStatNode, FileTreeModel} from '@tart/filesystem';
-import {FileStat} from '@tart/filesystem/lib/common/files';
-import {DisposableCollection} from '@tart/core/lib/common';
+} from '@tartjs/core';
+import {FileStatNode, FileTreeModel} from '@tartjs/filesystem';
+import {FileStat} from '@tartjs/filesystem/lib/common/files';
+import {DisposableCollection} from '@tartjs/core/lib/common';
 
 export interface OpenEditorNode extends FileStatNode {
   widget: Widget;

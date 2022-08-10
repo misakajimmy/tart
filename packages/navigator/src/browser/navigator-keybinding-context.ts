@@ -1,5 +1,5 @@
 import {inject, injectable} from 'inversify';
-import {ApplicationShell, KeybindingContext} from '@tart/core';
+import {ApplicationShell, KeybindingContext} from '@tartjs/core';
 import {FileNavigatorWidget} from './navigator-widget';
 
 export namespace NavigatorKeybindingContexts {

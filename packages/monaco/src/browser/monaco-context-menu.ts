@@ -1,9 +1,9 @@
 import {inject, injectable} from 'inversify';
-import {MenuPath} from '@tart/core/lib/common/menu';
-import {ContextMenuRenderer, toAnchor} from '@tart/core/lib/browser';
+import {MenuPath} from '@tartjs/core/lib/common/menu';
+import {ContextMenuRenderer, toAnchor} from '@tartjs/core/lib/browser';
 import {Menu} from '@lumino/widgets';
 import {CommandRegistry} from '@lumino/commands';
-import {EDITOR_CONTEXT_MENU} from '@tart/editor/lib';
+import {EDITOR_CONTEXT_MENU} from '@tartjs/editor/lib';
 import IContextMenuService = monaco.editor.IContextMenuService;
 import IContextMenuDelegate = monaco.editor.IContextMenuDelegate;
 

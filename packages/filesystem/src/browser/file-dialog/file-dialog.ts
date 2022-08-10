@@ -1,18 +1,18 @@
 import {inject, injectable, postConstruct} from 'inversify';
-import {AbstractDialog, codiconArray, createIconButton, DialogProps, Key, Panel, setEnabled} from '@tart/core';
+import {AbstractDialog, codiconArray, createIconButton, DialogProps, Key, Panel, setEnabled} from '@tartjs/core';
 import {
     FileDialogTreeFilters,
     FileDialogTreeFiltersRenderer,
     FileDialogTreeFiltersRendererFactory
 } from './file-dialog-tree-filters-renderer';
 import {Message} from '@lumino/messaging';
-import {Disposable, MaybeArray} from '@tart/core/lib/common';
+import {Disposable, MaybeArray} from '@tartjs/core/lib/common';
 import {FileStatNode} from '../file-tree';
 import {LocationListRenderer, LocationListRendererFactory} from '../location';
 import {FileDialogWidget} from './file-dialog-widget';
 import {FileDialogModel} from './file-dialog-model';
-import {LabelProvider, Widget} from '@tart/core/lib/browser';
-import URI from '@tart/core/lib/common/uri';
+import {LabelProvider, Widget} from '@tartjs/core/lib/browser';
+import URI from '@tartjs/core/lib/common/uri';
 
 export const OpenFileDialogFactory = Symbol('OpenFileDialogFactory');
 

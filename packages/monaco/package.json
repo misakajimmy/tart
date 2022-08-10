@@ -1,6 +1,9 @@
 {
-  "name": "@tart/monaco",
-  "version": "1.0.0",
+  "name": "@tartjs/monaco",
+  "version": "0.0.6",
+  "publishConfig": {
+    "access": "public"
+  },
   "directories": {
     "lib": "lib/"
   },
@@ -19,26 +22,27 @@
     "dev": "yarn build && yarn watch"
   },
   "dependencies": {
+    "@lumino/domutils": "^1.8.1",
+    "@tartjs/core": "^0.0.6",
+    "@tartjs/editor": "^0.0.6",
+    "@theia/monaco-editor-core": "^0.23.0",
+    "idb": "^7.0.0",
+    "inversify": "^5.1.1",
+    "onigasm": "^2.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "inversify": "^5.1.1",
-    "idb": "^7.0.0",
-    "vscode-textmate": "^4.4.0",
-    "onigasm": "^2.2.0",
     "vscode-languageserver-protocol": "^3.16.0",
     "vscode-languageserver-types": "^3.16.0",
-    "@theia/monaco-editor-core": "^0.23.0",
-    "@lumino/domutils": "^1.8.1",
-    "@tart/core": "^1.0.0",
-    "@tart/editor": "^1.0.0"
+    "vscode-textmate": "^4.4.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.48",
     "@types/react-dom": "^17.0.17",
-    "typescript": "^4.7.4",
     "gulp": "^4.0.2",
     "gulp-less": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
     "gulp-typescript": "^5.0.1",
-    "gulp-sourcemaps": "^3.0.0"
-  }
+    "typescript": "^4.7.4"
+  },
+  "gitHead": "efc8c66b963111c557c3aca4b65a7ff57e50745a"
 }

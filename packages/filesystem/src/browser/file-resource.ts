@@ -7,9 +7,9 @@ import {
     ResourceResolver,
     ResourceSaveOptions,
     ResourceVersion
-} from '@tart/core/lib/common';
+} from '@tartjs/core/lib/common';
 import {inject, injectable} from 'inversify';
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 import {FileService, TextFileOperationError, TextFileOperationResult} from './file-service';
 import {
     BinarySize,
@@ -20,9 +20,9 @@ import {
     FileReadStreamOptions,
     FileSystemProviderCapabilities
 } from '../common/files';
-import {ConfirmDialog, LabelProvider} from '@tart/core';
+import {ConfirmDialog, LabelProvider} from '@tartjs/core';
 import {GENERAL_MAX_FILE_SIZE_MB} from './filesystem-preferences';
-import {Readable, ReadableStream} from '@tart/core/lib/common/stream';
+import {Readable, ReadableStream} from '@tartjs/core/lib/common/stream';
 
 export interface FileResourceVersion extends ResourceVersion {
     readonly encoding: string;

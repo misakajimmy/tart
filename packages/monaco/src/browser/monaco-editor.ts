@@ -11,16 +11,16 @@ import {
   RevealRangeOptions,
   TextDocumentChangeEvent,
   TextEditor
-} from '@tart/editor/lib/browser/editor';
+} from '@tartjs/editor/lib/browser/editor';
 import {ElementExt} from '@lumino/domutils'
-import {Disposable, DisposableCollection, Emitter, Event, TextDocumentContentChangeDelta,} from '@tart/core/lib/common';
+import {Disposable, DisposableCollection, Emitter, Event, TextDocumentContentChangeDelta,} from '@tartjs/core/lib/common';
 
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 import {MonacoEditorModel} from './monaco-editor-model';
 import {MonacoToProtocolConverter} from './monaco-to-protocol-converter';
 import {ProtocolToMonacoConverter} from './protocol-to-monaco-converter';
-import {ContextKeyService} from '@tart/core/lib/browser/context-key-service';
-import {UTF8} from '@tart/core/lib/common/encodings';
+import {ContextKeyService} from '@tartjs/core/lib/browser/context-key-service';
+import {UTF8} from '@tartjs/core/lib/common/encodings';
 import {TextEdit} from 'vscode-languageserver-types';
 import IStandaloneEditorConstructionOptions = monaco.editor.IStandaloneEditorConstructionOptions;
 import IModelDeltaDecoration = monaco.editor.IModelDeltaDecoration;
@@ -28,9 +28,9 @@ import IEditorOverrideServices = monaco.editor.IEditorOverrideServices;
 import IStandaloneCodeEditor = monaco.editor.IStandaloneCodeEditor;
 import IIdentifiedSingleEditOperation = monaco.editor.IIdentifiedSingleEditOperation;
 import IBoxSizing = ElementExt.IBoxSizing;
-import {EditorDecoration} from '@tart/editor/lib/browser/decorations/editor-decoration';
-import {EditorManager} from '@tart/editor/lib/browser/editor-manager';
-import {EditorWidget} from '@tart/editor/lib/browser/editor-widget';
+import {EditorDecoration} from '@tartjs/editor/lib/browser/decorations/editor-decoration';
+import {EditorManager} from '@tartjs/editor/lib/browser/editor-manager';
+import {EditorWidget} from '@tartjs/editor/lib/browser/editor-widget';
 
 
 @injectable()

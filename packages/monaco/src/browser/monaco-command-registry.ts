@@ -1,8 +1,8 @@
 import {MonacoEditor} from './monaco-editor';
 import {inject, injectable} from 'inversify';
 import {MonacoEditorProvider} from './monaco-editor-provider';
-import {Command, CommandHandler, CommandRegistry, SelectionService} from '@tart/core/lib/common';
-import {TextEditorSelection} from '@tart/editor';
+import {Command, CommandHandler, CommandRegistry, SelectionService} from '@tartjs/core/lib/common';
+import {TextEditorSelection} from '@tartjs/editor';
 
 export interface MonacoEditorCommandHandler {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -16,9 +16,9 @@
 
 import {inject, injectable, named} from 'inversify';
 import {IOnigLib, IRawGrammar, parseRawGrammar, Registry} from 'vscode-textmate';
-import {ContributionProvider, Disposable, DisposableCollection} from '@tart/core/lib/common';
-import {FrontendApplicationContribution} from '@tart/core/lib/browser';
-import {ThemeService} from '@tart/core/lib/browser/theming';
+import {ContributionProvider, Disposable, DisposableCollection} from '@tartjs/core/lib/common';
+import {FrontendApplicationContribution} from '@tartjs/core/lib/browser';
+import {ThemeService} from '@tartjs/core/lib/browser/theming';
 import {getEncodedLanguageId, LanguageGrammarDefinitionContribution} from './textmate-contribution';
 import {createTextmateTokenizer, TokenizerOption} from './textmate-tokenizer';
 import {TextmateRegistry} from './textmate-registry';

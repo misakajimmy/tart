@@ -1,18 +1,18 @@
 import {inject, injectable, postConstruct} from 'inversify';
-import {PreferenceSchemaProvider, PreferenceScope, PreferenceServiceImpl, WindowService} from '@tart/core';
-import {BaseStat, FileStat} from '@tart/filesystem/lib/common/files';
-import {Deferred} from '@tart/core/lib/common/promise-util';
-import URI from '@tart/core/lib/common/uri';
+import {PreferenceSchemaProvider, PreferenceScope, PreferenceServiceImpl, WindowService} from '@tartjs/core';
+import {BaseStat, FileStat} from '@tartjs/filesystem/lib/common/files';
+import {Deferred} from '@tartjs/core/lib/common/promise-util';
+import URI from '@tartjs/core/lib/common/uri';
 import * as jsoncparser from 'jsonc-parser';
 import Ajv from 'ajv';
-import {FileService} from '@tart/filesystem/lib/browser/file-service';
+import {FileService} from '@tartjs/filesystem/lib/browser/file-service';
 import {VSCODE_EXT, WM_EXT} from '../common';
 import {WorkspacePreferences} from './workspace-preference';
-import {Disposable, DisposableCollection, Emitter, Event, MaybePromise} from '@tart/core/lib/common';
+import {Disposable, DisposableCollection, Emitter, Event, MaybePromise} from '@tartjs/core/lib/common';
 import {workspaceSchema} from './workspace-schema-updater';
-import {FileSystemPreferences} from '@tart/filesystem/lib/browser/filesystem-preferences';
-import {DEFAULT_WINDOW_HASH} from '@tart/core/lib/common/window';
-import {FrontendApplicationConfigProvider} from '@tart/core/lib/browser/frontend-application-config-provider';
+import {FileSystemPreferences} from '@tartjs/filesystem/lib/browser/filesystem-preferences';
+import {DEFAULT_WINDOW_HASH} from '@tartjs/core/lib/common/window';
+import {FrontendApplicationConfigProvider} from '@tartjs/core/lib/browser/frontend-application-config-provider';
 
 /**
  *  The workspace service

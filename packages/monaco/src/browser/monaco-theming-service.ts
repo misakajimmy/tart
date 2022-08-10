@@ -1,6 +1,6 @@
 import {injectable} from 'inversify';
-import {Disposable, DisposableCollection} from '@tart/core/lib/common';
-import {BuiltinThemeProvider, ThemeService} from '@tart/core/lib/browser/theming';
+import {Disposable, DisposableCollection} from '@tartjs/core/lib/common';
+import {BuiltinThemeProvider, ThemeService} from '@tartjs/core/lib/browser/theming';
 import {getThemes, MonacoThemeState, putTheme, stateToTheme} from './monaco-indexed-db';
 import {MonacoThemeRegistry} from './textmate/monaco-theme-registry';
 

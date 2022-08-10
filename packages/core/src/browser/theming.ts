@@ -21,7 +21,7 @@ import darkCss from '../assets/style/variables-dark.useable.css';
 import lightCss from '../assets/style/variables-bright.useable.css';
 
 /**
- * @deprecated since 1.20.0. Import from `@tart/core/lib/common/theme` instead.
+ * @deprecated since 1.20.0. Import from `@tartjs/core/lib/common/theme` instead.
  */
 export * from '../common/theme';
 

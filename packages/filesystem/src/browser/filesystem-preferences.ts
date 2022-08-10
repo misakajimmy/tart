@@ -21,9 +21,9 @@ import {
     PreferenceProxy,
     PreferenceSchema,
     PreferenceService
-} from '@tart/core/lib/browser/preferences';
-import {SUPPORTED_ENCODINGS} from '@tart/core/lib/browser/supported-encodings';
-import {nls} from '@tart/core/lib/common/nls';
+} from '@tartjs/core/lib/browser/preferences';
+import {SUPPORTED_ENCODINGS} from '@tartjs/core/lib/browser/supported-encodings';
+import {nls} from '@tartjs/core/lib/common/nls';
 
 // See https://github.com/Microsoft/vscode/issues/30180
 export const WIN32_MAX_FILE_SIZE_MB = 300; // 300 MB

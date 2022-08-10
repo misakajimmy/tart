@@ -1,5 +1,5 @@
 import {inject, injectable, postConstruct} from 'inversify';
-import {ContextKey, ContextKeyService} from '@tart/core';
+import {ContextKey, ContextKeyService} from '@tartjs/core';
 
 @injectable()
 export class MonacoContextKeyService extends ContextKeyService {

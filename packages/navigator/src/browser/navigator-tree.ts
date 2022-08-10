@@ -1,11 +1,11 @@
 /**
  * File tree root node for multi-root workspaces.
  */
-import {CompositeTreeNode, SelectableTreeNode, TreeNode} from '@tart/core';
-import {DirNode, FileTree} from '@tart/filesystem';
+import {CompositeTreeNode, SelectableTreeNode, TreeNode} from '@tartjs/core';
+import {DirNode, FileTree} from '@tartjs/filesystem';
 import {inject, injectable, postConstruct} from 'inversify';
-import URI from '@tart/core/lib/common/uri';
-import {FileStat} from '@tart/filesystem/lib/common/files';
+import URI from '@tartjs/core/lib/common/uri';
+import {FileStat} from '@tartjs/filesystem/lib/common/files';
 import {FileNavigatorFilter} from './navigator-filter';
 
 @injectable()

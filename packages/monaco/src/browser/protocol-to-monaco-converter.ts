@@ -1,5 +1,5 @@
 import {injectable} from 'inversify';
-import {RecursivePartial} from '@tart/core/lib/common';
+import {RecursivePartial} from '@tartjs/core/lib/common';
 import {
     Diagnostic,
     DiagnosticRelatedInformation,

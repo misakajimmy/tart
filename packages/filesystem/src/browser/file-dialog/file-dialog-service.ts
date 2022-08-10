@@ -1,10 +1,10 @@
 import {OpenFileDialogFactory, OpenFileDialogProps, SaveFileDialogFactory, SaveFileDialogProps} from './file-dialog';
 import {FileStat} from '../../common/files';
-import URI from '@tart/core/lib/common/uri';
-import {MaybeArray} from '@tart/core/lib/common';
+import URI from '@tartjs/core/lib/common/uri';
+import {MaybeArray} from '@tartjs/core/lib/common';
 import {inject, injectable} from 'inversify';
 import {FileService} from '../file-service';
-import {LabelProvider} from '@tart/core/lib/browser';
+import {LabelProvider} from '@tartjs/core/lib/browser';
 import {DirNode} from '../file-tree';
 
 export const FileDialogService = Symbol('FileDialogService');

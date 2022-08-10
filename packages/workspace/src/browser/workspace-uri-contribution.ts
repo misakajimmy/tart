@@ -1,6 +1,6 @@
-import URI from '@tart/core/lib/common/uri';
-import {DefaultUriLabelProviderContribution, URIIconReference} from '@tart/core/lib/browser';
-import {FileStat} from '@tart/filesystem/lib/common/files';
+import URI from '@tartjs/core/lib/common/uri';
+import {DefaultUriLabelProviderContribution, URIIconReference} from '@tartjs/core/lib/browser';
+import {FileStat} from '@tartjs/filesystem/lib/common/files';
 import {injectable, postConstruct} from 'inversify';
 
 @injectable()

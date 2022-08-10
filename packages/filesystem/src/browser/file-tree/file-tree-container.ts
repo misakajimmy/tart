@@ -1,5 +1,5 @@
 import {Container, interfaces} from 'inversify';
-import {createTreeContainer, Tree, TreeImpl, TreeModel, TreeModelImpl, TreeWidget} from '@tart/core';
+import {createTreeContainer, Tree, TreeImpl, TreeModel, TreeModelImpl, TreeWidget} from '@tartjs/core';
 import {FileTreeModel} from './file-tree-model';
 import {FileTreeWidget} from './file-tree-widget';
 import {FileTree} from './file-tree';

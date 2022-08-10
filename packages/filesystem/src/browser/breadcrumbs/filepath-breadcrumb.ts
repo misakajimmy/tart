@@ -1,5 +1,5 @@
-import {Breadcrumb} from '@tart/core';
-import URI from '@tart/core/lib/common/uri';
+import {Breadcrumb} from '@tartjs/core';
+import URI from '@tartjs/core/lib/common/uri';
 import {FilepathBreadcrumbType} from './filepath-breadcrumbs-contribution';
 
 export class FilepathBreadcrumb implements Breadcrumb {

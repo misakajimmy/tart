@@ -1,5 +1,5 @@
-import URI from '@tart/core/lib/common/uri';
-import {EnvVariablesServer} from '@tart/core/lib/common/env-variables';
+import URI from '@tartjs/core/lib/common/uri';
+import {EnvVariablesServer} from '@tartjs/core/lib/common/env-variables';
 
 export const WM_EXT = 'wm-workspace';
 export const VSCODE_EXT = 'code-workspace';

@@ -15,7 +15,7 @@
  ********************************************************************************/
 
 import {inject, injectable, named, postConstruct} from 'inversify';
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 import {
     ContributionProvider,
     Event,
@@ -23,13 +23,13 @@ import {
     ReferenceCollection,
     Resource,
     ResourceProvider,
-} from '@tart/core/lib/common';
-import {EditorPreferenceChange, EditorPreferences} from '@tart/editor';
+} from '@tartjs/core/lib/common';
+import {EditorPreferenceChange, EditorPreferences} from '@tartjs/editor';
 import {MonacoEditorModel} from './monaco-editor-model';
 import {MonacoToProtocolConverter} from './monaco-to-protocol-converter';
 import {ProtocolToMonacoConverter} from './protocol-to-monaco-converter';
 // import { ApplicationServer } from '@wm/core/lib/common/application-protocol';
-import {Deferred} from '@tart/core/lib/common/promise-util';
+import {Deferred} from '@tartjs/core/lib/common/promise-util';
 import IReference = monaco.editor.IReference;
 
 export {IReference};

@@ -1,9 +1,9 @@
 import {ContainerModule} from 'inversify';
 import {EditorContribution} from './editor-contribution';
-import {FrontendApplicationContribution, KeybindingContribution, WidgetFactory} from '@tart/core';
-import {CommandContribution} from '@tart/core/lib/common';
+import {FrontendApplicationContribution, KeybindingContribution, WidgetFactory} from '@tartjs/core';
+import {CommandContribution} from '@tartjs/core/lib/common';
 import {EditorManager} from './editor-manager';
-import {OpenHandler} from '@tart/core/lib/browser/opener-service';
+import {OpenHandler} from '@tartjs/core/lib/browser/opener-service';
 import {bindEditorPreferences} from './editor-preference';
 import {EditorWidgetFactory} from './editor-widget-factory';
 

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {DisposableCollection, Emitter, Path} from '@tart/core/lib/common';
+import {DisposableCollection, Emitter, Path} from '@tartjs/core/lib/common';
 import {FileService} from '../file-service';
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 import {inject, injectable, postConstruct} from 'inversify';
-import {codicon, ReactRenderer} from '@tart/core';
+import {codicon, ReactRenderer} from '@tartjs/core';
 import {FileDialogModel} from '../file-dialog/file-dialog-model';
 import {LocationService} from './locaion-service';
 

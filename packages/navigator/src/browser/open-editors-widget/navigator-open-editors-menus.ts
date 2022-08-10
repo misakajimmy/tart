@@ -13,7 +13,7 @@
  *
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
-import {MenuPath} from '@tart/core/lib/common';
+import {MenuPath} from '@tartjs/core/lib/common';
 
 
 export const OPEN_EDITORS_CONTEXT_MENU: MenuPath = ['open-editors-context-menu'];

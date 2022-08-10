@@ -10,7 +10,7 @@ import {
     Event,
     Mutable,
     WaitUntilEvent
-} from '@tart/core/lib/common';
+} from '@tartjs/core/lib/common';
 import {
     BaseStatWithMetadata,
     CopyFileOptions,
@@ -51,12 +51,12 @@ import {
     WatchOptions,
     WriteFileOptions
 } from '../common/files';
-import URI from '@tart/core/lib/common/uri';
-import {Deferred} from '@tart/core/lib/common/promise-util';
-import {TernarySearchTree} from '@tart/core/lib/common/ternary-search-tree';
+import URI from '@tartjs/core/lib/common/uri';
+import {Deferred} from '@tartjs/core/lib/common/promise-util';
+import {TernarySearchTree} from '@tartjs/core/lib/common/ternary-search-tree';
 import type {TextDocumentContentChangeEvent} from 'vscode-languageserver-protocol';
-import {LabelProvider} from '@tart/core';
-import {EncodingRegistry} from '@tart/core/lib/browser/encoding-registry';
+import {LabelProvider} from '@tartjs/core';
+import {EncodingRegistry} from '@tartjs/core/lib/browser/encoding-registry';
 import {
     consumeStream,
     isReadableBufferedStream,
@@ -66,9 +66,9 @@ import {
     Readable,
     ReadableStream,
     transform
-} from '@tart/core/lib/common/stream';
-import {DecodeStreamResult, EncodingService, ResourceEncoding} from '@tart/core/lib/common/encoding-service';
-import {UTF8, UTF8_with_bom} from '@tart/core/lib/common/encodings';
+} from '@tartjs/core/lib/common/stream';
+import {DecodeStreamResult, EncodingService, ResourceEncoding} from '@tartjs/core/lib/common/encoding-service';
+import {UTF8, UTF8_with_bom} from '@tartjs/core/lib/common/encodings';
 import {FileSystemPreferences} from './filesystem-preferences';
 import {
     BinaryBuffer,
@@ -76,7 +76,7 @@ import {
     BinaryBufferReadableBufferedStream,
     BinaryBufferReadableStream,
     BinaryBufferWriteableStream
-} from '@tart/core/lib/common/buffer';
+} from '@tartjs/core/lib/common/buffer';
 import {readFileIntoStream} from '../common/io';
 import {FileSystemUtils} from './file-tree/filesystem-utils';
 

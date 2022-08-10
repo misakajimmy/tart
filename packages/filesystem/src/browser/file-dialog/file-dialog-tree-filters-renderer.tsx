@@ -1,7 +1,7 @@
 import React from 'react';
 import {FileDialogTree} from './file-dialog-tree';
 import {inject, injectable} from 'inversify';
-import {ReactRenderer} from '@tart/core';
+import {ReactRenderer} from '@tartjs/core';
 
 export const FILE_TREE_FILTERS_LIST_CLASS = 'tart-FileTreeFiltersList';
 

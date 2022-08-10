@@ -15,12 +15,12 @@ import {
     Stat,
     WatchOptions
 } from './files';
-import {CancellationToken, Disposable, DisposableCollection, Emitter, Event} from '@tart/core/lib/common';
-import URI from '@tart/core/lib/common/uri';
-import {newWriteableStream, ReadableStreamEvents} from '@tart/core/lib/common/stream';
+import {CancellationToken, Disposable, DisposableCollection, Emitter, Event} from '@tartjs/core/lib/common';
+import URI from '@tartjs/core/lib/common/uri';
+import {newWriteableStream, ReadableStreamEvents} from '@tartjs/core/lib/common/stream';
 import type {TextDocumentContentChangeEvent} from 'vscode-languageserver-protocol';
-import {Deferred} from '@tart/core/lib/common/promise-util';
-import {BinaryBuffer} from '@tart/core/lib/common/buffer';
+import {Deferred} from '@tartjs/core/lib/common/promise-util';
+import {BinaryBuffer} from '@tartjs/core/lib/common/buffer';
 import {
     add_dir_to_pointer,
     add_file_to_pointer,

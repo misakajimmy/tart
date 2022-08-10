@@ -1,4 +1,4 @@
-import {Command} from '@tart/core/lib/common';
+import {Command} from '@tartjs/core/lib/common';
 
 export namespace NavigatorDiffCommands {
   const COMPARE_CATEGORY = 'Compare';

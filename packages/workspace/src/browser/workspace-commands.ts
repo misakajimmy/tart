@@ -6,7 +6,7 @@ import {
   OpenerService,
   OpenHandler,
   SingleTextInputDialog
-} from '@tart/core';
+} from '@tartjs/core';
 import {
   Command,
   CommandContribution,
@@ -16,21 +16,21 @@ import {
   MenuContribution,
   MenuModelRegistry,
   SelectionService,
-} from '@tart/core/lib/common';
-import {nls} from '@tart/core/lib/common/nls';
+} from '@tartjs/core/lib/common';
+import {nls} from '@tartjs/core/lib/common/nls';
 import {inject, injectable, postConstruct} from 'inversify';
 import {WorkspacePreferences} from './workspace-preference';
-import URI from '@tart/core/lib/common/uri';
-import {FileService} from '@tart/filesystem/lib/browser/file-service';
+import URI from '@tartjs/core/lib/common/uri';
+import {FileService} from '@tartjs/filesystem/lib/browser/file-service';
 import {WorkspaceService} from './workspace-service';
-import {UriAwareCommandHandler, UriCommandHandler} from '@tart/core/lib/common/uri-command-handler';
-import {FileStat} from '@tart/filesystem/lib/common/files';
-import {FileSystemUtils} from '@tart/filesystem/lib/browser/file-tree/filesystem-utils';
+import {UriAwareCommandHandler, UriCommandHandler} from '@tartjs/core/lib/common/uri-command-handler';
+import {FileStat} from '@tartjs/filesystem/lib/common/files';
+import {FileSystemUtils} from '@tartjs/filesystem/lib/browser/file-tree/filesystem-utils';
 import {WorkspaceInputDialog} from './workspace-input-dialog';
 import * as validFilename from 'valid-filename';
-import {FileSystemCommands} from '@tart/filesystem';
+import {FileSystemCommands} from '@tartjs/filesystem';
 import {WorkspaceDeleteHandler} from './workspace-delete-handler';
-import {FileDownloadCommands} from '@tart/filesystem/lib/browser/download/file-download-command-contribution';
+import {FileDownloadCommands} from '@tartjs/filesystem/lib/browser/download/file-download-command-contribution';
 
 export namespace WorkspaceCommands {
 

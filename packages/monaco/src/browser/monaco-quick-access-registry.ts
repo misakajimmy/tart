@@ -1,7 +1,7 @@
 import {inject, injectable} from 'inversify';
-import {KeybindingRegistry, QuickAccessProviderDescriptor, QuickAccessRegistry} from '@tart/core';
-import {CancellationToken, Disposable} from '@tart/core/lib/common';
-import {QuickPickItem, QuickPickSeparator} from '@tart/core/lib/common/quick-pick-service';
+import {KeybindingRegistry, QuickAccessProviderDescriptor, QuickAccessRegistry} from '@tartjs/core';
+import {CancellationToken, Disposable} from '@tartjs/core/lib/common';
+import {QuickPickItem, QuickPickSeparator} from '@tartjs/core/lib/common/quick-pick-service';
 import {MonacoQuickPickItem} from './monaco-quick-input-service';
 
 abstract class MonacoPickerAccessProvider extends monaco.quickInput.PickerQuickAccessProvider<QuickPickItem> {

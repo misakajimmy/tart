@@ -21,9 +21,9 @@
 
 /* eslint-disable max-len */
 
-import URI from '@tart/core/lib/common/uri';
-import {BinaryBuffer} from '@tart/core/lib/common//buffer';
-import {CancellationToken, cancelled as canceled} from '@tart/core/lib/common/cancellation';
+import URI from '@tartjs/core/lib/common/uri';
+import {BinaryBuffer} from '@tartjs/core/lib/common//buffer';
+import {CancellationToken, cancelled as canceled} from '@tartjs/core/lib/common/cancellation';
 import {
     createFileSystemProviderError,
     ensureFileSystemProviderError,
@@ -31,7 +31,7 @@ import {
     FileSystemProviderErrorCode,
     FileSystemProviderWithOpenReadWriteCloseCapability
 } from './files';
-import {DataTransformer, ErrorTransformer, WriteableStream} from '@tart/core/lib/common/stream';
+import {DataTransformer, ErrorTransformer, WriteableStream} from '@tartjs/core/lib/common/stream';
 
 export interface CreateReadStreamOptions extends FileReadStreamOptions {
 

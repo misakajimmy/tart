@@ -1,8 +1,8 @@
 import {Location, Position, Range} from 'vscode-languageserver-types';
-import * as lsp from '@tart/core/shared/vscode-languageserver-types';
-import URI from '@tart/core/lib/common/uri';
-import {Navigatable, Saveable, Widget} from '@tart/core';
-import {Disposable, Event, Reference, TextDocumentContentChangeDelta} from '@tart/core/lib/common';
+import * as lsp from '@tartjs/core/shared/vscode-languageserver-types';
+import URI from '@tartjs/core/lib/common/uri';
+import {Navigatable, Saveable, Widget} from '@tartjs/core';
+import {Disposable, Event, Reference, TextDocumentContentChangeDelta} from '@tartjs/core/lib/common';
 import {EditorDecoration} from './decorations';
 
 export {

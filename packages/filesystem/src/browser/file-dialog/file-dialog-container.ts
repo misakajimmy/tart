@@ -1,11 +1,11 @@
 import {Container, interfaces} from 'inversify';
 import {createFileTreeContainer, FileTreeModel, FileTreeWidget} from '../file-tree';
 import {FileDialogModel} from './file-dialog-model';
-import {Tree, TreeModel} from '@tart/core';
+import {Tree, TreeModel} from '@tartjs/core';
 import {FileDialogWidget} from './file-dialog-widget';
 import {FileDialogTree} from './file-dialog-tree';
 import {OpenFileDialog, OpenFileDialogProps, SaveFileDialog, SaveFileDialogProps} from './file-dialog';
-import {defaultTreeProps, TreeProps} from '@tart/core/lib/browser';
+import {defaultTreeProps, TreeProps} from '@tartjs/core/lib/browser';
 
 export function createFileDialogContainer(parent: interfaces.Container): Container {
     const child = createFileTreeContainer(parent);

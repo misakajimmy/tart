@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, inject, injectable, interfaces, postConstruct} from 'inversify';
-import {createFileTreeContainer, FileTreeWidget} from '@tart/filesystem';
-import {nls} from '@tart/core/lib/common/nls';
+import {createFileTreeContainer, FileTreeWidget} from '@tartjs/filesystem';
+import {nls} from '@tartjs/core/lib/common/nls';
 import {
   ApplicationShell,
   ContextMenuRenderer,
@@ -17,10 +17,10 @@ import {
   TreeProps,
   TreeWidget,
   Widget
-} from '@tart/core';
+} from '@tartjs/core';
 import {OpenEditorNode, OpenEditorsModel} from './navigator-open-editors-tree-model';
 import {OpenEditorsCommands} from './navigator-open-editors-commands';
-import {CommandService} from '@tart/core/lib/common';
+import {CommandService} from '@tartjs/core/lib/common';
 import {OpenEditorsTreeDecoratorService} from './navigator-open-editors-decorator-service';
 import {OPEN_EDITORS_CONTEXT_MENU} from './navigator-open-editors-menus';
 

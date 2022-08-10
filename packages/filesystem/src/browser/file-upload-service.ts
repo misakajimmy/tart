@@ -1,8 +1,8 @@
 import {inject, injectable} from 'inversify';
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 import {FileService} from './file-service';
-import {EncodingService} from '@tart/core/lib/common/encoding-service';
-import {BinaryBuffer} from "@tart/core/lib/common//buffer";
+import {EncodingService} from '@tartjs/core/lib/common/encoding-service';
+import {BinaryBuffer} from "@tartjs/core/lib/common//buffer";
 
 
 export interface FileUploadParams {

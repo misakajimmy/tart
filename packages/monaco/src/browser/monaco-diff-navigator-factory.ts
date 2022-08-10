@@ -15,7 +15,7 @@
  ********************************************************************************/
 
 import {injectable} from 'inversify';
-import {DiffNavigator} from '@tart/editor';
+import {DiffNavigator} from '@tartjs/editor';
 import IStandaloneDiffEditor = monaco.editor.IStandaloneDiffEditor;
 import IDiffNavigatorOptions = monaco.editor.IDiffNavigatorOptions;
 

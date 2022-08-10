@@ -97,7 +97,7 @@ export const MenuContribution = Symbol('MenuContribution');
  * ### Example usage
  *
  * ```ts
- * import { MenuContribution, MenuModelRegistry, MAIN_MENU_BAR } from '@tart/core';
+ * import { MenuContribution, MenuModelRegistry, MAIN_MENU_BAR } from '@tartjs/core';
  *
  * @injectable()
  * export class NewMenuContribution implements MenuContribution {

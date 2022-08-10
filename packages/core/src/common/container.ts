@@ -31,7 +31,7 @@ export class ContainerLoader {
 
   protected async importModule(module: string) {
     console.log('start');
-    // const m = await import(`@tart_module/${module}`);
+    // const m = await import(`@tartjs_module/${module}`);
     // await this.load(m.default);
   }
 

@@ -1,5 +1,5 @@
 import {FileStat} from '../common/files';
-import {SelectionCommandHandler, SelectionService} from '@tart/core/lib/common';
+import {SelectionCommandHandler, SelectionService} from '@tartjs/core/lib/common';
 
 export interface FileSelection {
     fileStat: FileStat

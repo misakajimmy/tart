@@ -1,9 +1,9 @@
 import {inject, injectable} from 'inversify';
-import {WidgetFactory} from '@tart/core/lib/browser/widget-manager';
-import URI from '@tart/core/lib/common/uri';
-import {LabelProvider, NavigatableWidgetOptions} from '@tart/core';
+import {WidgetFactory} from '@tartjs/core/lib/browser/widget-manager';
+import URI from '@tartjs/core/lib/common/uri';
+import {LabelProvider, NavigatableWidgetOptions} from '@tartjs/core';
 import {TextEditorProvider} from './editor';
-import {SelectionService} from '@tart/core/lib/common';
+import {SelectionService} from '@tartjs/core/lib/common';
 import {EditorWidget} from './editor-widget';
 
 @injectable()

@@ -1,6 +1,6 @@
 import {IGrammarConfiguration} from 'vscode-textmate';
 import {injectable} from 'inversify';
-import {Disposable} from '@tart/core/lib/common';
+import {Disposable} from '@tartjs/core/lib/common';
 import {TokenizerOption} from './textmate-tokenizer';
 
 export interface TextmateGrammarConfiguration extends IGrammarConfiguration {

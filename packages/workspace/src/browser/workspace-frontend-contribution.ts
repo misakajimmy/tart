@@ -1,11 +1,11 @@
 import {inject, injectable} from 'inversify';
-import {CommandContribution, CommandRegistry, MenuContribution, MenuModelRegistry, OS} from '@tart/core/lib/common';
-import {CommonMenus, KeybindingContribution, KeybindingRegistry, open, OpenerService} from '@tart/core';
-import {FileDialogService, FileDialogTreeFilters, OpenFileDialogProps} from '@tart/filesystem';
+import {CommandContribution, CommandRegistry, MenuContribution, MenuModelRegistry, OS} from '@tartjs/core/lib/common';
+import {CommonMenus, KeybindingContribution, KeybindingRegistry, open, OpenerService} from '@tartjs/core';
+import {FileDialogService, FileDialogTreeFilters, OpenFileDialogProps} from '@tartjs/filesystem';
 import {WorkspaceCommands} from './workspace-commands';
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 import {WorkspaceService} from './workspace-service';
-import {FileService} from '@tart/filesystem/lib/browser/file-service';
+import {FileService} from '@tartjs/filesystem/lib/browser/file-service';
 import {WorkspacePreferences} from './workspace-preference';
 import {VSCODE_EXT, WM_EXT} from '../common';
 

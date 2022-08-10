@@ -1,7 +1,7 @@
 import {inject, injectable,} from 'inversify';
-import {Command, CommandContribution, CommandRegistry,} from '@tart/core/lib/common';
+import {Command, CommandContribution, CommandRegistry,} from '@tartjs/core/lib/common';
 import {FileService} from './file-service';
-import {CommonCommands, FrontendApplicationContribution} from '@tart/core';
+import {CommonCommands, FrontendApplicationContribution} from '@tartjs/core';
 
 export namespace FileSystemCommands {
 

@@ -1,6 +1,6 @@
 import {inject, injectable} from 'inversify';
-import {CommandRegistry} from '@tart/core/lib/common/command';
-import {Disposable, DisposableCollection, Emitter} from '@tart/core/lib/common';
+import {CommandRegistry} from '@tartjs/core/lib/common/command';
+import {Disposable, DisposableCollection, Emitter} from '@tartjs/core/lib/common';
 import ICommandEvent = monaco.commands.ICommandEvent;
 import ICommandService = monaco.commands.ICommandService;
 

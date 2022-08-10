@@ -9,7 +9,7 @@ import {
   Navigatable,
   SelectableTreeNode,
   Widget
-} from '@tart/core';
+} from '@tartjs/core';
 import {FILE_NAVIGATOR_ID, FileNavigatorWidget} from './navigator-widget';
 import {EXPLORER_VIEW_CONTAINER_ID, EXPLORER_VIEW_CONTAINER_TITLE_OPTIONS} from './navigator-widget-factory';
 import {
@@ -23,12 +23,12 @@ import {
   MenuModelRegistry,
   MenuPath,
   Mutable
-} from '@tart/core/lib/common';
+} from '@tartjs/core/lib/common';
 import {
   TabBarToolbarContribution,
   TabBarToolbarItem,
   TabBarToolbarRegistry
-} from '@tart/core/lib/browser/shell/tab-bar-toolbar';
+} from '@tartjs/core/lib/browser/shell/tab-bar-toolbar';
 import {FileNavigatorPreferences} from './navigator-preferences';
 import {NavigatorContextKeyService} from './navigator-context-key-service';
 import {
@@ -37,14 +37,14 @@ import {
   WorkspaceCommands,
   WorkspacePreferences,
   WorkspaceService
-} from '@tart/workspace';
-import {nls} from '@tart/core/lib/common/nls';
+} from '@tartjs/workspace';
+import {nls} from '@tartjs/core/lib/common/nls';
 import {FileNavigatorModel} from './navigator-model';
-import {DirNode, FileSystemCommands} from '@tart/filesystem';
+import {DirNode, FileSystemCommands} from '@tartjs/filesystem';
 import {NavigatorDiffCommands} from './navigator-diff';
 import {OpenEditorsContextMenu, OpenEditorsWidget} from './open-editors-widget';
 import {NavigatorKeybindingContexts} from './navigator-keybinding-context';
-import {FileDownloadCommands} from '@tart/filesystem/lib/browser/download/file-download-command-contribution';
+import {FileDownloadCommands} from '@tartjs/filesystem/lib/browser/download/file-download-command-contribution';
 
 export namespace FileNavigatorCommands {
   export const REVEAL_IN_NAVIGATOR = Command.toLocalizedCommand({

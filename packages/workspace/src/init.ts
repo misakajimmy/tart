@@ -1,4 +1,4 @@
-import {TartInit} from '@tart/core/lib/common';
+import {TartInit} from '@tartjs/core/lib/common';
 
 export class WorkspaceInit implements TartInit {
   static async init(): Promise<any[]> {

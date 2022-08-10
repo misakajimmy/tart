@@ -1,6 +1,6 @@
 import React from 'react';
 import {inject, injectable, postConstruct} from 'inversify';
-import {DirNode, FileNode, FileStatNode, FileTreeWidget} from '@tart/filesystem';
+import {DirNode, FileNode, FileStatNode, FileTreeWidget} from '@tartjs/filesystem';
 import {
   ApplicationShell,
   ContextMenuRenderer,
@@ -15,14 +15,14 @@ import {
   TreeModel,
   TreeNode,
   TreeProps
-} from '@tart/core';
+} from '@tartjs/core';
 import {FileNavigatorModel} from './navigator-model';
-import {nls} from '@tart/core/lib/common/nls';
+import {nls} from '@tartjs/core/lib/common/nls';
 import {WorkspaceNode, WorkspaceRootNode} from './navigator-tree';
-import {CommandService, isOSX, notEmpty} from '@tart/core/lib/common';
+import {CommandService, isOSX, notEmpty} from '@tartjs/core/lib/common';
 import {Message} from '@lumino/messaging';
 import {NavigatorContextKeyService} from './navigator-context-key-service';
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 import {FileNavigatorCommands} from './navigator-contribution';
 
 export const FILE_NAVIGATOR_ID = 'files';

@@ -15,7 +15,7 @@
  ********************************************************************************/
 
 import {Diagnostic} from 'vscode-languageserver-types';
-import {Disposable, DisposableCollection} from '@tart/core/lib/common/disposable';
+import {Disposable, DisposableCollection} from '@tartjs/core/lib/common/disposable';
 import {ProtocolToMonacoConverter} from './protocol-to-monaco-converter';
 import IModel = monaco.editor.IModel;
 import IMarkerData = monaco.editor.IMarkerData;

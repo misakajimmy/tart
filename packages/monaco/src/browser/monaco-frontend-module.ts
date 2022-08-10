@@ -2,9 +2,9 @@ import '../assets/style/index.css';
 // import '../assets/style/symbol-icons.css';
 // import '../assets/style/symbol-icons.svg';
 import {ContainerModule, decorate, injectable, interfaces} from 'inversify';
-import {ColorRegistry} from '@tart/core/lib/browser/color-registry';
-import {QuickInputService} from '@tart/core/lib/common/quick-pick-service';
-import {bindContributionProvider, CommandContribution, MenuContribution} from '@tart/core/lib/common';
+import {ColorRegistry} from '@tartjs/core/lib/browser/color-registry';
+import {QuickInputService} from '@tartjs/core/lib/common/quick-pick-service';
+import {bindContributionProvider, CommandContribution, MenuContribution} from '@tartjs/core/lib/common';
 import {MonacoColorRegistry} from './monaco-color-registry';
 import {MonacoThemingService} from './monaco-theming-service';
 import MonacoTextmateModuleBinder from './textmate/monaco-textmate-frontend-bindings';
@@ -24,7 +24,7 @@ import {
   PreferenceService,
   QuickAccessContribution,
   QuickAccessRegistry
-} from '@tart/core';
+} from '@tartjs/core';
 import {MonacoKeybindingContribution} from './monaco-keybinding';
 import {MonacoCommandRegistry} from './monaco-command-registry';
 import {MonacoEditorModelFactory, MonacoTextModelService} from './monaco-text-model-service';
@@ -37,10 +37,10 @@ import {MonacoContextKeyService} from './monaco-context-key-service';
 import {MonacoBulkEditService} from './monaco-bulk-edit-service';
 import {MonacoQuickAccessRegistry} from './monaco-quick-access-registry';
 import {MonacoLanguages} from './monaco-languages';
-import {LanguageService} from '@tart/core/lib/browser/language-service';
+import {LanguageService} from '@tartjs/core/lib/browser/language-service';
 import {WorkspaceSymbolCommand} from './workspace-symbol-command';
-import {TextEditorProvider} from '@tart/editor/lib/browser/editor';
-import {DiffNavigatorProvider} from '@tart/editor/lib/browser/diff-navigator';
+import {TextEditorProvider} from '@tartjs/editor/lib/browser/editor';
+import {DiffNavigatorProvider} from '@tartjs/editor/lib/browser/diff-navigator';
 
 decorate(injectable(), monaco.contextKeyService.ContextKeyService);
 

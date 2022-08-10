@@ -1,11 +1,11 @@
 import {interfaces} from 'inversify';
 import {MonacoTextmateService, OnigasmPromise} from './monaco-textmate-service';
-import {FrontendApplicationContribution} from '@tart/core';
-import {bindContributionProvider} from '@tart/core/lib/common';
+import {FrontendApplicationContribution} from '@tartjs/core';
+import {bindContributionProvider} from '@tartjs/core/lib/common';
 import {LanguageGrammarDefinitionContribution} from './textmate-contribution';
 import {TextmateRegistry} from './textmate-registry';
 import {IOnigLib} from 'vscode-textmate';
-import {isBasicWasmSupported} from '@tart/core/lib/browser/browser';
+import {isBasicWasmSupported} from '@tartjs/core/lib/browser/browser';
 import wasm from 'onigasm/lib/onigasm.wasm';
 import {loadWASM, OnigScanner, OnigString} from 'onigasm';
 import {MonacoThemeRegistry} from './monaco-theme-registry';

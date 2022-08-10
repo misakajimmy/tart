@@ -14,13 +14,13 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-import URI from '@tart/core/lib/common/uri';
-import {Disposable} from '@tart/core/lib/common';
-import {DeltaDecorationParams, DiffNavigator, Dimension} from '@tart/editor';
+import URI from '@tartjs/core/lib/common/uri';
+import {Disposable} from '@tartjs/core/lib/common';
+import {DeltaDecorationParams, DiffNavigator, Dimension} from '@tartjs/editor';
 import {MonacoEditorModel} from './monaco-editor-model';
 import {MonacoEditor, MonacoEditorServices} from './monaco-editor';
 import {MonacoDiffNavigatorFactory} from './monaco-diff-navigator-factory';
-import {DiffUris} from '@tart/core/lib/browser/diff-uris';
+import {DiffUris} from '@tartjs/core/lib/browser/diff-uris';
 import IStandaloneDiffEditor = monaco.editor.IStandaloneDiffEditor;
 import IDiffEditorConstructionOptions = monaco.editor.IDiffEditorConstructionOptions;
 import IDiffNavigatorOptions = monaco.editor.IDiffNavigatorOptions;

@@ -1,4 +1,4 @@
-import {Disposable, Emitter, Event} from '@tart/core/lib/common';
+import {Disposable, Emitter, Event} from '@tartjs/core/lib/common';
 import {inject, injectable} from 'inversify';
 import {
     Breadcrumb,
@@ -7,13 +7,13 @@ import {
     LabelProvider,
     SelectableTreeNode,
     Widget
-} from '@tart/core/lib/browser';
+} from '@tartjs/core/lib/browser';
 import {FilepathBreadcrumb} from './filepath-breadcrumb';
 import {BreadcrumbsFileTreeWidget} from './filepath-breadcrumbs-container';
 import {DirNode} from '../file-tree';
 import {FileService} from '../file-service';
 import {FileStat} from '../../common/files';
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 
 export const FilepathBreadcrumbType = Symbol('FilepathBreadcrumb');
 

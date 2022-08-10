@@ -31,7 +31,7 @@ export const MessageServiceFactory = Symbol('MessageServiceFactory');
  * Service to log and categorize messages, show progress information and offer actions.
  *
  * The messages are processed by this service and forwarded to an injected {@link MessageClient}.
- * For example "@tart/messages" provides such a client, rendering messages as notifications
+ * For example "@tartjs/messages" provides such a client, rendering messages as notifications
  * in the frontend.
  *
  * ### Example usage

@@ -14,8 +14,8 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-import {CommonCommands} from '@tart/core/lib/browser';
-import {Command} from '@tart/core/lib/common';
+import {CommonCommands} from '@tartjs/core/lib/browser';
+import {Command} from '@tartjs/core/lib/common';
 
 export namespace OpenEditorsCommands {
   export const CLOSE_ALL_TABS_FROM_TOOLBAR = Command.toDefaultLocalizedCommand({

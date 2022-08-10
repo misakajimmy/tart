@@ -1,5 +1,5 @@
 import {inject, injectable} from 'inversify';
-import {KeybindingContribution, KeybindingRegistry} from '@tart/core';
+import {KeybindingContribution, KeybindingRegistry} from '@tartjs/core';
 import {MonacoResolvedKeybinding} from './monaco-resolved-keybinding';
 import {MonacoCommandRegistry} from './monaco-command-registry';
 

@@ -1,7 +1,7 @@
 import {injectable} from 'inversify';
-import {Color, ColorRegistry} from '@tart/core/lib/browser/color-registry';
-import {ColorDefinition} from '@tart/core/lib/common/color';
-import {Disposable} from '@tart/core/lib/common';
+import {Color, ColorRegistry} from '@tartjs/core/lib/browser/color-registry';
+import {ColorDefinition} from '@tartjs/core/lib/common/color';
+import {Disposable} from '@tartjs/core/lib/common';
 
 @injectable()
 export class MonacoColorRegistry extends ColorRegistry {

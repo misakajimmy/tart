@@ -4,8 +4,8 @@ import {
   PreferenceProxy,
   PreferenceSchema,
   PreferenceService
-} from '@tart/core';
-import {nls} from '@tart/core/lib/common/nls';
+} from '@tartjs/core';
+import {nls} from '@tartjs/core/lib/common/nls';
 import {interfaces} from 'inversify';
 
 export const workspacePreferenceSchema: PreferenceSchema = {

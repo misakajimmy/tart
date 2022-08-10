@@ -4,10 +4,10 @@
  */
 import {inject, injectable, postConstruct} from 'inversify';
 import {Minimatch} from 'minimatch';
-import {Emitter, Event, MaybePromise} from '@tart/core/lib/common';
-import {FileSystemConfiguration, FileSystemPreferences} from '@tart/filesystem/lib/browser/filesystem-preferences';
+import {Emitter, Event, MaybePromise} from '@tartjs/core/lib/common';
+import {FileSystemConfiguration, FileSystemPreferences} from '@tartjs/filesystem/lib/browser/filesystem-preferences';
 import {FileNavigatorConfiguration, FileNavigatorPreferences} from './navigator-preferences';
-import {PreferenceChangeEvent} from '@tart/core';
+import {PreferenceChangeEvent} from '@tartjs/core';
 
 @injectable()
 export class FileNavigatorFilter {

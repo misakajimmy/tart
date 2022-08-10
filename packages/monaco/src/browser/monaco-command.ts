@@ -1,18 +1,18 @@
 import {inject, injectable, optional} from 'inversify';
-import {CommandContribution, CommandHandler, CommandRegistry} from '@tart/core/lib/common';
+import {CommandContribution, CommandHandler, CommandRegistry} from '@tartjs/core/lib/common';
 import {MonacoEditorService} from './monaco-editor-service';
-import {CommonCommands} from '@tart/core';
+import {CommonCommands} from '@tartjs/core';
 import {MonacoCommandRegistry, MonacoEditorCommandHandler} from './monaco-command-registry';
 import {ProtocolToMonacoConverter} from './protocol-to-monaco-converter';
-import {QuickInputService} from '@tart/core/lib/common/quick-pick-service';
+import {QuickInputService} from '@tartjs/core/lib/common/quick-pick-service';
 import {MonacoTextModelService} from './monaco-text-model-service';
-import {ApplicationShell} from '@tart/core/lib/browser';
+import {ApplicationShell} from '@tartjs/core/lib/browser';
 import {MonacoEditor} from './monaco-editor';
 import {Location, Position} from 'vscode-languageserver-types';
-import {nls} from '@tart/core/lib/common/nls';
-import {EditorManager} from '@tart/editor/lib/browser/editor-manager';
-import {EditorCommands} from '@tart/editor/lib/browser/editor-command';
-import {EditorWidget} from '@tart/editor/lib/browser/editor-widget';
+import {nls} from '@tartjs/core/lib/common/nls';
+import {EditorManager} from '@tartjs/editor/lib/browser/editor-manager';
+import {EditorCommands} from '@tartjs/editor/lib/browser/editor-command';
+import {EditorWidget} from '@tartjs/editor/lib/browser/editor-widget';
 
 export namespace MonacoCommands {
 

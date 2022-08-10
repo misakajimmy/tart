@@ -1,4 +1,4 @@
-import {TartInit} from '@tart/core/lib/common';
+import {TartInit} from '@tartjs/core/lib/common';
 
 export class EditorInit implements TartInit {
   static async init(): Promise<any[]> {

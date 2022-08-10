@@ -18,7 +18,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import * as browser from '@tart/core/lib/browser/browser';
+import * as browser from '@tartjs/core/lib/browser/browser';
 
 const KeyCode = monaco.KeyCode;
 

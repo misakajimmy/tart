@@ -4,12 +4,12 @@ import IResourceEditorInput = monaco.editor.IResourceEditorInput;
 import {MonacoEditor} from './monaco-editor';
 import {decorate, inject, injectable} from 'inversify';
 import {MonacoEditorModel} from './monaco-editor-model';
-import {ApplicationShell, open, OpenerService, PreferenceService, WidgetOpenMode} from '@tart/core/lib/browser';
+import {ApplicationShell, open, OpenerService, PreferenceService, WidgetOpenMode} from '@tartjs/core/lib/browser';
 import {MonacoToProtocolConverter} from './monaco-to-protocol-converter';
-import URI from '@tart/core/lib/common/uri';
-import {EditorManager, EditorOpenerOptions} from '@tart/editor/lib/browser/editor-manager';
-import {CustomEditorWidget} from '@tart/editor/lib/browser/editor';
-import {EditorWidget} from '@tart/editor/lib/browser/editor-widget';
+import URI from '@tartjs/core/lib/common/uri';
+import {EditorManager, EditorOpenerOptions} from '@tartjs/editor/lib/browser/editor-manager';
+import {CustomEditorWidget} from '@tartjs/editor/lib/browser/editor';
+import {EditorWidget} from '@tartjs/editor/lib/browser/editor-widget';
 
 
 

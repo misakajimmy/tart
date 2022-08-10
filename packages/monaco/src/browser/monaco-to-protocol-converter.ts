@@ -16,7 +16,7 @@
 
 import {injectable} from 'inversify';
 import {Position, Range} from 'vscode-languageserver-types';
-import {RecursivePartial} from '@tart/core/lib/common/types';
+import {RecursivePartial} from '@tartjs/core/lib/common/types';
 
 export interface MonacoRangeReplace {
     insert: monaco.IRange;

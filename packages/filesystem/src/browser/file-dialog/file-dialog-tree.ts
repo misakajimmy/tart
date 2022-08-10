@@ -1,8 +1,8 @@
 import {injectable} from 'inversify';
 import {DirNode, FileTree} from '../file-tree';
 import {FileStat} from '../../common/files';
-import {CompositeTreeNode} from '@tart/core/lib/browser';
-import {TreeNode} from '@tart/core';
+import {CompositeTreeNode} from '@tartjs/core/lib/browser';
+import {TreeNode} from '@tartjs/core';
 
 @injectable()
 export class FileDialogTree extends FileTree {

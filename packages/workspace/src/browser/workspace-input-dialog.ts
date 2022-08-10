@@ -1,5 +1,5 @@
-import URI from '@tart/core/lib/common/uri';
-import {codiconArray, LabelProvider, SingleTextInputDialog, SingleTextInputDialogProps} from '@tart/core';
+import URI from '@tartjs/core/lib/common/uri';
+import {codiconArray, LabelProvider, SingleTextInputDialog, SingleTextInputDialogProps} from '@tartjs/core';
 import {inject, injectable} from 'inversify';
 
 @injectable()

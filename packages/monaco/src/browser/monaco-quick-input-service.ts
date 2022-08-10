@@ -1,5 +1,5 @@
 import {inject, injectable} from 'inversify';
-import {CancellationToken, Event} from '@tart/core/lib/common';
+import {CancellationToken, Event} from '@tartjs/core/lib/common';
 import {
   InputBox,
   InputOptions,
@@ -12,8 +12,8 @@ import {
   QuickPickItemHighlights,
   QuickPickOptions,
   QuickPickSeparator
-} from '@tart/core/lib/common/quick-pick-service';
-import {KeybindingRegistry} from '@tart/core/lib/browser/keybinding';
+} from '@tartjs/core/lib/common/quick-pick-service';
+import {KeybindingRegistry} from '@tartjs/core/lib/browser/keybinding';
 import {MonacoResolvedKeybinding} from './monaco-resolved-keybinding';
 
 @injectable()

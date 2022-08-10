@@ -1,11 +1,11 @@
 import {inject, injectable} from 'inversify';
-import {UriCommandHandler} from '@tart/core/lib/common/uri-command-handler';
-import URI from '@tart/core/lib/common/uri';
-import {FileService} from '@tart/filesystem/lib/browser/file-service';
-import {ApplicationShell, ConfirmDialog, NavigatableWidget, SaveableWidget} from '@tart/core';
+import {UriCommandHandler} from '@tartjs/core/lib/common/uri-command-handler';
+import URI from '@tartjs/core/lib/common/uri';
+import {FileService} from '@tartjs/filesystem/lib/browser/file-service';
+import {ApplicationShell, ConfirmDialog, NavigatableWidget, SaveableWidget} from '@tartjs/core';
 import {WorkspaceService} from './workspace-service';
-import {FileSystemPreferences} from '@tart/filesystem/lib/browser/filesystem-preferences';
-import {FileDeleteOptions, FileSystemProviderCapabilities} from '@tart/filesystem/lib/common/files';
+import {FileSystemPreferences} from '@tartjs/filesystem/lib/browser/filesystem-preferences';
+import {FileDeleteOptions, FileSystemProviderCapabilities} from '@tartjs/filesystem/lib/common/files';
 import {WorkspaceUtils} from './workspace-utils';
 
 @injectable()

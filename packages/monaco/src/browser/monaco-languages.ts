@@ -1,9 +1,9 @@
 import {WorkspaceSymbolParams} from 'vscode-languageserver-protocol';
-import {CancellationToken, Disposable, MaybePromise, Mutable} from '@tart/core/lib/common';
+import {CancellationToken, Disposable, MaybePromise, Mutable} from '@tartjs/core/lib/common';
 import {Diagnostic, SymbolInformation} from 'vscode-languageserver-types';
 import {inject, injectable, postConstruct} from 'inversify';
-import {Language, LanguageService} from '@tart/core/lib/browser/language-service';
-import URI from '@tart/core/lib/common/uri';
+import {Language, LanguageService} from '@tartjs/core/lib/browser/language-service';
+import URI from '@tartjs/core/lib/common/uri';
 import {MonacoDiagnosticCollection} from './monaco-diagnostic-collection';
 import {ProtocolToMonacoConverter} from './protocol-to-monaco-converter';
 

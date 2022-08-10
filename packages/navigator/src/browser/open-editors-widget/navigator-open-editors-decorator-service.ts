@@ -15,8 +15,8 @@
  ********************************************************************************/
 
 import {inject, injectable, named} from 'inversify';
-import {AbstractTreeDecoratorService, TreeDecorator} from '@tart/core/lib/browser/tree/tree-decorator';
-import {ContributionProvider} from '@tart/core/lib/common';
+import {AbstractTreeDecoratorService, TreeDecorator} from '@tartjs/core/lib/browser/tree/tree-decorator';
+import {ContributionProvider} from '@tartjs/core/lib/common';
 
 export const OpenEditorsTreeDecorator = Symbol('OpenEditorsTreeDecorator');
 

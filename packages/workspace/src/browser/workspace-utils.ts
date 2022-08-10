@@ -2,7 +2,7 @@
  * Collection of workspace utility functions
  * @class
  */
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 import {inject, injectable} from 'inversify';
 import {WorkspaceService} from './workspace-service';
 

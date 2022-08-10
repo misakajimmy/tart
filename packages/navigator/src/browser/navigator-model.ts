@@ -1,6 +1,6 @@
 import {inject, injectable, postConstruct} from 'inversify';
-import {FileNode, FileTreeModel} from '@tart/filesystem';
-import URI from '@tart/core/lib/common/uri';
+import {FileNode, FileTreeModel} from '@tartjs/filesystem';
+import URI from '@tartjs/core/lib/common/uri';
 import {
   CompositeTreeNode,
   ExpandableTreeNode,
@@ -8,10 +8,10 @@ import {
   OpenerService,
   SelectableTreeNode,
   TreeNode
-} from '@tart/core/lib/browser';
+} from '@tartjs/core/lib/browser';
 import {FileNavigatorTree, WorkspaceNode, WorkspaceRootNode} from './navigator-tree';
-import {WorkspaceService} from '@tart/workspace';
-import {FrontendApplicationStateService} from '@tart/core/lib/browser/frontend-application-state';
+import {WorkspaceService} from '@tartjs/workspace';
+import {FrontendApplicationStateService} from '@tartjs/core/lib/browser/frontend-application-state';
 
 @injectable()
 export class FileNavigatorModel extends FileTreeModel {

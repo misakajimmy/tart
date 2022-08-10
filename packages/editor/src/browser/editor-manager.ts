@@ -1,10 +1,10 @@
 import {injectable, postConstruct} from 'inversify';
 import {EditorWidget} from './editor-widget';
-import {NavigatableWidgetOpenHandler, NavigatableWidgetOptions, Widget, WidgetOpenerOptions} from '@tart/core';
-import {Emitter, Event, MaybePromise, RecursivePartial} from '@tart/core/lib/common';
+import {NavigatableWidgetOpenHandler, NavigatableWidgetOptions, Widget, WidgetOpenerOptions} from '@tartjs/core';
+import {Emitter, Event, MaybePromise, RecursivePartial} from '@tartjs/core/lib/common';
 import {EditorWidgetFactory} from './editor-widget-factory';
 import {Position, Range} from './editor';
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 
 export interface WidgetId {
   id: number;

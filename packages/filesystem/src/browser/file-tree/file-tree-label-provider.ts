@@ -1,6 +1,6 @@
 import {inject, injectable} from 'inversify';
-import {DidChangeLabelEvent, LabelProvider, LabelProviderContribution} from '@tart/core';
-import {TreeLabelProvider} from '@tart/core/lib/browser/tree/tree-label-provider';
+import {DidChangeLabelEvent, LabelProvider, LabelProviderContribution} from '@tartjs/core';
+import {TreeLabelProvider} from '@tartjs/core/lib/browser/tree/tree-label-provider';
 import {FileStatNode} from './file-tree';
 
 @injectable()

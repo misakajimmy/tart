@@ -9,13 +9,13 @@ import {
   Resource,
   ResourceError,
   ResourceVersion
-} from '@tart/core/lib/common';
+} from '@tartjs/core/lib/common';
 import {Position, Range} from 'vscode-languageserver-types';
-import {Saveable, SaveOptions} from '@tart/core/lib/browser/saveable';
+import {Saveable, SaveOptions} from '@tartjs/core/lib/browser/saveable';
 import {MonacoToProtocolConverter} from './monaco-to-protocol-converter';
 import {ProtocolToMonacoConverter} from './protocol-to-monaco-converter';
-import {EditorPreferences} from '@tart/editor/lib/browser/editor-preference';
-import {EncodingMode, FindMatch, FindMatchesOptions, TextEditorDocument} from '@tart/editor/lib/browser/editor';
+import {EditorPreferences} from '@tartjs/editor/lib/browser/editor-preference';
+import {EncodingMode, FindMatch, FindMatchesOptions, TextEditorDocument} from '@tartjs/editor/lib/browser/editor';
 
 export {
   TextDocumentSaveReason

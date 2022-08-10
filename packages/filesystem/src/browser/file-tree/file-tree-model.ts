@@ -1,9 +1,9 @@
-import {ConfirmDialog, LabelProvider, TreeModelImpl, TreeNode} from '@tart/core';
+import {ConfirmDialog, LabelProvider, TreeModelImpl, TreeNode} from '@tartjs/core';
 import {inject, injectable, postConstruct} from 'inversify';
 import {FileService} from '../file-service';
 import {DirNode, FileNode, FileStatNode} from './file-tree';
-import URI from '@tart/core/lib/common/uri';
-import {MessageService} from '@tart/core/lib/common';
+import URI from '@tartjs/core/lib/common/uri';
+import {MessageService} from '@tartjs/core/lib/common';
 import {FileSystemUtils} from './filesystem-utils';
 import {
     FileChange,
@@ -15,7 +15,7 @@ import {
     FileOperationResult
 } from '../../common/files';
 import {LocationService} from '../location';
-import {CompositeTreeNode} from '@tart/core/lib/browser';
+import {CompositeTreeNode} from '@tartjs/core/lib/browser';
 
 @injectable()
 export class FileTreeModel extends TreeModelImpl implements LocationService {

@@ -1,5 +1,5 @@
-import {codicon, ViewContainer, ViewContainerTitleOptions, WidgetFactory, WidgetManager} from '@tart/core';
-import {nls} from '@tart/core/lib/common/nls';
+import {codicon, ViewContainer, ViewContainerTitleOptions, WidgetFactory, WidgetManager} from '@tartjs/core';
+import {nls} from '@tartjs/core/lib/common/nls';
 import {inject, injectable} from 'inversify';
 import {OpenEditorsWidget} from './open-editors-widget/navigator-open-editors-widget';
 import {FILE_NAVIGATOR_ID} from './navigator-widget';

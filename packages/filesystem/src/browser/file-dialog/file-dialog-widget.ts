@@ -1,8 +1,8 @@
 import {inject, injectable} from 'inversify';
 import {FileStatNode, FileTreeWidget} from '../file-tree';
-import {FOCUS_CLASS, SELECTED_CLASS, TreeProps} from '@tart/core/lib/browser';
+import {FOCUS_CLASS, SELECTED_CLASS, TreeProps} from '@tartjs/core/lib/browser';
 import {FileDialogModel} from './file-dialog-model';
-import {ContextMenuRenderer, NodeProps, TreeNode} from '@tart/core';
+import {ContextMenuRenderer, NodeProps, TreeNode} from '@tartjs/core';
 
 export const FILE_DIALOG_CLASS = 'tart-FileDialog';
 export const NOT_SELECTABLE_CLASS = 'tart-mod-not-selectable';

@@ -19,14 +19,14 @@
  *--------------------------------------------------------------------------------------------*/
 // based on https://github.com/microsoft/vscode/blob/04c36be045a94fee58e5f8992d3e3fd980294a84/src/vs/platform/files/common/files.ts
 
-import URI from '@tart/core/lib/common/uri';
-import {Event} from '@tart/core/lib/common/event';
-import {Disposable as IDisposable} from '@tart/core/lib/common/disposable';
-// import { BinaryBuffer, BinaryBufferReadableStream } from '@tart/core/lib/common/buffer';
+import URI from '@tartjs/core/lib/common/uri';
+import {Event} from '@tartjs/core/lib/common/event';
+import {Disposable as IDisposable} from '@tartjs/core/lib/common/disposable';
+// import { BinaryBuffer, BinaryBufferReadableStream } from '@tartjs/core/lib/common/buffer';
 import type {TextDocumentContentChangeEvent} from 'vscode-languageserver-protocol';
-import {ReadableStreamEvents} from '@tart/core/lib/common/stream';
-import {CancellationToken} from '@tart/core/lib/common/cancellation';
-import {BinaryBuffer, BinaryBufferReadableStream} from '@tart/core/lib/common/buffer';
+import {ReadableStreamEvents} from '@tartjs/core/lib/common/stream';
+import {CancellationToken} from '@tartjs/core/lib/common/cancellation';
+import {BinaryBuffer, BinaryBufferReadableStream} from '@tartjs/core/lib/common/buffer';
 
 export const enum FileOperation {
     CREATE,

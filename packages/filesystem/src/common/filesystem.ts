@@ -17,7 +17,7 @@
 /* eslint-disable max-len */
 
 import {TextDocumentContentChangeEvent} from 'vscode-languageserver-protocol';
-import {ApplicationError} from '@tart/core/lib/common';
+import {ApplicationError} from '@tartjs/core/lib/common';
 
 /**
  * @deprecated since 1.4.0 - in order to support VS Code FS API (https://github.com/eclipse-tart/tart/pull/7908), use `FileService` instead
@@ -232,7 +232,7 @@ export interface FileDeleteOptions {
 /**
  * A file resource with meta information.
  *
- * @deprecated since 1.4.0 - in order to support VS Code FS API (https://github.com/eclipse-tart/tart/pull/7908), use `FileStat` from `@tart/filesystem/lib/common/files` instead
+ * @deprecated since 1.4.0 - in order to support VS Code FS API (https://github.com/eclipse-tart/tart/pull/7908), use `FileStat` from `@tartjs/filesystem/lib/common/files` instead
  */
 export interface FileStat {
 

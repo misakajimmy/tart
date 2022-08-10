@@ -1,8 +1,8 @@
-import {BaseWidget, Message, Navigatable, Saveable, SaveableSource, Widget} from '@tart/core';
+import {BaseWidget, Message, Navigatable, Saveable, SaveableSource, Widget} from '@tartjs/core';
 import {TextEditor} from './editor';
-import {Disposable, Event, SelectionService} from '@tart/core/lib/common';
-import URI from '@tart/core/lib/common/uri';
-import {StatefulWidget} from '@tart/core/lib/browser/shell/shell-layout-restorer';
+import {Disposable, Event, SelectionService} from '@tartjs/core/lib/common';
+import URI from '@tartjs/core/lib/common/uri';
+import {StatefulWidget} from '@tartjs/core/lib/browser/shell/shell-layout-restorer';
 
 export class EditorWidget extends BaseWidget implements SaveableSource, Navigatable, StatefulWidget {
 

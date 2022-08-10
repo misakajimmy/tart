@@ -1,6 +1,6 @@
 import * as idb from 'idb';
-import {Disposable, DisposableCollection} from '@tart/core/lib/common';
-import {BuiltinThemeProvider, Theme, ThemeService, ThemeServiceSymbol} from '@tart/core/lib/browser/theming';
+import {Disposable, DisposableCollection} from '@tartjs/core/lib/common';
+import {BuiltinThemeProvider, Theme, ThemeService, ThemeServiceSymbol} from '@tartjs/core/lib/browser/theming';
 
 type ThemeMix = import('./textmate/monaco-theme-registry').ThemeMix;
 

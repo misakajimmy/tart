@@ -7,7 +7,7 @@ import {
     OpenerService,
     TreeNode,
     TreeProps
-} from '@tart/core/lib/browser';
+} from '@tartjs/core/lib/browser';
 import {createFileTreeContainer, FileStatNode, FileTreeModel, FileTreeWidget} from '../file-tree';
 
 const BREADCRUMBS_FILETREE_CLASS = 'tart-FilepathBreadcrumbFileTree';

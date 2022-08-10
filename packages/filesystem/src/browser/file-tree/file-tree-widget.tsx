@@ -7,13 +7,13 @@ import {
     TreeNode,
     TreeProps,
     TreeViewWelcomeWidget
-} from '@tart/core';
-import {Disposable, DisposableCollection, isCancelled, UriSelection} from '@tart/core/lib/common';
-import {IconThemeService} from '@tart/core/lib/browser/icon-theme-service';
+} from '@tartjs/core';
+import {Disposable, DisposableCollection, isCancelled, UriSelection} from '@tartjs/core/lib/common';
+import {IconThemeService} from '@tartjs/core/lib/browser/icon-theme-service';
 import {FileTreeModel} from './file-tree-model';
 import {DirNode, FileStatNode, FileStatNodeData} from './file-tree';
 import {FileStat, FileType} from '../../common/files';
-import URI from '@tart/core/lib/common/uri';
+import URI from '@tartjs/core/lib/common/uri';
 import {FileUploadService} from '../file-upload-service';
 
 export const FILE_TREE_CLASS = 'tart-FileTree';

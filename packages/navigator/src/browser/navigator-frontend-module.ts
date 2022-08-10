@@ -3,14 +3,14 @@ import '../assets/style/open-editors.css';
 
 import {ContainerModule} from 'inversify';
 import {NavigatorWidgetFactory} from './navigator-widget-factory';
-import {bindViewContribution, FrontendApplicationContribution, WidgetFactory} from '@tart/core';
+import {bindViewContribution, FrontendApplicationContribution, WidgetFactory} from '@tartjs/core';
 import {FileNavigatorContribution} from './navigator-contribution';
 import {FILE_NAVIGATOR_ID, FileNavigatorWidget} from './navigator-widget';
-import {bindContributionProvider} from '@tart/core/lib/common';
+import {bindContributionProvider} from '@tartjs/core/lib/common';
 import {createFileNavigatorWidget} from './navigator-container';
 import {OpenEditorsWidget} from './open-editors-widget/navigator-open-editors-widget';
 import {OpenEditorsTreeDecorator} from './open-editors-widget/navigator-open-editors-decorator-service';
-import {TabBarToolbarContribution} from '@tart/core/lib/browser/shell/tab-bar-toolbar';
+import {TabBarToolbarContribution} from '@tartjs/core/lib/browser/shell/tab-bar-toolbar';
 import {NavigatorContextKeyService} from './navigator-context-key-service';
 import {bindFileNavigatorPreferences} from './navigator-preferences';
 import {NavigatorTreeDecorator} from './navigator-decorator-service';

@@ -1,6 +1,6 @@
-import {Command} from '@tart/core/lib/common';
-import {CommonCommands} from '@tart/core';
-import {nls} from '@tart/core/lib/common/nls';
+import {Command} from '@tartjs/core/lib/common';
+import {CommonCommands} from '@tartjs/core';
+import {nls} from '@tartjs/core/lib/common/nls';
 
 export namespace EditorCommands {
 
