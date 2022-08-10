@@ -1,0 +1,36 @@
+{
+  "name": "@tart/editor",
+  "version": "1.0.0",
+  "directories": {
+    "lib": "lib/"
+  },
+  "files": [
+    "lib/*.d.ts",
+    "lib/*.d.ts.map",
+    "lib/*.js",
+    "lib/*.css"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "prepare": "yarn build",
+    "build": "gulp",
+    "watch": "gulp && gulp watch",
+    "dev": "yarn build && yarn watch"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "inversify": "^5.1.1",
+    "@tart/core": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17",
+    "@types/react-dom": "^17.0.17",
+    "typescript": "^4.7.4",
+    "gulp": "^4.0.2",
+    "gulp-less": "^5.0.0",
+    "gulp-typescript": "^5.0.1",
+    "gulp-sourcemaps": "^3.0.0"
+  }
+}

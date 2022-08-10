@@ -14,9 +14,9 @@
  * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
  ********************************************************************************/
 
-/*@import url('~@lumino/default-theme/style/index.css');*/
-/*@import url('~@lumino/widgets/style/index.css');*/
-/*@import url('~font-awesome/css/font-awesome.min.css');*/
+@import url('~@lumino/default-theme/style/index.css');
+@import url('~@lumino/widgets/style/index.css');
+@import url('~font-awesome/css/font-awesome.min.css');
 @import './variables-dark.useable.css';
 
 /*-----------------------------------------------------------------------------

@@ -17,7 +17,7 @@
 import {inject, injectable} from 'inversify';
 import {CancellationToken, Disposable} from '../../common';
 import {ContextKeyService} from '../context-key-service';
-import {QuickAccessContribution, QuickAccessProvider} from './quick-access';
+import {QuickAccessContribution, QuickAccessProvider, QuickAccessRegistry} from './quick-access';
 import {filterItems, QuickPickItem, QuickPicks} from '../../common/quick-pick-service';
 
 export interface QuickViewItem {
@@ -31,8 +31,8 @@ export class QuickViewService implements QuickAccessContribution, QuickAccessPro
   static PREFIX = 'view ';
 
   protected readonly items: (QuickPickItem & { when?: string })[] = [];
-  // @inject(QuickAccessRegistry)
-  // protected readonly quickAccessRegistry: QuickAccessRegistry;
+  @inject(QuickAccessRegistry)
+  protected readonly quickAccessRegistry: QuickAccessRegistry;
   @inject(ContextKeyService)
   protected readonly contextKexService: ContextKeyService;
   private hiddenItemLabels = new Set<string | undefined>();
@@ -63,12 +63,12 @@ export class QuickViewService implements QuickAccessContribution, QuickAccessPro
   }
 
   registerQuickAccessProvider(): void {
-    // this.quickAccessRegistry.registerQuickAccessProvider({
-    //   getInstance: () => this,
-    //   prefix: QuickViewService.PREFIX,
-    //   placeholder: '',
-    //   helpEntries: [{description: 'Open View', needsEditor: false}]
-    // });
+    this.quickAccessRegistry.registerQuickAccessProvider({
+      getInstance: () => this,
+      prefix: QuickViewService.PREFIX,
+      placeholder: '',
+      helpEntries: [{description: 'Open View', needsEditor: false}]
+    });
   }
 
   getPicks(filter: string, token: CancellationToken): QuickPicks {

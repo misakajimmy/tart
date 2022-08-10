@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const development = true;
+const monacoEditorCorePath = development ? path.resolve(__dirname, '../../node_modules/@theia/monaco-editor-core/dev/vs') : path.resolve(__dirname, '../../node_modules/@theia/monaco-editor-core/min/vs');
 const outputPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
@@ -23,7 +24,9 @@ module.exports = {
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".ts", ".tsx", ".js", ".d.ts"],
-        alias: {}
+        alias: {
+            'vs': path.resolve(outputPath, monacoEditorCorePath),
+        }
     },
     module: {
         rules: [
@@ -143,18 +146,20 @@ module.exports = {
         ]
     },
     plugins: [
-        // new CopyWebpackPlugin({
-        // patterns: [{
-        //     from: monacoEditorCorePath,
-        //     to: 'legend/vs'
-        // },{
-        //     from: blocklyEditorCorePath,
-        //     to: 'legend/blockly'
-        // }, {
-        //     from: blocklyMirrorCorePath,
-        //     to: 'legend/blocklymirror'
-        // }]
-        // }),
+        new CopyWebpackPlugin({
+            patterns: [{
+                from: monacoEditorCorePath,
+                to: 'vs'
+            }
+                // , {
+                //     from: blocklyEditorCorePath,
+                //     to: 'legend/blockly'
+                // }, {
+                //     from: blocklyMirrorCorePath,
+                //     to: 'legend/blocklymirror'
+                // }
+            ]
+        }),
         new webpack.ProvidePlugin({
             // the Buffer class doesn't exist in the browser but some dependencies rely on it
             Buffer: ['buffer', 'Buffer']

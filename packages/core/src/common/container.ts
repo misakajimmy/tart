@@ -12,19 +12,21 @@ export class ContainerLoader {
   }
 
   async importModules(modules: string[]) {
-    console.log(modules);
     await modules.map(async module => {
       await this.importModule(module);
     });
-    console.log('over');
   }
 
-  async loadsAsync(jsModules: Promise<any[]>) {
-    const modules = (await jsModules).map(jsModule => {
-      return jsModule.default;
-    });
-    console.log(modules);
-    await this.loads(modules);
+  async loadsAsync(jsModules: Promise<any[]>[]) {
+    let tmp = [];
+    for (let jsModule of jsModules) {
+      const modules = await jsModule;
+      for (let module of modules) {
+        const m = await module.default;
+        tmp.push(m)
+      }
+    }
+    await this.loads(tmp);
   }
 
   protected async importModule(module: string) {
