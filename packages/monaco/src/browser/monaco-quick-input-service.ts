@@ -1,17 +1,17 @@
 import {inject, injectable} from 'inversify';
 import {CancellationToken, Event} from '@tart/core/lib/common';
 import {
-    InputBox,
-    InputOptions,
-    PickOptions,
-    QuickInputButton,
-    QuickInputService,
-    QuickPick,
-    QuickPickItem,
-    QuickPickItemButtonEvent,
-    QuickPickItemHighlights,
-    QuickPickOptions,
-    QuickPickSeparator
+  InputBox,
+  InputOptions,
+  PickOptions,
+  QuickInputButton,
+  QuickInputService,
+  QuickPick,
+  QuickPickItem,
+  QuickPickItemButtonEvent,
+  QuickPickItemHighlights,
+  QuickPickOptions,
+  QuickPickSeparator
 } from '@tart/core/lib/common/quick-pick-service';
 import {KeybindingRegistry} from '@tart/core/lib/browser/keybinding';
 import {MonacoResolvedKeybinding} from './monaco-resolved-keybinding';

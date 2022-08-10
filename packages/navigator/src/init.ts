@@ -8,8 +8,8 @@ export class NavigatorInit implements TartInit {
 
   async initContainer(): Promise<any[]> {
     let modules = [];
-    // const monacoBrowser = await import('./browser/navigator-frontend-module');
-    // modules.push(monacoBrowser);
+    const monacoBrowser = await import('./browser/navigator-frontend-module');
+    modules.push(monacoBrowser);
     return modules;
   }
 }

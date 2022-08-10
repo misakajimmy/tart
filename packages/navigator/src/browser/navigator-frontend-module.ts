@@ -17,36 +17,36 @@ import {NavigatorTreeDecorator} from './navigator-decorator-service';
 import {FileNavigatorFilter} from './navigator-filter';
 
 export const NavigatorFrontendModule = new ContainerModule((bind) => {
-  // bindFileNavigatorPreferences(bind);
-  //
-  // bind(FileNavigatorFilter).toSelf().inSingletonScope();
-  //
-  // bindViewContribution(bind, FileNavigatorContribution);
-  //
-  // bind(NavigatorContextKeyService).toSelf().inSingletonScope();
-  //
-  // bind(FrontendApplicationContribution).toService(FileNavigatorContribution);
-  // bind(TabBarToolbarContribution).toService(FileNavigatorContribution);
-  //
-  // bind(FileNavigatorWidget).toDynamicValue(ctx =>
-  //     createFileNavigatorWidget(ctx.container)
-  // );
-  // bind(WidgetFactory).toDynamicValue(({container}) => ({
-  //   id: FILE_NAVIGATOR_ID,
-  //   createWidget: () => container.get(FileNavigatorWidget)
-  // })).inSingletonScope();
-  //
-  // bindContributionProvider(bind, NavigatorTreeDecorator);
-  // bindContributionProvider(bind, OpenEditorsTreeDecorator);
-  // // bind(OpenEditorsTreeDecorator).toService(NavigatorDeletedEditorDecorator);
-  //
-  // bind(WidgetFactory).toDynamicValue(({container}) => ({
-  //   id: OpenEditorsWidget.ID,
-  //   createWidget: () => OpenEditorsWidget.createWidget(container)
-  // })).inSingletonScope();
-  //
-  // bind(NavigatorWidgetFactory).toSelf().inSingletonScope();
-  // bind(WidgetFactory).toService(NavigatorWidgetFactory);
+  bindFileNavigatorPreferences(bind);
+
+  bind(FileNavigatorFilter).toSelf().inSingletonScope();
+
+  bindViewContribution(bind, FileNavigatorContribution);
+
+  bind(NavigatorContextKeyService).toSelf().inSingletonScope();
+
+  bind(FrontendApplicationContribution).toService(FileNavigatorContribution);
+  bind(TabBarToolbarContribution).toService(FileNavigatorContribution);
+
+  bind(FileNavigatorWidget).toDynamicValue(ctx =>
+      createFileNavigatorWidget(ctx.container)
+  );
+  bind(WidgetFactory).toDynamicValue(({container}) => ({
+    id: FILE_NAVIGATOR_ID,
+    createWidget: () => container.get(FileNavigatorWidget)
+  })).inSingletonScope();
+
+  bindContributionProvider(bind, NavigatorTreeDecorator);
+  bindContributionProvider(bind, OpenEditorsTreeDecorator);
+  // bind(OpenEditorsTreeDecorator).toService(NavigatorDeletedEditorDecorator);
+
+  bind(WidgetFactory).toDynamicValue(({container}) => ({
+    id: OpenEditorsWidget.ID,
+    createWidget: () => OpenEditorsWidget.createWidget(container)
+  })).inSingletonScope();
+
+  bind(NavigatorWidgetFactory).toSelf().inSingletonScope();
+  bind(WidgetFactory).toService(NavigatorWidgetFactory);
 });
 
 export default NavigatorFrontendModule;

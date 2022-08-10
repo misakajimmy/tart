@@ -18,7 +18,6 @@ export class ContainerLoader {
   }
 
   async loadsAsync(jsModules: Promise<any[]>[]) {
-    console.log(jsModules);
     let tmp = [];
     for (let jsModule of jsModules) {
       const modules = await jsModule;

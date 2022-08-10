@@ -368,15 +368,7 @@ export class FileNavigatorContribution extends AbstractViewContribution<FileNavi
     registry.registerMenuAction(fileSubMenuPath, {
       commandId: WorkspaceCommands.NEW_FILE.id,
       order: 'a',
-    })
-    registry.registerMenuAction(fileSubMenuPath, {
-      commandId: WorkspaceCommands.NEW_PYTHON_FILE.id,
-      order: 'b',
-    })
-    registry.registerMenuAction(fileSubMenuPath, {
-      commandId: WorkspaceCommands.NEW_BLOCKLY_FILE.id,
-      order: 'c',
-    })
+    });
 
     registry.registerMenuAction(NavigatorContextMenu.NAVIGATION, {
       commandId: WorkspaceCommands.NEW_FOLDER.id

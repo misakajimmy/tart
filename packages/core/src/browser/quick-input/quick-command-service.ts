@@ -1,6 +1,6 @@
 import {CancellationToken, Command, CommandRegistry, Disposable} from '../../common';
 import {inject, injectable} from 'inversify';
-import {QuickAccessContribution, QuickAccessProvider} from './quick-access';
+import {QuickAccessContribution, QuickAccessProvider, QuickAccessRegistry} from './quick-access';
 import {ContextKeyService} from '../context-key-service';
 import {CorePreferences} from '../core-preferences';
 import {KeybindingRegistry} from '../keybinding';
@@ -31,8 +31,8 @@ export class QuickCommandService implements QuickAccessContribution, QuickAccess
   protected readonly commandRegistry: CommandRegistry;
   @inject(CorePreferences)
   protected readonly corePreferences: CorePreferences;
-  // @inject(QuickAccessRegistry)
-  // protected readonly quickAccessRegistry: QuickAccessRegistry;
+  @inject(QuickAccessRegistry)
+  protected readonly quickAccessRegistry: QuickAccessRegistry;
   @inject(KeybindingRegistry)
   protected readonly keybindingRegistry: KeybindingRegistry;
   protected readonly contexts = new Map<string, string[]>();
@@ -40,12 +40,12 @@ export class QuickCommandService implements QuickAccessContribution, QuickAccess
   private otherItems: QuickPickItem[] = [];
 
   registerQuickAccessProvider(): void {
-    // this.quickAccessRegistry.registerQuickAccessProvider({
-    //   getInstance: () => this,
-    //   prefix: QuickCommandService.PREFIX,
-    //   placeholder: '',
-    //   helpEntries: [{description: 'Quick Command', needsEditor: false}]
-    // });
+    this.quickAccessRegistry.registerQuickAccessProvider({
+      getInstance: () => this,
+      prefix: QuickCommandService.PREFIX,
+      placeholder: '',
+      helpEntries: [{description: 'Quick Command', needsEditor: false}]
+    });
   }
 
   reset(): void {
