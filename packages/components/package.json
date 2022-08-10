@@ -8,10 +8,7 @@
     "lib": "lib/"
   },
   "files": [
-    "lib/*.d.ts",
-    "lib/*.d.ts.map",
-    "lib/*.js",
-    "lib/*.css"
+    "lib/*"
   ],
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
