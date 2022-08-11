@@ -11,7 +11,7 @@ import NavigatorInit from '@tartjs/navigator/lib/init';
 let inited = false;
 
 export interface ITartCoreProps {
-  modules?: [];
+  modules?: any[];
 }
 
 export function TartCore(props: ITartCoreProps) {
@@ -29,7 +29,7 @@ export function TartCore(props: ITartCoreProps) {
         EditorInit.init(),
         MonacoInit.init(),
         WorkspaceInit.init(),
-        NavigatorInit.init(),
+        NavigatorInit.init()
       ];
       containerLoader.loadsAsync(modules).then(() => {
       }).then(() => {
