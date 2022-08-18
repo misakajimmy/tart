@@ -11,7 +11,7 @@ export class EditorWidget extends BaseWidget implements SaveableSource, Navigata
       protected readonly selectionService: SelectionService,
   ) {
     super(editor);
-    this.addClass('wm-editor');
+    this.addClass('tart-editor');
     this.toDispose.push(this.editor);
     this.toDispose.push(this.editor.onSelectionChanged(() => this.setSelection()));
     this.toDispose.push(this.editor.onFocusChanged(() => this.setSelection()));

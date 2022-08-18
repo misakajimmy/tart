@@ -5,10 +5,12 @@
     "access": "public"
   },
   "directories": {
-    "lib": "lib/"
+    "lib": "lib/",
+    "shared": "shared/"
   },
   "files": [
-    "lib/*"
+    "lib/*",
+    "shared/*"
   ],
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
