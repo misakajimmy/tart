@@ -1086,6 +1086,7 @@ export class ApplicationShell extends Widget {
     const dockPanel = new TartDockPanel({
       mode: 'multiple-document',
       spacing: 0,
+      tabsConstrained: true
     });
     dockPanel.id = MAIN_AREA_ID;
     return dockPanel;

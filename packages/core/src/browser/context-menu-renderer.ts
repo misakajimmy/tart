@@ -17,8 +17,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import {injectable} from 'inversify';
-import {MenuPath} from '../common/menu';
-import {Disposable, DisposableCollection} from '../common';
+import {Disposable, DisposableCollection, MenuPath} from '../common';
 
 export interface Coordinate {
   x: number;

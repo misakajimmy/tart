@@ -2,6 +2,7 @@ import * as lfs from "./localstorage-fs";
 import {LocalStorage, move_dir, rename_dir} from "./localstorage-fs";
 import {FileChangeType} from '../files';
 
+// @ts-ignore
 let notifyDidChangeFile: ({changes: any}) => any;
 
 /*
@@ -12,63 +13,63 @@ let notifyDidChangeFile: ({changes: any}) => any;
 export const fsPointer = (
     id: LocalStorage.Id,
 ): FS.FsPointer => {
-    try {
-        const ty = lfs.get_fs_type(id); // get file type
-        // 1) file case
-        if (ty == LocalStorage.Type.file) {
-            const file = lfs.read_file(id);
-            return {
-                type: LocalStorage.Type.file,
-                name: file.name,
-                id: id,
-                parent: () => fsPointer(file.parent),
-                children: () => {
-                    return {type: LocalStorage.Type.error, msg: "file has no children"};
-                },
-                files: () => {
-                    return {type: LocalStorage.Type.error, msg: "file has no subfiles"};
-                },
-                dirs: () => {
-                    return {type: LocalStorage.Type.error, msg: "file has no subdirs"};
-                },
-                data: () => file.data,
-                // TODO : safer access to this file
-                raw: file,
-            };
-        }
-        // 2) directory case
-        else if (ty == LocalStorage.Type.directory) {
-            const dir = lfs.read_directory(id);
-            return {
-                type: LocalStorage.Type.directory,
-                name: dir.name,
-                id: id,
-                parent: () => fsPointer(dir.parent),
-                children: () => {
-                    return dir.children.map((child) => fsPointer(child));
-                },
-                files: () => {
-                    return dir.children
-                        .filter((child) => lfs.get_fs_type(child) == LocalStorage.Type.file)
-                        .map((child) => fsPointer(child)) as FS.File[];
-                },
-                dirs: () => {
-                    return dir.children
-                        .filter((child) => lfs.get_fs_type(child) == LocalStorage.Type.directory)
-                        .map((child) => fsPointer(child)) as FS.Directory[];
-                },
-                // TODO : safer access to this dir
-                raw: dir,
-                data: () => dir.data,
-            };
-        }
-    } catch (e) {
-        // 3) error case
-        return {
-            type: LocalStorage.Type.error,
-            msg: e.message,
-        };
+  try {
+    const ty = lfs.get_fs_type(id); // get file type
+    // 1) file case
+    if (ty == LocalStorage.Type.file) {
+      const file = lfs.read_file(id);
+      return {
+        type: LocalStorage.Type.file,
+        name: file.name,
+        id: id,
+        parent: () => fsPointer(file.parent),
+        children: () => {
+          return {type: LocalStorage.Type.error, msg: "file has no children"};
+        },
+        files: () => {
+          return {type: LocalStorage.Type.error, msg: "file has no subfiles"};
+        },
+        dirs: () => {
+          return {type: LocalStorage.Type.error, msg: "file has no subdirs"};
+        },
+        data: () => file.data,
+        // TODO : safer access to this file
+        raw: file,
+      };
     }
+    // 2) directory case
+    else if (ty == LocalStorage.Type.directory) {
+      const dir = lfs.read_directory(id);
+      return {
+        type: LocalStorage.Type.directory,
+        name: dir.name,
+        id: id,
+        parent: () => fsPointer(dir.parent),
+        children: () => {
+          return dir.children.map((child) => fsPointer(child));
+        },
+        files: () => {
+          return dir.children
+              .filter((child) => lfs.get_fs_type(child) == LocalStorage.Type.file)
+              .map((child) => fsPointer(child)) as FS.File[];
+        },
+        dirs: () => {
+          return dir.children
+              .filter((child) => lfs.get_fs_type(child) == LocalStorage.Type.directory)
+              .map((child) => fsPointer(child)) as FS.Directory[];
+        },
+        // TODO : safer access to this dir
+        raw: dir,
+        data: () => dir.data,
+      };
+    }
+  } catch (e) {
+    // 3) error case
+    return {
+      type: LocalStorage.Type.error,
+      msg: e.message,
+    };
+  }
 };
 
 export const movePointer = (
@@ -84,6 +85,7 @@ export const movePointer = (
     }
 }
 
+// @ts-ignore
 export const setNotifyDidChangeFile = (change: ({changes: any}) => any) => {
     notifyDidChangeFile = change;
 }

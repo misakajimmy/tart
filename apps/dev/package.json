@@ -9,7 +9,7 @@
     "prettier": "prettier --write src/**/*.{js,jsx,json,ts,tsx,css,less,scss,html,md}"
   },
   "dependencies": {
-    "@tartjs/components": "^0.0.3",
+    "@tartjs/components": "^0.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

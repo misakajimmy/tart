@@ -4,6 +4,7 @@ import {injectable} from "inversify";
 @injectable()
 export class FileSystemAccess {
   private _root: FileSystemDirectoryHandle;
+  // @ts-ignore
   private _notifyDidChangeFile: ({changes: any}) => any;
 
   async setRoot() {
@@ -15,6 +16,7 @@ export class FileSystemAccess {
     this._root = await window.showDirectoryPicker();
   }
 
+  // @ts-ignore
   setNotifyDidChangeFile(change: ({changes: any}) => any) {
     this._notifyDidChangeFile = change;
   }

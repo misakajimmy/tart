@@ -12,6 +12,7 @@ let inited = false;
 
 export interface ITartCoreProps {
   modules?: any[];
+  beforeInit?: () => void;
 }
 
 export function TartCore(props: ITartCoreProps) {
@@ -20,6 +21,9 @@ export function TartCore(props: ITartCoreProps) {
 
   useEffect(() => {
     const m = !!props.modules ? props.modules : [];
+    if (props.beforeInit) {
+      props.beforeInit();
+    }
     if (!inited) {
       inited = true;
       const modules = [

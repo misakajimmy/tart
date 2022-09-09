@@ -31,9 +31,9 @@ export class FrontendApplicationConfigProvider {
   }
 
   static set(config: FrontendApplicationConfig.Partial): void {
-    if (FrontendApplicationConfigProvider.doGet() !== undefined) {
-      throw new Error('The configuration is already set.');
-    }
+    // if (FrontendApplicationConfigProvider.doGet() !== undefined) {
+    //   throw new Error('The configuration is already set.');
+    // }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const globalObject = window as any;
     const key = FrontendApplicationConfigProvider.KEY;
