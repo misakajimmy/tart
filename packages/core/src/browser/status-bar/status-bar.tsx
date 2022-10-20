@@ -199,14 +199,14 @@ export class StatusBarImpl extends ReactWidget implements StatusBar {
       if (!(typeof val === 'string') && LabelIcon.is(val)) {
         if (val.name.startsWith('codicon-')) {
           children.push(
-              <span key={key}
-                    className={`codicon ${val.name}${val.animation ? ' fa-' + val.animation : ''}`}>
-              </span>);
+            <span
+              key={key} className={`codicon ${val.name}${val.animation ? ' fa-' + val.animation : ''}`}>
+            </span>);
         } else {
           children.push(
-              <span key={key}
-                    className={`fa fa-${val.name}${val.animation ? ' fa-' + val.animation : ''}`}>
-              </span>);
+            <span
+              key={key} className={`fa fa-${val.name}${val.animation ? ' fa-' + val.animation : ''}`}>
+            </span>);
         }
       } else {
         children.push(<span key={key}>{val}</span>);

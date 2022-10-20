@@ -1,0 +1,279 @@
+/********************************************************************************
+ * Copyright (C) 2019 TypeFox and others.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v. 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * This Source Code may also be made available under the following Secondary
+ * Licenses when the conditions for such availability set forth in the Eclipse
+ * Public License v. 2.0 are satisfied: GNU General Public License, version 2
+ * with the GNU Classpath Exception which is available at
+ * https://www.gnu.org/software/classpath/license.html.
+ *
+ * SPDX-License-Identifier: EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
+ ********************************************************************************/
+
+/* Container */
+
+.tart-notifications-overlay {
+  height: 0px;
+}
+
+.tart-notifications-container {
+  position: absolute;
+  bottom: 36px;
+  right: 16px;
+  width: 500px;
+  user-select: none;
+  z-index: 1111;
+}
+
+.tart-notifications-container.closed {
+  display: none;
+}
+
+.tart-notifications-container > * {
+  position: relative;
+}
+
+/* Toasts */
+
+.tart-notifications-container.tart-notification-toasts .tart-notification-list-item {
+  background-color: var(--tart-notifications-background);
+  box-shadow: 0px 0px 4px 0px var(--tart-widget-shadow);
+  border: 1px solid var(--tart-notificationToast-border);
+  margin-top: 6px;
+}
+
+/* Center */
+
+.tart-notifications-container.tart-notification-center {
+  background-color: var(--tart-notifications-background);
+  border: 1px solid var(--tart-notificationCenter-border);
+  box-shadow: 0px 0px 6px 0px var(--tart-widget-shadow);
+}
+
+/* Center > Header */
+
+.tart-notification-center-header {
+  color: var(--tart-notificationCenterHeader-foreground);
+  background-color: var(--tart-notificationCenterHeader-background);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  min-height: 30px;
+  align-items: center;
+}
+
+.tart-notification-center-header-title {
+  font-size: calc(var(--tart-ui-font-size1) / 1.1);
+  font-family: var(--tart-ui-font-family);
+  margin: 8px;
+  flex-grow: 2;
+}
+
+.tart-notification-center-header-actions {
+  margin: 8px;
+}
+
+/* List */
+
+.tart-notification-list-scroll-container {
+  max-height: 300px;
+  overflow: auto;
+}
+
+.tart-notification-list {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+}
+
+
+/* List > Item */
+
+.tart-notification-list-item {
+  width: 100%;
+  cursor: pointer;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.tart-notification-list-item:hover {
+  background-color: var(--tart-list-hoverBackground);
+}
+
+.tart-notification-list > .tart-notification-list-item:not(:last-child) {
+  border-top: 1px var(--tart-notifications-border) solid;
+}
+
+.tart-notification-list-item-content {
+  margin: 6px;
+  flex-grow: 3;
+}
+
+.tart-notification-list-item-content.collapsed .tart-notification-list-item-content-bottom {
+  display: none;
+}
+
+.tart-notification-list-item-content.collapsed .tart-notification-message {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tart-notification-list-item-content-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 5px 4px 7px 4px;
+}
+
+.tart-notification-message {
+  font-size: var(--tart-ui-font-size1);
+  font-family: var(--tart-ui-font-family);
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  flex-basis: 0%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  display: block;
+  overflow: hidden;
+  user-select: text;
+  margin-top: 3px;
+}
+
+.tart-notification-message a {
+  border: none;
+  color: var(--tart-notificationLink-foreground);
+  outline: 0;
+  text-decoration: none;
+}
+
+.tart-notification-message a:focus {
+  outline-color: var(--tart-focusBorder);
+}
+
+.tart-notification-icon {
+  margin-top: 1px;
+}
+
+.tart-notification-icon:before {
+  font-size: 18px;
+  padding-right: 4px;
+}
+
+.tart-notification-icon.info:before {
+  color: var(--tart-notificationsInfoIcon-foreground);
+}
+
+.tart-notification-icon.warning:before {
+  color: var(--tart-notificationsWarningIcon-foreground);
+}
+
+.tart-notification-icon.error:before {
+  color: var(--tart-notificationsErrorIcon-foreground);
+}
+
+.tart-notification-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin: 0px;
+  padding: 0px;
+}
+
+.tart-notification-actions > li {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.tart-notification-actions > .expand {
+  transform: rotate(0deg) scale(1.5);
+}
+
+.tart-notification-actions > .expand:active {
+  transform: rotate(0deg) scale(1.8);
+}
+
+.tart-notification-actions > .collapse {
+  transform: rotate(-90deg) scale(1.5);
+}
+
+.tart-notification-actions > .collapse:active {
+  transform: rotate(-90deg) scale(1.8);
+}
+
+.tart-notification-list-item-content-bottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tart-notification-source {
+  font-size: var(--tart-ui-font-size0);
+  font-family: var(--tart-ui-font-family);
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 4px;
+  display: block;
+  overflow: hidden;
+}
+
+.tart-notification-buttons {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.tart-notification-buttons > button {
+  margin: 4px;
+  max-width: 160px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tart-notification-item-progress {
+  display: block;
+}
+
+.tart-notification-item-progressbar {
+  height: 2px;
+  background-color: var(--tart-progressBar-background);
+  width: 66%;
+}
+
+/* Perfect scrollbar */
+
+.tart-notification-list-scroll-container .ps__rail-y {
+  width: var(--tart-scrollbar-rail-width);
+}
+
+.tart-notification-list-scroll-container .ps__rail-y:hover > .ps__thumb-y,
+.tart-notification-list-scroll-container .ps__rail-y:focus > .ps__thumb-y,
+.tart-notification-list-scroll-container .ps__rail-y.ps--clicking .ps__thumb-y {
+  right: calc((var(--tart-scrollbar-rail-width) - var(--tart-scrollbar-width)) / 2);
+  width: var(--tart-scrollbar-width);
+}
+
+.tart-notification-list-scroll-container .ps__rail-y > .ps__thumb-y {
+  width: var(--tart-scrollbar-width);
+  right: calc((var(--tart-scrollbar-rail-width) - var(--tart-scrollbar-width)) / 2);
+  background: var(--tart-scrollbarSlider-background);
+  border-radius: 0px;
+}
