@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {inject, injectable, postConstruct} from 'inversify';
 import {ApplicationShell, CorePreferences} from '@tartjs/core';
 import {MessageManager} from './message-manager';
 import {NotificationToastsComponent} from './notification-toasts-component';
 import {NotificationCenterComponent} from './notification-center-component';
+import {createRoot, Root} from 'react-dom/client';
 
 @injectable()
 export class MessagesRenderer {
@@ -16,6 +16,7 @@ export class MessagesRenderer {
 
   @inject(CorePreferences)
   protected readonly corePreferences: CorePreferences;
+  protected containerRoot: Root;
 
   @postConstruct()
   protected init(): void {
@@ -31,21 +32,14 @@ export class MessagesRenderer {
     if (window.document.body) {
       window.document.body.appendChild(this.container);
     }
+    this.containerRoot = createRoot(this.container);
   }
+
 
   protected render(): void {
-    ReactDOM.render(
-      <div>
-        <NotificationToastsComponent
-          manager={this.manager}
-          corePreferences={this.corePreferences}
-        />
-        <NotificationCenterComponent
-          manager={this.manager}
-        />
-      </div>,
-      this.container
-    );
+    this.containerRoot.render(<div>
+      <NotificationToastsComponent manager={this.manager} corePreferences={this.corePreferences} />
+      <NotificationCenterComponent manager={this.manager} />
+    </div>);
   }
-
 }

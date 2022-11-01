@@ -326,11 +326,6 @@ export class TabBarToolbar extends ReactWidget {
     if (!items.length) {
       this.hide();
     }
-    this.onRender.push(Disposable.create(() => {
-      if (items.length) {
-        this.show();
-      }
-    }));
     this.update();
   }
 

@@ -2,12 +2,13 @@ import './styles/main.less';
 import 'reflect-metadata';
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {App} from './app';
+import {createRoot} from 'react-dom/client';
 
-ReactDOM.render(
-    <React.StrictMode>
-      <App/>
-    </React.StrictMode>,
-    document.getElementById('root') as HTMLElement
+const hostRoot = createRoot(document.getElementById('root') as HTMLElement);
+
+hostRoot.render(
+  <React.StrictMode>
+    <App/>
+  </React.StrictMode>
 );

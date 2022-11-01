@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import {DisposableCollection, Emitter, Path} from '@tartjs/core/lib/common';
 import {FileService} from '../file-service';
 import URI from '@tartjs/core/lib/common/uri';
@@ -52,7 +51,7 @@ class ResolvedDirectoryCache {
 export const LocationListRendererFactory = Symbol('LocationListRendererFactory');
 
 export interface LocationListRendererFactory {
-    (options: LocationListRendererOptions): LocationListRenderer;
+  (options: LocationListRendererOptions): LocationListRenderer;
 }
 
 export const LocationListRendererOptions = Symbol('LocationListRendererOptions');
@@ -65,104 +64,104 @@ export interface LocationListRendererOptions {
 @injectable()
 export class LocationListRenderer extends ReactRenderer {
 
-    @inject(FileService) protected readonly fileService: FileService;
+  @inject(FileService) protected readonly fileService: FileService;
 
-    protected directoryCache: ResolvedDirectoryCache;
-    protected service: LocationService;
-    protected toDisposeOnNewCache = new DisposableCollection();
-    protected _drives: URI[] | undefined;
-    protected homeDir: string;
-    protected lastUniqueTextInputLocation: URI | undefined;
-    protected previousAutocompleteMatch: string;
-    protected doAttemptAutocomplete = true;
+  protected directoryCache: ResolvedDirectoryCache;
+  protected service: LocationService;
+  protected toDisposeOnNewCache = new DisposableCollection();
+  protected _drives: URI[] | undefined;
+  protected homeDir: string;
+  protected lastUniqueTextInputLocation: URI | undefined;
+  protected previousAutocompleteMatch: string;
+  protected doAttemptAutocomplete = true;
 
-    constructor(
-        @inject(LocationListRendererOptions) readonly options: LocationListRendererOptions
-    ) {
-        super(options.host);
-        this.service = options.model;
-        this.doLoadDrives();
+  constructor(
+    @inject(LocationListRendererOptions) readonly options: LocationListRendererOptions
+  ) {
+    super(options.host);
+    this.service = options.model;
+    this.doLoadDrives();
+  }
+
+  protected _doShowTextInput = false;
+
+  get doShowTextInput(): boolean {
+    return this._doShowTextInput;
+  }
+
+  set doShowTextInput(doShow: boolean) {
+    this._doShowTextInput = doShow;
+    if (doShow) {
+      this.initResolveDirectoryCache();
     }
+  }
 
-    protected _doShowTextInput = false;
-
-    get doShowTextInput(): boolean {
-        return this._doShowTextInput;
+  get locationList(): HTMLSelectElement | undefined {
+    const locationList = this.host.getElementsByClassName(LocationListRenderer.Styles.LOCATION_LIST_CLASS)[0];
+    if (locationList instanceof HTMLSelectElement) {
+      return locationList;
     }
+    return undefined;
+  }
 
-    set doShowTextInput(doShow: boolean) {
-        this._doShowTextInput = doShow;
-        if (doShow) {
-            this.initResolveDirectoryCache();
+  get locationTextInput(): HTMLInputElement | undefined {
+    const locationTextInput = this.host.getElementsByClassName(LocationListRenderer.Styles.LOCATION_TEXT_INPUT_CLASS)[0];
+    if (locationTextInput instanceof HTMLInputElement) {
+      return locationTextInput;
+    }
+    return undefined;
+  }
+
+  @postConstruct()
+  async init(): Promise<void> {
+    // const homeDirWithPrefix = await this.variablesServer.getHomeDirUri();
+    // this.homeDir = (new URI(homeDirWithPrefix)).path.toString();
+    this.homeDir = (new URI()).path.toString();
+  }
+
+  render(): void {
+    this.hostRoot.render(this.doRender());
+  }
+
+  dispose(): void {
+    super.dispose();
+    this.toDisposeOnNewCache.dispose();
+  }
+
+  protected initResolveDirectoryCache(): void {
+    this.toDisposeOnNewCache.dispose();
+    this.directoryCache = new ResolvedDirectoryCache(this.fileService);
+    this.toDisposeOnNewCache.push(this.directoryCache.onDirectoryDidResolve(({parent, children}) => {
+      if (this.locationTextInput) {
+        const expandedPath = Path.untildify(this.locationTextInput.value, this.homeDir);
+        const inputParent = (new URI(expandedPath)).path.dir.toString();
+        if (inputParent === parent) {
+          this.tryRenderFirstMatch(this.locationTextInput, children);
         }
+      }
+    }));
+  }
+
+  protected doAfterRender = (): void => {
+    const locationList = this.locationList;
+    const locationListTextInput = this.locationTextInput;
+    if (locationList) {
+      const currentLocation = this.service.location;
+      locationList.value = currentLocation ? currentLocation.toString() : '';
+    } else if (locationListTextInput) {
+      locationListTextInput.focus();
     }
+  };
 
-    get locationList(): HTMLSelectElement | undefined {
-        const locationList = this.host.getElementsByClassName(LocationListRenderer.Styles.LOCATION_LIST_CLASS)[0];
-        if (locationList instanceof HTMLSelectElement) {
-            return locationList;
-        }
-        return undefined;
-    }
+  protected readonly handleLocationChanged = (e: React.ChangeEvent<HTMLSelectElement>) => this.onLocationChanged(e);
 
-    get locationTextInput(): HTMLInputElement | undefined {
-        const locationTextInput = this.host.getElementsByClassName(LocationListRenderer.Styles.LOCATION_TEXT_INPUT_CLASS)[0];
-        if (locationTextInput instanceof HTMLInputElement) {
-            return locationTextInput;
-        }
-        return undefined;
-    }
+  protected readonly handleTextInputOnChange = (e: React.ChangeEvent<HTMLInputElement>) => this.trySuggestDirectory(e);
 
-    @postConstruct()
-    async init(): Promise<void> {
-        // const homeDirWithPrefix = await this.variablesServer.getHomeDirUri();
-        // this.homeDir = (new URI(homeDirWithPrefix)).path.toString();
-        this.homeDir = (new URI()).path.toString();
-    }
+  protected readonly handleTextInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => this.handleControlKeys(e);
 
-    render(): void {
-        ReactDOM.render(this.doRender(), this.host, this.doAfterRender);
-    }
+  protected readonly handleIconKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>) => this.toggleInputOnKeyDown(e);
 
-    dispose(): void {
-        super.dispose();
-        this.toDisposeOnNewCache.dispose();
-    }
-
-    protected initResolveDirectoryCache(): void {
-        this.toDisposeOnNewCache.dispose();
-        this.directoryCache = new ResolvedDirectoryCache(this.fileService);
-        this.toDisposeOnNewCache.push(this.directoryCache.onDirectoryDidResolve(({parent, children}) => {
-            if (this.locationTextInput) {
-                const expandedPath = Path.untildify(this.locationTextInput.value, this.homeDir);
-                const inputParent = (new URI(expandedPath)).path.dir.toString();
-                if (inputParent === parent) {
-                    this.tryRenderFirstMatch(this.locationTextInput, children);
-                }
-            }
-        }));
-    }
-
-    protected doAfterRender = (): void => {
-        const locationList = this.locationList;
-        const locationListTextInput = this.locationTextInput;
-        if (locationList) {
-            const currentLocation = this.service.location;
-            locationList.value = currentLocation ? currentLocation.toString() : '';
-        } else if (locationListTextInput) {
-            locationListTextInput.focus();
-        }
-    };
-
-    protected readonly handleLocationChanged = (e: React.ChangeEvent<HTMLSelectElement>) => this.onLocationChanged(e);
-
-    protected readonly handleTextInputOnChange = (e: React.ChangeEvent<HTMLInputElement>) => this.trySuggestDirectory(e);
-
-    protected readonly handleTextInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => this.handleControlKeys(e);
-
-    protected readonly handleIconKeyDown = (e: React.KeyboardEvent<HTMLSpanElement>) => this.toggleInputOnKeyDown(e);
-
-    protected readonly handleTextInputOnBlur = () => this.toggleToSelectInput();
+  protected readonly handleTextInputOnBlur = () => this.toggleToSelectInput();
 
     protected readonly handleTextInputMouseDown = (e: React.MouseEvent<HTMLSpanElement>) => this.toggleToTextInputOnMouseDown(e);
 
@@ -227,11 +226,11 @@ export class LocationListRenderer extends ReactRenderer {
     }
 
     protected toggleToTextInputOnMouseDown(e: React.MouseEvent<HTMLSpanElement>): void {
-        if (e.currentTarget.id === 'select-input') {
-            e.preventDefault();
-            this.doShowTextInput = true;
-            this.render();
-        }
+      if (e.currentTarget.id === 'select-input') {
+        e.preventDefault();
+        this.doShowTextInput = true;
+        this.render();
+      }
     }
 
     protected toggleToSelectInput(): void {

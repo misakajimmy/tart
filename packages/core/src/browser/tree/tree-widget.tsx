@@ -50,6 +50,7 @@ import {TreeWidgetSelection} from './tree-widget-selection';
 import {MaybePromise} from '../../common/types';
 import {LabelProvider} from '../label-provider';
 import {CorePreferences} from '../core-preferences';
+import {useEffect} from 'react';
 
 export const TREE_CLASS = 'tart-Tree';
 export const TREE_CONTAINER_CLASS = 'tart-TreeContainer';
@@ -508,6 +509,12 @@ export class TreeWidget extends ReactWidget implements StatefulWidget {
     return this.model.root;
   }
 
+  protected ScrollingRowRenderer: React.FC<{ rows: TreeWidget.NodeRow[] }> = ({ rows }) => {
+    useEffect(() => this.scrollToSelected());
+    return <>{rows.map(row => <div key={row.index}>{this.renderNodeRow(row)}</div>)}</>;
+  };
+
+
   /**
    * Render the tree widget.
    * @param model the tree model.
@@ -516,8 +523,7 @@ export class TreeWidget extends ReactWidget implements StatefulWidget {
     if (model.root) {
       const rows = Array.from(this.rows.values());
       if (this.props.virtualized === false) {
-        this.onRender.push(Disposable.create(() => this.scrollToSelected()));
-        return rows.map(row => <div key={row.index}>{this.renderNodeRow(row)}</div>);
+        return <this.ScrollingRowRenderer rows={rows} />;
       }
       return <TreeWidget.View
           ref={view => this.view = (view || undefined)}
@@ -1251,15 +1257,13 @@ export class TreeWidget extends ReactWidget implements StatefulWidget {
       }
       const contextMenuPath = this.props.contextMenuPath;
       if (contextMenuPath) {
-        const {x, y} = event.nativeEvent;
+        const { x, y } = event.nativeEvent;
         const args = this.toContextMenuArgs(node);
-        this.onRender.push(Disposable.create(() =>
-            setTimeout(() => this.contextMenuRenderer.render({
-              menuPath: contextMenuPath,
-              anchor: {x, y},
-              args
-            }))
-        ));
+        setTimeout(() => this.contextMenuRenderer.render({
+          menuPath: contextMenuPath,
+          anchor: { x, y },
+          args
+        }), 10);
       }
       this.doFocus();
     }

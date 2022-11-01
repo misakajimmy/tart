@@ -15,28 +15,35 @@
  ********************************************************************************/
 
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import {inject, injectable} from 'inversify';
-import {Disposable, DisposableCollection} from '../../common';
+import {Disposable} from '../../common';
 import {Message} from '../widgets';
 import {AbstractDialog, DialogProps} from '../dialogs';
+import {createRoot, Root} from 'react-dom/client';
 
 @injectable()
 export abstract class ReactDialog<T> extends AbstractDialog<T> {
-  protected readonly onRender = new DisposableCollection();
+  protected contentNodeRoot: Root;
+  protected isMounted: boolean;
 
   constructor(
-      @inject(DialogProps) protected readonly props: DialogProps
+    @inject(DialogProps) props: DialogProps
   ) {
     super(props);
+    this.contentNodeRoot = createRoot(this.contentNode);
+    this.isMounted = true;
     this.toDispose.push(Disposable.create(() => {
-      ReactDOM.unmountComponentAtNode(this.contentNode);
+      this.contentNodeRoot.unmount();
+      this.isMounted = false;
     }));
   }
 
-  protected onUpdateRequest(msg: Message): void {
+  protected override onUpdateRequest(msg: Message): void {
     super.onUpdateRequest(msg);
-    ReactDOM.render(<>{this.render()}</>, this.contentNode, () => this.onRender.dispose());
+    if (!this.isMounted) {
+      this.contentNodeRoot = createRoot(this.contentNode);
+    }
+    this.contentNodeRoot?.render(<>{this.render()}</>);
   }
 
   /**
