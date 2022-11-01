@@ -28,7 +28,7 @@ export class MessagesRenderer {
 
   protected createOverlayContainer(): void {
     this.container = window.document.createElement('div');
-    this.container.className = 'theia-notifications-overlay';
+    this.container.className = 'wm-notifications-overlay';
     if (window.document.body) {
       window.document.body.appendChild(this.container);
     }
