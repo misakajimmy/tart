@@ -24,14 +24,14 @@
     "ajv": "^6.12.6",
     "inversify": "^5.1.1",
     "jsonc-parser": "^3.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "valid-filename": "^2.0.1"
   },
   "devDependencies": {
     "@types/jszip": "^3.4.1",
-    "@types/react": "^17.0.48",
-    "@types/react-dom": "^17.0.17",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
     "gulp": "^4.0.2",
     "gulp-less": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",

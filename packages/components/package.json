@@ -28,14 +28,14 @@
     "@tartjs/messages": "^0.0.6",
     "bluebird": "^3.7.2",
     "inversify": "^5.1.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.36",
-    "@types/react": "^17",
-    "@types/react-dom": "^17.0.17",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
     "gulp": "^4.0.2",
     "gulp-less": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",

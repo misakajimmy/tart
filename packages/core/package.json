@@ -47,8 +47,8 @@
     "native-keymap": "^2.4.1",
     "p-debounce": "^4.0.0",
     "perfect-scrollbar": "^1.5.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-tooltip": "^4.2.21",
     "react-virtualized": "^9.22.3",
     "reflect-metadata": "^0.1.13",
@@ -57,8 +57,8 @@
     "vscode-uri": "^3.0.2"
   },
   "devDependencies": {
-    "@types/react": "^17",
-    "@types/react-dom": "^17.0.17",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
     "gulp": "^4.0.2",
     "gulp-less": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",
