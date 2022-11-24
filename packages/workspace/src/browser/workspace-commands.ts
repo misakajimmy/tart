@@ -476,23 +476,23 @@ export class WorkspaceRootUriAwareCommandHandler extends UriAwareCommandHandler<
 export class FileMenuContribution implements MenuContribution {
 
   registerMenus(registry: MenuModelRegistry): void {
-    registry.registerMenuAction(CommonMenus.FILE_NEW, {
-      commandId: WorkspaceCommands.NEW_FILE.id,
-      order: 'a'
-    });
-    registry.registerMenuAction(CommonMenus.FILE_NEW, {
-      commandId: WorkspaceCommands.NEW_FOLDER.id,
-      order: 'b'
-    });
-    const downloadUploadMenu = [...CommonMenus.FILE, '4_downloadupload'];
-    registry.registerMenuAction(downloadUploadMenu, {
-      commandId: FileSystemCommands.UPLOAD.id,
-      order: 'a'
-    });
-    registry.registerMenuAction(downloadUploadMenu, {
-      commandId: FileDownloadCommands.DOWNLOAD.id,
-      order: 'b'
-    });
+    // registry.registerMenuAction(CommonMenus.FILE_NEW, {
+    //   commandId: WorkspaceCommands.NEW_FILE.id,
+    //   order: 'a'
+    // });
+    // registry.registerMenuAction(CommonMenus.FILE_NEW, {
+    //   commandId: WorkspaceCommands.NEW_FOLDER.id,
+    //   order: 'b'
+    // });
+    // const downloadUploadMenu = [...CommonMenus.FILE, '4_downloadupload'];
+    // registry.registerMenuAction(downloadUploadMenu, {
+    //   commandId: FileSystemCommands.UPLOAD.id,
+    //   order: 'a'
+    // });
+    // registry.registerMenuAction(downloadUploadMenu, {
+    //   commandId: FileDownloadCommands.DOWNLOAD.id,
+    //   order: 'b'
+    // });
   }
 
 }
