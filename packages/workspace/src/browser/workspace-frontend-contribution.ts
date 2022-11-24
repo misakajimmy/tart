@@ -40,14 +40,14 @@ export class WorkspaceFrontendContribution implements CommandContribution, Keybi
   }
 
   registerMenus(menus: MenuModelRegistry): void {
-    menus.registerMenuAction(CommonMenus.FILE_OPEN, {
-      commandId: WorkspaceCommands.OPEN.id,
-      order: 'a00'
-    });
-    menus.registerMenuAction(CommonMenus.FILE_OPEN, {
-      commandId: WorkspaceCommands.OPEN_WORKSPACE.id,
-      order: 'a10'
-    });
+    // menus.registerMenuAction(CommonMenus.FILE_OPEN, {
+    //   commandId: WorkspaceCommands.OPEN.id,
+    //   order: 'a00'
+    // });
+    // menus.registerMenuAction(CommonMenus.FILE_OPEN, {
+    //   commandId: WorkspaceCommands.OPEN_WORKSPACE.id,
+    //   order: 'a10'
+    // });
   }
 
   /**

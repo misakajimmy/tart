@@ -19,7 +19,7 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
         host: "0.0.0.0",
-        port: 9008
+        port: 9010
     },
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.

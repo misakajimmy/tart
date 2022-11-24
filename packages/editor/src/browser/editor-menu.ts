@@ -46,70 +46,70 @@ export namespace EditorMainMenu {
 export class EditorMenuContribution implements MenuContribution {
 
   registerMenus(registry: MenuModelRegistry): void {
-    registry.registerMenuAction(EditorContextMenu.UNDO_REDO, {
-      commandId: CommonCommands.UNDO.id
-    });
-    registry.registerMenuAction(EditorContextMenu.UNDO_REDO, {
-      commandId: CommonCommands.REDO.id
-    });
-
-    registry.registerMenuAction(EditorContextMenu.CUT_COPY_PASTE, {
-      commandId: CommonCommands.CUT.id,
-      order: '0'
-    });
-    registry.registerMenuAction(EditorContextMenu.CUT_COPY_PASTE, {
-      commandId: CommonCommands.COPY.id,
-      order: '1'
-    });
-    registry.registerMenuAction(EditorContextMenu.CUT_COPY_PASTE, {
-      commandId: CommonCommands.PASTE.id,
-      order: '2'
-    });
-
-    // Editor navigation. Go > Back and Go > Forward.
-    registry.registerSubmenu(EditorMainMenu.GO, nls.localizeByDefault('Go'));
-    registry.registerMenuAction(EditorMainMenu.NAVIGATION_GROUP, {
-      commandId: EditorCommands.GO_BACK.id,
-      label: EditorCommands.GO_BACK.label,
-      order: '1'
-    });
-    registry.registerMenuAction(EditorMainMenu.NAVIGATION_GROUP, {
-      commandId: EditorCommands.GO_FORWARD.id,
-      label: EditorCommands.GO_FORWARD.label,
-      order: '2'
-    });
-    registry.registerMenuAction(EditorMainMenu.NAVIGATION_GROUP, {
-      commandId: EditorCommands.GO_LAST_EDIT.id,
-      label: nls.localizeByDefault('Last Edit Location'),
-      order: '3'
-    });
-
-    registry.registerMenuAction(EditorMainMenu.LOCATION_GROUP, {
-      commandId: EditorCommands.GOTO_LINE_COLUMN.id,
-      order: '1'
-    });
-
-    // Toggle Commands.
-    registry.registerMenuAction(CommonMenus.VIEW_TOGGLE, {
-      commandId: EditorCommands.TOGGLE_WORD_WRAP.id,
-      label: EditorCommands.TOGGLE_WORD_WRAP.label,
-      order: '0'
-    });
-    registry.registerMenuAction(CommonMenus.VIEW_TOGGLE, {
-      commandId: EditorCommands.TOGGLE_MINIMAP.id,
-      label: EditorCommands.TOGGLE_MINIMAP.label,
-      order: '1',
-    });
-    registry.registerMenuAction(CommonMenus.VIEW_TOGGLE, {
-      commandId: EditorCommands.TOGGLE_RENDER_WHITESPACE.id,
-      label: EditorCommands.TOGGLE_RENDER_WHITESPACE.label,
-      order: '2'
-    });
-    registry.registerMenuAction(CommonMenus.FILE_CLOSE, {
-      commandId: CommonCommands.CLOSE_MAIN_TAB.id,
-      label: nls.localizeByDefault('Close Editor'),
-      order: '1'
-    });
+    // registry.registerMenuAction(EditorContextMenu.UNDO_REDO, {
+    //   commandId: CommonCommands.UNDO.id
+    // });
+    // registry.registerMenuAction(EditorContextMenu.UNDO_REDO, {
+    //   commandId: CommonCommands.REDO.id
+    // });
+    //
+    // registry.registerMenuAction(EditorContextMenu.CUT_COPY_PASTE, {
+    //   commandId: CommonCommands.CUT.id,
+    //   order: '0'
+    // });
+    // registry.registerMenuAction(EditorContextMenu.CUT_COPY_PASTE, {
+    //   commandId: CommonCommands.COPY.id,
+    //   order: '1'
+    // });
+    // registry.registerMenuAction(EditorContextMenu.CUT_COPY_PASTE, {
+    //   commandId: CommonCommands.PASTE.id,
+    //   order: '2'
+    // });
+    //
+    // // Editor navigation. Go > Back and Go > Forward.
+    // registry.registerSubmenu(EditorMainMenu.GO, nls.localizeByDefault('Go'));
+    // registry.registerMenuAction(EditorMainMenu.NAVIGATION_GROUP, {
+    //   commandId: EditorCommands.GO_BACK.id,
+    //   label: EditorCommands.GO_BACK.label,
+    //   order: '1'
+    // });
+    // registry.registerMenuAction(EditorMainMenu.NAVIGATION_GROUP, {
+    //   commandId: EditorCommands.GO_FORWARD.id,
+    //   label: EditorCommands.GO_FORWARD.label,
+    //   order: '2'
+    // });
+    // registry.registerMenuAction(EditorMainMenu.NAVIGATION_GROUP, {
+    //   commandId: EditorCommands.GO_LAST_EDIT.id,
+    //   label: nls.localizeByDefault('Last Edit Location'),
+    //   order: '3'
+    // });
+    //
+    // registry.registerMenuAction(EditorMainMenu.LOCATION_GROUP, {
+    //   commandId: EditorCommands.GOTO_LINE_COLUMN.id,
+    //   order: '1'
+    // });
+    //
+    // // Toggle Commands.
+    // registry.registerMenuAction(CommonMenus.VIEW_TOGGLE, {
+    //   commandId: EditorCommands.TOGGLE_WORD_WRAP.id,
+    //   label: EditorCommands.TOGGLE_WORD_WRAP.label,
+    //   order: '0'
+    // });
+    // registry.registerMenuAction(CommonMenus.VIEW_TOGGLE, {
+    //   commandId: EditorCommands.TOGGLE_MINIMAP.id,
+    //   label: EditorCommands.TOGGLE_MINIMAP.label,
+    //   order: '1',
+    // });
+    // registry.registerMenuAction(CommonMenus.VIEW_TOGGLE, {
+    //   commandId: EditorCommands.TOGGLE_RENDER_WHITESPACE.id,
+    //   label: EditorCommands.TOGGLE_RENDER_WHITESPACE.label,
+    //   order: '2'
+    // });
+    // registry.registerMenuAction(CommonMenus.FILE_CLOSE, {
+    //   commandId: CommonCommands.CLOSE_MAIN_TAB.id,
+    //   label: nls.localizeByDefault('Close Editor'),
+    //   order: '1'
+    // });
   }
 
 }

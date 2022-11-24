@@ -6,7 +6,7 @@ import FilesystemInit from '@tartjs/filesystem/lib/init';
 import EditorInit from '@tartjs/editor/lib/init';
 import MonacoInit from '@tartjs/monaco/lib/init';
 import WorkspaceInit from '@tartjs/workspace/lib/init';
-import NavigatorInit from '@tartjs/navigator/lib/init';
+// import NavigatorInit from '@tartjs/navigator/lib/init';
 import MessagesInit from '@tartjs/messages/lib/init';
 
 let inited = false;
@@ -34,7 +34,7 @@ export function TartCore(props: ITartCoreProps) {
         EditorInit.init(),
         MonacoInit.init(),
         WorkspaceInit.init(),
-        NavigatorInit.init(),
+        // NavigatorInit.init(),
         MessagesInit.init()
       ];
       containerLoader.loadsAsync(modules).then(() => {
