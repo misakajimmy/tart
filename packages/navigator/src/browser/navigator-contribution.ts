@@ -299,11 +299,11 @@ export class FileNavigatorContribution extends AbstractViewContribution<FileNavi
     //     order: '5'
     // });
 
-    registry.registerMenuAction(NavigatorContextMenu.NAVIGATION, {
-      commandId: FileNavigatorCommands.OPEN.id,
-      label: FileNavigatorCommands.OPEN.label
-    });
-    registry.registerSubmenu(NavigatorContextMenu.OPEN_WITH, nls.localizeByDefault('Open With...'));
+    // registry.registerMenuAction(NavigatorContextMenu.NAVIGATION, {
+    //   commandId: FileNavigatorCommands.OPEN.id,
+    //   label: FileNavigatorCommands.OPEN.label
+    // });
+    // registry.registerSubmenu(NavigatorContextMenu.OPEN_WITH, nls.localizeByDefault('Open With...'));
     // this.openerService.getOpeners().then(openers => {
     //     for (const opener of openers) {
     //         const openWithCommand = WorkspaceCommands.FILE_OPEN_WITH(opener);
@@ -319,116 +319,116 @@ export class FileNavigatorContribution extends AbstractViewContribution<FileNavi
     //     commandId: Commands.FILE_CUT
     // });
 
-    registry.registerMenuAction(NavigatorContextMenu.CLIPBOARD, {
-      commandId: CommonCommands.COPY.id,
-      order: 'a'
-    });
-    registry.registerMenuAction(NavigatorContextMenu.CLIPBOARD, {
-      commandId: CommonCommands.PASTE.id,
-      order: 'b'
-    });
-    registry.registerMenuAction(NavigatorContextMenu.CLIPBOARD, {
-      commandId: CommonCommands.COPY_PATH.id,
-      order: 'c'
-    });
-    registry.registerMenuAction(NavigatorContextMenu.CLIPBOARD, {
-      commandId: FileNavigatorCommands.COPY_RELATIVE_FILE_PATH.id,
-      label: FileNavigatorCommands.COPY_RELATIVE_FILE_PATH.label,
-      order: 'd'
-    });
     // registry.registerMenuAction(NavigatorContextMenu.CLIPBOARD, {
-    //     commandId: FileDownloadCommands.COPY_DOWNLOAD_LINK.id,
-    //     order: 'z'
+    //   commandId: CommonCommands.COPY.id,
+    //   order: 'a'
     // });
-
-    registry.registerMenuAction(NavigatorContextMenu.MODIFICATION, {
-      commandId: WorkspaceCommands.FILE_RENAME.id
-    });
-    registry.registerMenuAction(NavigatorContextMenu.MODIFICATION, {
-      commandId: WorkspaceCommands.FILE_DELETE.id
-    });
-    registry.registerMenuAction(NavigatorContextMenu.MODIFICATION, {
-      commandId: WorkspaceCommands.FILE_DUPLICATE.id
-    });
-
-    const downloadUploadMenu = [...NAVIGATOR_CONTEXT_MENU, '6_downloadupload'];
-    registry.registerMenuAction(downloadUploadMenu, {
-      commandId: FileSystemCommands.UPLOAD.id,
-      order: 'a'
-    });
-    registry.registerMenuAction(downloadUploadMenu, {
-      commandId: FileDownloadCommands.DOWNLOAD.id,
-      order: 'b'
-    });
-
-    const fileSubMenuPath = [...NavigatorContextMenu.NAVIGATION, 'new-file'];
-    registry.registerSubmenu(fileSubMenuPath, nls.localize('New File', '新建文件'), {
-      order: '0'
-    });
-    registry.registerMenuAction(fileSubMenuPath, {
-      commandId: WorkspaceCommands.NEW_FILE.id,
-      order: 'a',
-    });
-
-    registry.registerMenuAction(NavigatorContextMenu.NAVIGATION, {
-      commandId: WorkspaceCommands.NEW_FOLDER.id
-    });
-    registry.registerMenuAction(NavigatorContextMenu.COMPARE, {
-      commandId: WorkspaceCommands.FILE_COMPARE.id
-    });
-    registry.registerMenuAction(NavigatorContextMenu.MODIFICATION, {
-      commandId: FileNavigatorCommands.COLLAPSE_ALL.id,
-      label: nls.localizeByDefault('Collapse All'),
-      order: 'z2'
-    });
-
-    registry.registerMenuAction(NavigatorContextMenu.COMPARE, {
-      commandId: NavigatorDiffCommands.COMPARE_FIRST.id,
-      order: 'za'
-    });
-    registry.registerMenuAction(NavigatorContextMenu.COMPARE, {
-      commandId: NavigatorDiffCommands.COMPARE_SECOND.id,
-      order: 'zb'
-    });
-
-    // Open Editors Widget Menu Items
-    registry.registerMenuAction(OpenEditorsContextMenu.CLIPBOARD, {
-      commandId: CommonCommands.COPY_PATH.id,
-      order: 'a'
-    });
-    registry.registerMenuAction(OpenEditorsContextMenu.CLIPBOARD, {
-      commandId: FileNavigatorCommands.COPY_RELATIVE_FILE_PATH.id,
-      order: 'b'
-    });
-    registry.registerMenuAction(OpenEditorsContextMenu.SAVE, {
-      commandId: CommonCommands.SAVE.id,
-      order: 'a'
-    });
-
-    registry.registerMenuAction(OpenEditorsContextMenu.COMPARE, {
-      commandId: NavigatorDiffCommands.COMPARE_FIRST.id,
-      order: 'a'
-    });
-    registry.registerMenuAction(OpenEditorsContextMenu.COMPARE, {
-      commandId: NavigatorDiffCommands.COMPARE_SECOND.id,
-      order: 'b'
-    });
-
-    registry.registerMenuAction(OpenEditorsContextMenu.MODIFICATION, {
-      commandId: CommonCommands.CLOSE_TAB.id,
-      label: 'Close',
-      order: 'a'
-    });
-    registry.registerMenuAction(OpenEditorsContextMenu.MODIFICATION, {
-      commandId: CommonCommands.CLOSE_OTHER_TABS.id,
-      label: 'Close Others',
-      order: 'b'
-    });
-    registry.registerMenuAction(OpenEditorsContextMenu.MODIFICATION, {
-      commandId: CommonCommands.CLOSE_ALL_MAIN_TABS.id,
-      label: 'Close All',
-      order: 'c'
-    });
+    // registry.registerMenuAction(NavigatorContextMenu.CLIPBOARD, {
+    //   commandId: CommonCommands.PASTE.id,
+    //   order: 'b'
+    // });
+    // registry.registerMenuAction(NavigatorContextMenu.CLIPBOARD, {
+    //   commandId: CommonCommands.COPY_PATH.id,
+    //   order: 'c'
+    // });
+    // registry.registerMenuAction(NavigatorContextMenu.CLIPBOARD, {
+    //   commandId: FileNavigatorCommands.COPY_RELATIVE_FILE_PATH.id,
+    //   label: FileNavigatorCommands.COPY_RELATIVE_FILE_PATH.label,
+    //   order: 'd'
+    // });
+    // // registry.registerMenuAction(NavigatorContextMenu.CLIPBOARD, {
+    // //     commandId: FileDownloadCommands.COPY_DOWNLOAD_LINK.id,
+    // //     order: 'z'
+    // // });
+    //
+    // registry.registerMenuAction(NavigatorContextMenu.MODIFICATION, {
+    //   commandId: WorkspaceCommands.FILE_RENAME.id
+    // });
+    // registry.registerMenuAction(NavigatorContextMenu.MODIFICATION, {
+    //   commandId: WorkspaceCommands.FILE_DELETE.id
+    // });
+    // registry.registerMenuAction(NavigatorContextMenu.MODIFICATION, {
+    //   commandId: WorkspaceCommands.FILE_DUPLICATE.id
+    // });
+    //
+    // const downloadUploadMenu = [...NAVIGATOR_CONTEXT_MENU, '6_downloadupload'];
+    // registry.registerMenuAction(downloadUploadMenu, {
+    //   commandId: FileSystemCommands.UPLOAD.id,
+    //   order: 'a'
+    // });
+    // registry.registerMenuAction(downloadUploadMenu, {
+    //   commandId: FileDownloadCommands.DOWNLOAD.id,
+    //   order: 'b'
+    // });
+    //
+    // const fileSubMenuPath = [...NavigatorContextMenu.NAVIGATION, 'new-file'];
+    // registry.registerSubmenu(fileSubMenuPath, nls.localize('New File', '新建文件'), {
+    //   order: '0'
+    // });
+    // registry.registerMenuAction(fileSubMenuPath, {
+    //   commandId: WorkspaceCommands.NEW_FILE.id,
+    //   order: 'a',
+    // });
+    //
+    // registry.registerMenuAction(NavigatorContextMenu.NAVIGATION, {
+    //   commandId: WorkspaceCommands.NEW_FOLDER.id
+    // });
+    // registry.registerMenuAction(NavigatorContextMenu.COMPARE, {
+    //   commandId: WorkspaceCommands.FILE_COMPARE.id
+    // });
+    // registry.registerMenuAction(NavigatorContextMenu.MODIFICATION, {
+    //   commandId: FileNavigatorCommands.COLLAPSE_ALL.id,
+    //   label: nls.localizeByDefault('Collapse All'),
+    //   order: 'z2'
+    // });
+    //
+    // registry.registerMenuAction(NavigatorContextMenu.COMPARE, {
+    //   commandId: NavigatorDiffCommands.COMPARE_FIRST.id,
+    //   order: 'za'
+    // });
+    // registry.registerMenuAction(NavigatorContextMenu.COMPARE, {
+    //   commandId: NavigatorDiffCommands.COMPARE_SECOND.id,
+    //   order: 'zb'
+    // });
+    //
+    // // Open Editors Widget Menu Items
+    // registry.registerMenuAction(OpenEditorsContextMenu.CLIPBOARD, {
+    //   commandId: CommonCommands.COPY_PATH.id,
+    //   order: 'a'
+    // });
+    // registry.registerMenuAction(OpenEditorsContextMenu.CLIPBOARD, {
+    //   commandId: FileNavigatorCommands.COPY_RELATIVE_FILE_PATH.id,
+    //   order: 'b'
+    // });
+    // registry.registerMenuAction(OpenEditorsContextMenu.SAVE, {
+    //   commandId: CommonCommands.SAVE.id,
+    //   order: 'a'
+    // });
+    //
+    // registry.registerMenuAction(OpenEditorsContextMenu.COMPARE, {
+    //   commandId: NavigatorDiffCommands.COMPARE_FIRST.id,
+    //   order: 'a'
+    // });
+    // registry.registerMenuAction(OpenEditorsContextMenu.COMPARE, {
+    //   commandId: NavigatorDiffCommands.COMPARE_SECOND.id,
+    //   order: 'b'
+    // });
+    //
+    // registry.registerMenuAction(OpenEditorsContextMenu.MODIFICATION, {
+    //   commandId: CommonCommands.CLOSE_TAB.id,
+    //   label: 'Close',
+    //   order: 'a'
+    // });
+    // registry.registerMenuAction(OpenEditorsContextMenu.MODIFICATION, {
+    //   commandId: CommonCommands.CLOSE_OTHER_TABS.id,
+    //   label: 'Close Others',
+    //   order: 'b'
+    // });
+    // registry.registerMenuAction(OpenEditorsContextMenu.MODIFICATION, {
+    //   commandId: CommonCommands.CLOSE_ALL_MAIN_TABS.id,
+    //   label: 'Close All',
+    //   order: 'c'
+    // });
   }
 
   /**
